@@ -554,3 +554,34 @@ img {
     overflow-x: auto;
   }
 }
+
+
+/* Ensure Education timeline matches Experience timeline styling */
+
+/* Add a faint vertical line for the left timeline rail */
+#education .timeline {
+  position: relative;
+  margin-left: 10px; /* aligns with Experience timeline visually */
+}
+
+#education .timeline::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(250, 204, 21, 0.25); /* soft yellow timeline rail */
+  border-radius: 2px;
+}
+
+/* Ensure the yellow dots match exactly */
+#education .timeline-item::before {
+  background: var(--accent); /* same bright yellow dot */
+}
+
+/* Optional: Slightly increase spacing for visual clarity */
+#education .timeline-item {
+  margin-bottom: 22px;
+  padding-left: 18px;
+}
