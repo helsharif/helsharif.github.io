@@ -251,26 +251,19 @@ body {
   margin-bottom: 1.3rem;
 }
 
-.avatar-fallback {
-  width: 64px;
-  height: 64px;
+.avatar-img {
+  width: 140px;
+  height: 140px;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent), #4f46e5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #e5e7eb;
-  font-weight: 700;
-  font-size: 1.4rem;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
   margin-right: 1rem;
 }
 
-.avatar-img {
-  width: 64px;
-  height: 64px;
-  border-radius: 999px;
-  object-fit: cover;
-  margin-right: 1rem;
+.avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
 }
 
 .hero-card-body h2 {
