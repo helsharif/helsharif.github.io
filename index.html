@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Husayn El-Sharif | Data Scientist Resume</title>
+
+  <!--
+    - favicon
+    (optional: replace with your own favicon in ./assets/images/logo.ico)
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <!-- Your headshot -->
+          <img src="./assets/images/helsharif_headshot.png"
+               alt="Husayn El-Sharif"
+               width="120">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Husayn El-Sharif">Husayn El-Sharif</h1>
+
+          <p class="title">Data Scientist & ML Engineer</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <!-- EMAIL -->
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <!-- TODO: replace REPLACE_WITH_YOUR_EMAIL with your real email -->
+              <a href="mailto:REPLACE_WITH_YOUR_EMAIL"
+                 class="contact-link">REPLACE_WITH_YOUR_EMAIL</a>
+            </div>
+
+          </li>
+
+          <!-- PHONE -->
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <!-- TODO: replace with your phone or remove if you prefer -->
+              <a href="tel:+10000000000" class="contact-link">+1 (000) 000-0000</a>
+            </div>
+
+          </li>
+
+          <!-- (OPTIONAL) BIRTHDAY -->
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <!-- TODO: update or delete this item if you don't want birthday visible -->
+              <time datetime="1990-01-01">January 1</time>
+            </div>
+
+          </li>
+
+          <!-- LOCATION -->
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Atlanta, Georgia, USA</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <!-- SOCIAL LINKS (update URLs as needed) -->
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/helsharif" class="social-link" target="_blank" rel="noopener">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/REPLACE_WITH_YOUR_LINKEDIN"
+               class="social-link" target="_blank" rel="noopener">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <!-- Make Resume the default active tab -->
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <!-- About is no longer default active, but still available -->
+      <article class="about" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am a data scientist and hydrology researcher with a Ph.D. in Civil &amp; Environmental
+            Engineering, specializing in water resources, remote sensing, and machine learning.
+          </p>
+
+          <p>
+            I build end-to-end data and ML solutions that turn noisy environmental and business data
+            into actionable insight&mdash;from preprocessing and model development to dashboards and
+            production deployment. My work spans satellite-based water quality monitoring, climate and
+            crop-yield forecasting, and AI-powered analytics for decision makers.
+          </p>
+
+          <p>
+            I enjoy collaborating with cross-functional teams, communicating complex methods in plain
+            language, and designing systems that are robust, interpretable, and useful to real people.
+          </p>
+        </section>
+
+        <!--
+          - You can keep or remove the sections below.
+          - For now, I've left the structure; you can later swap in more tailored content.
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What I Do</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="ML & data science icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">ML &amp; Data Science</h4>
+
+                <p class="service-item-text">
+                  Design, train, and evaluate models for prediction, classification, and forecasting,
+                  with a focus on reproducible pipelines.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="Geospatial icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Geospatial &amp; Remote Sensing</h4>
+
+                <p class="service-item-text">
+                  Work with satellite, climate, and GIS data to map risk, monitor water quality, and
+                  support infrastructure planning.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="Apps icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">End-to-End Apps</h4>
+
+                <p class="service-item-text">
+                  Build dashboards and lightweight apps that connect models to stakeholders via intuitive
+                  interfaces.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="Communication icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Technical Communication</h4>
+
+                <p class="service-item-text">
+                  Translate complex analytics into clear narratives, visuals, and recommendations for
+                  non-technical audiences.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME (now default active page)
+      -->
+
+      <article class="resume active" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <!-- EDUCATION -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <!-- Example entry: update years and text as needed -->
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Ph.D., Civil &amp; Environmental Engineering (Water Resources / Hydrology)
+              </h4>
+
+              <span>YYYY &mdash; YYYY</span>
+
+              <p class="timeline-text">
+                Georgia Institute of Technology, Atlanta, GA. Research focused on hydrology, water
+                resources, and machine learning for environmental systems.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                B.S., Civil Engineering
+              </h4>
+
+              <span>YYYY &mdash; YYYY</span>
+
+              <p class="timeline-text">
+                Brief one-sentence summary of your undergraduate work or honors.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <!-- ROLE 1 -->
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Research Engineer &amp; Assistant Director, Georgia Water Resources Institute
+              </h4>
+
+              <span>YYYY &mdash; Present</span>
+
+              <p class="timeline-text">
+                Lead data science and ML projects for water resources planning, including
+                satellite-based water quality monitoring, climate and crop-yield forecasting,
+                and geospatial risk mapping for utilities and government partners.
+              </p>
+
+            </li>
+
+            <!-- ROLE 2 -->
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Data Scientist / ML Consultant (Freelance)
+              </h4>
+
+              <span>YYYY &mdash; YYYY</span>
+
+              <p class="timeline-text">
+                Designed and implemented ML workflows for clients, including churn modeling,
+                computer vision for health imaging, and AI-assisted analytics for industrial
+                compliance and lead generation.
+              </p>
+
+            </li>
+
+            <!-- ROLE 3 -->
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">
+                Graduate Research Assistant, Georgia Institute of Technology
+              </h4>
+
+              <span>YYYY &mdash; YYYY</span>
+
+              <p class="timeline-text">
+                Applied statistical learning, time-series modeling, and remote sensing to study
+                hydrologic systems, water quality, and climate impacts on agriculture.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <!-- SKILLS -->
+        <section class="skill">
+
+          <h3 class="h3 skills-title">Skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Python, ML &amp; Deep Learning</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Geospatial / Remote Sensing (GIS, GEE)</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Data Engineering &amp; Visualization</h5>
+                <data value="85">85%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h5">Communication &amp; Stakeholder Engagement</h5>
+                <data value="85">85%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 85%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+        (unchanged layout; you can plug your actual portfolio projects here later)
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+        <!-- ... your existing portfolio markup from the template ... -->
+      </article>
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+        <!-- ... existing blog markup ... -->
+      </article>
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+        <!-- ... existing contact markup ... -->
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module"
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
