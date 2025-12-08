@@ -384,7 +384,7 @@ img {
   font-style: italic;
 }
 
-/* Timeline (Experience / Education) */
+/* Generic timeline (used by Education) */
 
 .timeline {
   margin-top: 14px;
@@ -413,7 +413,7 @@ img {
   margin: 0 0 2px;
 }
 
-/* Org + dates layout (Experience + Education) */
+/* Org + dates layout (used by Education) */
 .timeline-meta {
   font-size: 12px;
   color: var(--text-muted);
@@ -562,49 +562,17 @@ img {
     overflow-x: auto;
   }
 
-    .timeline-meta {
-    grid-template-columns: 1fr;   /* stack org + dates */
+  /* Stack org + dates for generic timelines (Education) */
+  .timeline-meta {
+    grid-template-columns: 1fr;
     row-gap: 2px;
   }
 
   .timeline-dates {
     text-align: left;
-    white-space: normal;          /* allow wrapping on small screens */
+    white-space: normal;
   }
-
 }
-
-
-/* Ensure Education timeline matches Experience timeline styling */
-
-/* Add a faint vertical line for the left timeline rail */
-#education .timeline {
-  position: relative;
-  margin-left: 10px; /* aligns with Experience timeline visually */
-}
-
-#education .timeline::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: rgba(250, 204, 21, 0.25); /* soft yellow timeline rail */
-  border-radius: 2px;
-}
-
-/* Ensure the yellow dots match exactly */
-#education .timeline-item::before {
-  background: var(--accent); /* same bright yellow dot */
-}
-
-/* Optional: Slightly increase spacing for visual clarity */
-#education .timeline-item {
-  margin-bottom: 22px;
-  padding-left: 18px;
-}
-
 
 /* === Education timeline with small logo icons === */
 
@@ -614,7 +582,7 @@ img {
   margin-left: 16px;
 }
 
-/* yellow vertical rail */
+/* yellow vertical rail for education */
 .edu-timeline::before {
   content: "";
   position: absolute;
@@ -626,14 +594,14 @@ img {
   border-radius: 2px;
 }
 
-/* each row */
+/* each education row */
 #education .timeline-item {
   position: relative;
   margin-bottom: 14px;
   padding-left: 0;
 }
 
-/* yellow dot per row */
+/* yellow dot per edu row */
 #education .timeline-item::before {
   content: "";
   position: absolute;
@@ -654,23 +622,23 @@ img {
   align-items: center;
 }
 
-/* Clean minimal university logos (no circle, no background) */
+/* clean logo icons */
 .edu-logo {
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0; /* remove inner padding */
-  background: none; /* remove background */
-  box-shadow: none; /* remove shadow */
-  border-radius: 0; /* remove circle rounding */
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .edu-logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* keep aspect ratio */
+  object-fit: contain;
 }
 
 /* slight per-logo tweaks if needed */
@@ -691,14 +659,35 @@ img {
   font-size: 12px;
 }
 
-/* === Professional Experience: two-column header layout === */
+/* === Professional Experience: card + two-column layout === */
 
-#experience .exp-header {
+/* Remove generic timeline look for experience */
+#experience .timeline {
+  margin-left: 0;
+  position: static;
+}
+
+#experience .timeline::before,
+#experience .timeline-item::before {
+  content: none;
+}
+
+/* Job cards */
+#experience .timeline-item {
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 20px;
+  padding: 14px 18px 16px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+  margin-bottom: 18px;
+}
+
+/* Two-column header layout */
+#experience .exp-layout {
   display: grid;
   grid-template-columns: minmax(0, 3fr) auto; /* left: title/org, right: dates/location */
-  column-gap: 16px;
+  column-gap: 24px;
   align-items: flex-start;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 #experience .exp-main {
@@ -710,6 +699,7 @@ img {
   color: var(--text-muted);
 }
 
+/* Right column (dates + location) */
 #experience .exp-meta {
   font-size: 12px;
   color: var(--text-muted);
@@ -717,15 +707,28 @@ img {
   white-space: nowrap;
 }
 
-#experience .exp-meta span {
-  display: block; /* dates and location on separate lines */
+#experience .exp-meta .exp-dates,
+#experience .exp-meta .exp-location {
+  display: block; /* stack date & location */
+}
+
+/* Bullets */
+#experience .exp-points {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+#experience .exp-points li + li {
+  margin-top: 4px;
 }
 
 /* Mobile: stack header vertically */
 @media (max-width: 640px) {
-  #experience .exp-header {
+  #experience .exp-layout {
     grid-template-columns: 1fr;
-    row-gap: 2px;
+    row-gap: 4px;
   }
 
   #experience .exp-meta {
@@ -733,5 +736,3 @@ img {
     white-space: normal;
   }
 }
-
-
