@@ -729,3 +729,58 @@ img {
   }
 }
 
+
+/* Sidebar download buttons */
+
+.sidebar-actions {
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: #111827;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(250, 204, 21, 0.4);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.btn-download ion-icon {
+  font-size: 16px;
+}
+
+.btn-download:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(250, 204, 21, 0.55);
+}
+
+.btn-download:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(250, 204, 21, 0.4);
+}
+
+/* On very small screens, stack them full-width */
+@media (max-width: 480px) {
+  .sidebar-actions {
+    flex-direction: column;
+  }
+
+  .btn-download {
+    width: 100%;
+  }
+}
+
+
