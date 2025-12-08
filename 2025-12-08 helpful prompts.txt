@@ -1,3 +1,6 @@
+==============================================================
+2025-12-08 12:30pm
+
 I generally like the styling of the portfolio website now, but I want to modify the following.
 
 # Left Sidebar Area
@@ -53,3 +56,7 @@ Place a contact box here that people can send me an email.
 ## Other modifications
 I don't want a blog section.
 The navigation links should be About, Portfolio, Professional Experience, Contact and should link to sections of this page.
+
+
+
+==============================================================
