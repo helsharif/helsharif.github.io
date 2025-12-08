@@ -362,19 +362,18 @@ img {
   width: 100%;
   aspect-ratio: 4 / 3;
   border-radius: 18px;
-  overflow: hidden;              /* ensures rounded corners clip the image */
-  background: none;              /* remove gold background */
+  overflow: hidden;                 /* REQUIRED for rounded corners */
   margin-bottom: 14px;
-
-  /* soft thumbnail shadow */
+  background: #111;                 /* optional, just prevents flashes */
   box-shadow: 0 4px 18px rgba(0,0,0,0.35);
 }
 
 .project-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;             /* prevents distortion */
+  object-fit: cover;                /* prevents stretching */
   display: block;
+  border-radius: inherit;           /* extra safety */
 }
 
 .project-title {
