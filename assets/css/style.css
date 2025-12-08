@@ -659,7 +659,7 @@ img {
   font-size: 12px;
 }
 
-/* === Professional Experience: card + two-column layout === */
+/* === Professional Experience: card + two-column layout (left text, right dates) === */
 
 /* Remove generic timeline look for experience */
 #experience .timeline {
@@ -681,35 +681,27 @@ img {
   margin-bottom: 18px;
 }
 
-/* Two-column header layout */
-#experience .exp-layout {
+/* Whole card becomes 2-column grid */
+#experience .exp-card {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) auto; /* left: title/org, right: dates/location */
+  grid-template-columns: minmax(0, 3fr) auto; /* LEFT: title + bullets, RIGHT: dates/location */
   column-gap: 24px;
   align-items: flex-start;
-  margin-bottom: 8px;
 }
 
-#experience .exp-main {
+/* Left column: title + org + bullets */
+#experience .exp-left {
   min-width: 0;
+}
+
+#experience .timeline-role {
+  margin: 0 0 2px;
 }
 
 #experience .exp-org {
   font-size: 13px;
   color: var(--text-muted);
-}
-
-/* Right column (dates + location) */
-#experience .exp-meta {
-  font-size: 12px;
-  color: var(--text-muted);
-  text-align: right;
-  white-space: nowrap;
-}
-
-#experience .exp-meta .exp-dates,
-#experience .exp-meta .exp-location {
-  display: block; /* stack date & location */
+  margin-bottom: 6px;
 }
 
 /* Bullets */
@@ -724,15 +716,29 @@ img {
   margin-top: 4px;
 }
 
-/* Mobile: stack header vertically */
+/* Right column: dates + location */
+#experience .exp-right {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+#experience .exp-right .exp-dates,
+#experience .exp-right .exp-location {
+  display: block; /* stack date & location */
+}
+
+/* Mobile: stack columns vertically */
 @media (max-width: 640px) {
-  #experience .exp-layout {
+  #experience .exp-card {
     grid-template-columns: 1fr;
     row-gap: 4px;
   }
 
-  #experience .exp-meta {
+  #experience .exp-right {
     text-align: left;
     white-space: normal;
   }
 }
+
