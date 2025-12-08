@@ -691,3 +691,47 @@ img {
   font-size: 12px;
 }
 
+/* === Professional Experience: two-column header layout === */
+
+#experience .exp-header {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) auto; /* left: title/org, right: dates/location */
+  column-gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+#experience .exp-main {
+  min-width: 0;
+}
+
+#experience .exp-org {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+#experience .exp-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
+}
+
+#experience .exp-meta span {
+  display: block; /* dates and location on separate lines */
+}
+
+/* Mobile: stack header vertically */
+@media (max-width: 640px) {
+  #experience .exp-header {
+    grid-template-columns: 1fr;
+    row-gap: 2px;
+  }
+
+  #experience .exp-meta {
+    text-align: left;
+    white-space: normal;
+  }
+}
+
+
