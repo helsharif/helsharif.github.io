@@ -587,28 +587,19 @@ img {
 }
 
 
-/* === Education Logos Styling (Upgraded) === */
+/* === Education timeline with small logo icons === */
 
-.edu-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  column-gap: 18px;
-  align-items: flex-start;
+.edu-timeline {
   position: relative;
-  padding-left: 18px; /* aligns with timeline */
-  margin-bottom: 28px;
+  margin-top: 16px;
+  margin-left: 16px;
 }
 
-/* Vertical timeline rail */
-#education .timeline {
-  position: relative;
-  margin-left: 12px;
-}
-
-#education .timeline::before {
+/* yellow vertical rail */
+.edu-timeline::before {
   content: "";
   position: absolute;
-  left: 4px;
+  left: -6px;
   top: 0;
   bottom: 0;
   width: 2px;
@@ -616,45 +607,68 @@ img {
   border-radius: 2px;
 }
 
-/* Yellow timeline dots */
+/* each row */
+#education .timeline-item {
+  position: relative;
+  margin-bottom: 14px;
+  padding-left: 0;
+}
+
+/* yellow dot per row */
 #education .timeline-item::before {
   content: "";
   position: absolute;
-  left: -8px;
-  top: 10px;
-  width: 10px;
-  height: 10px;
-  background: var(--accent);
+  left: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
+  background: var(--accent);
 }
 
-/* Logo container */
+/* grid for logo + text */
+.edu-item {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  column-gap: 12px;
+  align-items: center;
+}
+
+/* small logo “icon” */
 .edu-logo {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
-  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+  padding: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* Scale logos properly */
 .edu-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-/* Fine tuning for FAU logo shape */
+/* slight per-logo tweaks if needed */
 .edu-logo img[src*="fau_logo"] {
   transform: scale(0.9);
 }
 
-/* Fine tuning for Georgia Tech "GT" logo */
 .edu-logo img[src*="gatech_logo"] {
-  transform: scale(1.05);
+  transform: scale(1.0);
+}
+
+/* line text just a bit tighter here */
+#education .timeline-role {
+  margin-bottom: 2px;
+}
+
+#education .timeline-meta {
+  font-size: 12px;
 }
 
