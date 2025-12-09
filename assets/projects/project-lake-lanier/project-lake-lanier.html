@@ -354,12 +354,34 @@
     </div>
 
     <script>
-        // simple active-state handling for nav on click
+        // all in-page anchors (e.g., #about, #portfolio, #contact)
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
         const navLinks = document.querySelectorAll(".nav-link");
-        navLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                navLinks.forEach((l) => l.classList.remove("active"));
-                link.classList.add("active");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+
+                // ignore plain "#" links, if any
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                // prevent the default instant jump
+                e.preventDefault();
+
+                // smooth scroll to the section
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                // update active state for top nav links
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
             });
         });
     </script>

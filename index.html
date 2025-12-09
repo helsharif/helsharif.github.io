@@ -224,7 +224,8 @@
           </a>
 
           <!-- Project 3 -->
-          <a href="assets/projects/project-climate-bias-correction/project-climate-bias-correction.html" class="project-card">
+          <a href="assets/projects/project-climate-bias-correction/project-climate-bias-correction.html"
+            class="project-card">
             <div class="project-thumb"><img
                 src="assets/projects/project-climate-bias-correction/project-climate-bias-correction-thumb.png"
                 alt="Continental-Scale Climate Bias-Correction, Projection, & Interactive Dashboard"></div>
@@ -274,7 +275,8 @@
           </a>
 
           <!-- Project 6 -->
-          <a href="assets/projects/project-retinal-disease-detection/project-retinal-disease-detection.html" class="project-card">
+          <a href="assets/projects/project-retinal-disease-detection/project-retinal-disease-detection.html"
+            class="project-card">
             <div class="project-thumb"><img
                 src="assets/projects/project-retinal-disease-detection/project-retinal-disease-detection-thumb.png"
                 alt="AI-Powered Retinal Disease Detection with Deep Learning & Computer Vision Pipeline"></div>
@@ -290,7 +292,8 @@
           </a>
 
           <!-- Project 7 -->
-          <a href="assets/projects/project-hydrology-literature-genai/project-hydrology-literature-genai.html" class="project-card">
+          <a href="assets/projects/project-hydrology-literature-genai/project-hydrology-literature-genai.html"
+            class="project-card">
             <div class="project-thumb"><img
                 src="assets/projects/project-hydrology-literature-genai/project-hydrology-literature-genai-thumb.png"
                 alt="Multi-Agent GenAI System for Automated Hydrology Literature Review (CrewAI + LLMs)"></div>
@@ -557,12 +560,34 @@
   </div>
 
   <script>
-    // optional: simple active-state handling for nav on click
+    // all in-page anchors (e.g., #about, #portfolio, #contact)
+    const inPageAnchors = document.querySelectorAll('a[href^="#"]');
     const navLinks = document.querySelectorAll(".nav-link");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.forEach((l) => l.classList.remove("active"));
-        link.classList.add("active");
+
+    inPageAnchors.forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const targetId = this.getAttribute("href");
+
+        // ignore plain "#" links, if any
+        if (!targetId || targetId === "#") return;
+
+        const target = document.querySelector(targetId);
+        if (!target) return;
+
+        // prevent the default instant jump
+        e.preventDefault();
+
+        // smooth scroll to the section
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        // update active state for top nav links
+        if (this.classList.contains("nav-link")) {
+          navLinks.forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+        }
       });
     });
   </script>
