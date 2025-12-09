@@ -750,6 +750,7 @@ img {
   font-size: 13px;
   color: var(--text-muted);
   margin-bottom: 6px;
+  font-style: italic;
 }
 
 #experience .exp-points {
@@ -773,6 +774,10 @@ img {
 #experience .exp-right .exp-dates,
 #experience .exp-right .exp-location {
   display: block;
+}
+
+#experience .exp-dates {
+  font-style: italic;
 }
 
 /* Mobile stacking */
