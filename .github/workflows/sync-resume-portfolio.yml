@@ -4,9 +4,13 @@ on:
   # Run manually from the Actions tab
   workflow_dispatch:
 
-  # Run every day at 6:00 UTC (1:00 AM EST)
+  # Run every day at 6:00 UTC
   schedule:
     - cron: "0 6 * * *"
+
+# Allow this workflow to push commits
+permissions:
+  contents: write
 
 jobs:
   sync-docs:
@@ -16,7 +20,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Make assets directory
+      - name: Create destination folder
         run: mkdir -p "assets/resume_portfolio_pdfs"
 
       - name: Download resume from Google Drive
