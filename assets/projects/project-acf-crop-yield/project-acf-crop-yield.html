@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Remote Sensing & ML for Water Quality | Husayn El Sharif</title>
+    <title>Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Google Font -->
@@ -121,23 +121,23 @@
 
             <!-- ===== Project Overview ===== -->
             <section id="overview" class="section">
-                <h2 class="section-title">Remote Sensing &amp; ML for Water Quality Assessment at Lake Lanier</h2>
+                <h2 class="section-title">Climate-Informed Crop Yield &amp; Irrigation Projections for the ACF River Basin</h2>
 
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
-                    <!-- Replace the src with your actual screenshot path -->
-                    <img src="../../images/projects/lake-lanier-hero.png"
-                        alt="Satellite-based chlorophyll-a monitoring dashboard for Lake Lanier" />
+                    <!-- Replace the src with your actual screenshot path (1000x750 4:3 image) -->
+                    <img src="../../images/projects/acf-crop-hero.png"
+                        alt="Climate-informed crop yield and irrigation projections for the ACF River Basin" />
                 </div>
 
-                <!-- Tech / domain pills (optional but looks nice) -->
+                <!-- Tech / domain pills -->
                 <div class="project-meta-pills">
-                    <span class="project-pill">Remote Sensing</span>
-                    <span class="project-pill">Symbolic Regression</span>
+                    <span class="project-pill">DSSAT Crop Modeling</span>
+                    <span class="project-pill">Statistical Downscaling</span>
+                    <span class="project-pill">Bias Correction (JVBC)</span>
                     <span class="project-pill">Time-Series Analysis</span>
-                    <span class="project-pill">Google Earth Engine</span>
-                    <span class="project-pill">Dockerized Deployment</span>
-                    <span class="project-pill">Regulatory Compliance</span>
+                    <span class="project-pill">Climate Impact Assessment</span>
+                    <span class="project-pill">Data Visualization</span>
                 </div>
 
                 <!-- Quick facts card -->
@@ -145,36 +145,33 @@
                     <h3>Quick Facts</h3>
                     <dl>
                         <dt>Role</dt>
-                        <dd>Lead Data Scientist / ML Engineer</dd>
+                        <dd>Lead Data Scientist / Climate &amp; Agriculture Modeler</dd>
 
                         <dt>Domain</dt>
-                        <dd>Water Quality, Remote Sensing, Early-Warning Systems</dd>
+                        <dd>Climate Risk, Crop Yield Modeling, Irrigation Planning</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python, Symbolic Regression, Sentinel-2, Google Earth Engine, JupyterLab, Docker</dd>
+                        <dd>DSSAT-CSM, Python, Joint Variable Bias Correction (JVBC), CMIP6, Time-Series Analytics, GIS</dd>
 
-                        <dt>Stakeholder</dt>
-                        <dd>Gwinnett County Dept. of Water Resources</dd>
+                        <dt>Region &amp; Crops</dt>
+                        <dd>ACF River Basin – Corn, Cotton, Peanuts, Soybeans</dd>
                     </dl>
                 </aside>
 
                 <!-- Short overview text -->
                 <div class="project-section-text">
                     <p>
-                        This project developed a satellite-based workflow for estimating chlorophyll-a (Chl-a) in Lake
-                        Lanier,
-                        Georgia, using Sentinel-2 imagery and in-situ sampling. Chl-a is a key indicator of algal
-                        biomass and
-                        eutrophication, and is central to monitoring harmful algal blooms and water quality standards
-                        compliance.
+                        This project integrated soil, crop, and meteorological datasets with the DSSAT Cropping System Model
+                        (DSSAT-CSM) to assess how climate will reshape agricultural production and irrigation demand across
+                        the Apalachicola–Chattahoochee–Flint (ACF) River Basin. The analysis focused on four major crops—
+                        peanuts, corn, soybeans, and cotton—and examined yield sensitivity across normal, dry, and wet years. :contentReference[oaicite:2]{index=2}
                     </p>
                     <p>
-                        Traditional field sampling is expensive and sparsely distributed in space and time. By mining
-                        satellite
-                        reflectance data and learning robust relationships to in-situ measurements, this workflow
-                        produces weekly,
-                        lake-wide Chl-a maps that give water utilities and regulators a much richer view of changing
-                        conditions.
+                        A Joint Variable Bias Correction (JVBC) algorithm was applied to CMIP6 climate projections, producing
+                        high-resolution, bias-corrected temperature and precipitation fields suitable for driving DSSAT and
+                        downstream regression models. These climate-informed projections were then used to estimate future
+                        crop yields and irrigation demand through the end of the century, providing decision-makers with
+                        actionable evidence for drought management and water-resources planning. 
                     </p>
                 </div>
             </section>
@@ -186,25 +183,21 @@
 
                 <div class="project-section-text">
                     <p>
-                        Chlorophyll-a is widely used as a proxy for algal biomass and trophic state in lakes and
-                        reservoirs.
-                        Elevated Chl-a levels can indicate harmful algal blooms that threaten ecosystem health, drinking
-                        water
-                        safety, and recreation.
+                        The ACF River Basin is an agricultural and hydrologic “hotspot,” where irrigation, municipal
+                        demand, ecosystem needs, and interstate water-sharing agreements intersect. Shifts in growing-season
+                        rainfall and evaporative demand directly affect crop yields and the volume and timing of irrigation
+                        withdrawals.
                     </p>
                     <p>
-                        In Lake Lanier, routine field assessments provide high-quality measurements but are limited in
-                        spatial and
-                        temporal coverage and require significant field and lab effort. This creates blind spots in
-                        understanding
-                        how water quality evolves across the full lake surface, especially between sampling events.
+                        Historically, growers and water managers relied on station-based climate records and
+                        rule-of-thumb irrigation scheduling. However, with intensifying heat, altered precipitation
+                        patterns, and more frequent agricultural droughts, this approach is no longer sufficient to plan
+                        for the next several decades. :contentReference[oaicite:4]{index=4}
                     </p>
                     <p>
-                        <strong>Problem Statement:</strong> How can satellite-based remote sensing using Sentinel-2
-                        imagery be used
-                        to assess and monitor chlorophyll-a concentrations in Lake Lanier, GA, in near real time to
-                        improve water
-                        quality management and detect harmful algal blooms?
+                        <strong>Problem Statement:</strong> How will climate-driven shifts in rainfall and evapotranspiration
+                        shape crop yields and irrigation demand in the ACF River Basin, and how can this information be used
+                        to guide more resilient farm and water-management strategies? :contentReference[oaicite:5]{index=5}
                     </p>
                 </div>
             </section>
@@ -215,89 +208,99 @@
 
                 <div class="project-section-text">
                     <p>
-                        A multi-year lake sampling campaign was conducted from fall 2018 through 2020. During Sentinel-2
-                        overpasses,
-                        photic-zone chlorophyll-a concentrations were measured at multiple locations across Lake Lanier.
-                        The
-                        resulting paired dataset of in-situ Chl-a and satellite reflectance formed the foundation for
-                        model
-                        development.
+                        The modeling framework combined detailed agricultural inputs with advanced climate data processing
+                        and crop simulation:
                     </p>
 
                     <ul class="project-bullets">
                         <li>
-                            Assembled a dataset linking in-situ Chl-a measurements with Sentinel-2 surface reflectance
-                            bands for each
-                            sampling location and overpass date.
+                            <strong>Data Collection:</strong> Assembled soil, land-use, and weather inputs from multiple
+                            public datasets including the USDA Cropland Data Layer, Climate Research Unit Dataset,
+                            GRIDMET historical reanalysis, HarvestChoice soil profiles, and CMIP6 climate projections for
+                            the ACF. :contentReference[oaicite:6]{index=6}
                         </li>
                         <li>
-                            Segmented the data by season to account for changing optical properties and stratification
-                            in the lake.
+                            <strong>DSSAT Configuration:</strong> Configured DSSAT-CSM for four major crops
+                            (corn, cotton, peanuts, soybeans), using region-specific planting calendars, management
+                            practices, and soil profiles to simulate yields and irrigation demand under historical
+                            conditions (normal, dry, and wet years).
                         </li>
                         <li>
-                            Applied Symbolic Regression to discover functional relationships between Sentinel-2 bands
-                            and Chl-a,
-                            identifying the most informative spectral combinations for water quality prediction.
+                            <strong>Joint Variable Bias Correction (JVBC):</strong> Developed and applied a JVBC algorithm
+                            to downscale coarse CMIP6 projections (~100 km) to ~10 km grid cells and to daily-to-monthly
+                            resolution, while preserving the joint distribution and spatial correlation structure of
+                            temperature and precipitation. 
                         </li>
                         <li>
-                            Evaluated alternative functional forms and seasonal models to balance predictive accuracy,
-                            robustness, and
-                            interpretability for operational use.
+                            <strong>Derived Climate Metrics:</strong> Computed growing-season precipitation, potential
+                            evapotranspiration (PET), and precipitation deficit (PRECIP − PET) as primary predictors of
+                            yield variability and irrigation demand in heavily cropped sub-regions.
+                        </li>
+                        <li>
+                            <strong>Regression Modeling:</strong> Built regression models linking precipitation deficit to
+                            total irrigation demand for each crop and ACF sub-basin, enabling rapid scenario analysis
+                            across multiple climate realizations. 
                         </li>
                     </ul>
 
                     <!-- Optional placeholders where you can later drop in images/figures -->
                     <div class="project-figure">
-                        Optional: Insert map figure of Lake Lanier Chl-a field sampling locations here.
+                        Optional: Insert map figure of the ACF River Basin and major cropped sub-regions here.
                     </div>
 
                     <div class="project-figure">
-                        Optional: Insert figure summarizing Sentinel-2 reflectance bands and symbolic regression fits
-                        for Chl-a.
+                        Optional: Insert schematic showing the pipeline from CMIP6 climate projections → JVBC bias
+                        correction → DSSAT simulations → regression models for irrigation demand.
                     </div>
                 </div>
             </section>
 
             <!-- ===== Deployment & Results ===== -->
             <section id="deployment" class="section">
-                <h2 class="section-title">Model Deployment &amp; Results</h2>
+                <h2 class="section-title">Projected Climate, Crop Response, &amp; Irrigation Demand</h2>
 
                 <div class="project-section-text">
                     <p>
-                        Once robust Chl-a models were established, they were deployed on
-                        <strong>Google Earth Engine (GEE)</strong>, enabling near real-time processing of Sentinel-2
-                        scenes and
-                        generation of operational water-quality products.
+                        After calibration under historical conditions, the DSSAT and regression models were driven with
+                        JVBC-corrected CMIP6 projections to quantify future climate, crop yield, and irrigation patterns
+                        across the ACF.
                     </p>
 
                     <ul class="project-bullets">
                         <li>
-                            Implemented the Chl-a estimation algorithms as GEE scripts to automatically ingest new
-                            Sentinel-2
-                            imagery, apply atmospheric corrections, and compute lake-wide Chl-a maps.
+                            <strong>Projected Climate:</strong> Time-series analysis indicates substantial warming across
+                            the ACF Basin, while precipitation increases only slightly—insufficient to offset
+                            temperature-driven increases in evapotranspiration and atmospheric demand. 
                         </li>
                         <li>
-                            Built interactive browser-based tools that allow users to visualize spatial patterns, query
-                            locations, and
-                            export maps and data tables for further analysis.
+                            <strong>Growing-Season Deficits:</strong> Analysis of precipitation deficits (PRECIP − PET)
+                            shows that agricultural droughts become more frequent, longer-lasting, and more severe.
+                            By the end of the century, over 50% of growing seasons in multiple ACF sub-basins are projected
+                            to be classified as “dry.” 
                         </li>
                         <li>
-                            Developed a JupyterLab-based companion workflow for power users, supporting exploratory
-                            analysis,
-                            time-series extraction, and custom reporting.
+                            <strong>Climate–Irrigation Relationship:</strong> Mining historical records revealed a robust
+                            functional relationship between precipitation deficit and irrigation demand, which was then
+                            applied to future climate scenarios to estimate irrigation requirements for each crop and
+                            sub-basin. 
                         </li>
                         <li>
-                            Containerized the full analysis environment with <strong>Docker</strong> so the tool can be
-                            launched
-                            consistently on different machines or deployed in cloud / enterprise environments without
-                            dependency
-                            issues.
+                            <strong>Irrigation Projections:</strong> Results show substantial increases in irrigation
+                            volumes:
+                            Central ACF irrigation demand is projected to rise by ~30% over the next 30 years and ~100%
+                            by end-of-century; Southern ACF demand is projected to increase by ~40% and ~130% over the
+                            same horizons. 
                         </li>
                     </ul>
 
                     <div class="project-figure">
-                        Optional: Insert screenshot of the web-based interactive dashboard for Lake Lanier water quality
-                        here.
+                        Optional: Insert figure showing historical vs. projected precipitation deficits and frequency of
+                        “dry” growing seasons in key ACF sub-basins.
+                    </div>
+
+                    <div class="project-figure">
+                        Optional: Insert chart comparing baseline vs. projected irrigation volumes for corn, cotton,
+                        peanuts, and soybeans in central and southern ACF sub-regions.
                     </div>
                 </div>
             </section>
@@ -308,32 +311,32 @@
 
                 <div class="project-section-text">
                     <p>
-                        The deployed Chl-a Sat-Tool now serves as a decision-support platform for the
-                        <strong>Gwinnett County Department of Water Resources</strong>, providing a synoptic, near
-                        real-time view of
-                        water quality conditions across Lake Lanier.
+                        The climate-informed crop and irrigation projections generated in this project provide a
+                        quantitative basis for long-term water-resource planning and climate adaptation in the ACF.
                     </p>
 
                     <ul class="project-bullets">
                         <li>
-                            Enables long-term lake monitoring at a fraction of the cost of traditional field campaigns
-                            and laboratory
-                            analysis.
+                            <strong>Water-Planning Implications:</strong> Projected increases in irrigation demand of
+                            30–40% mid-century and 100–130% by end-of-century signal the need for expanded drought
+                            contingency planning, reservoir operation strategies, and potential revisions to
+                            interstate water-sharing agreements. 
                         </li>
                         <li>
-                            Reveals that large areas of Lake Lanier frequently exceed regulatory thresholds for
-                            chlorophyll-a,
-                            supplying data-driven evidence to prioritize remediation and regulatory compliance efforts.
+                            <strong>Farm-Level Adaptation:</strong> Growers can use sub-basin level projections of
+                            precipitation deficit and irrigation demand to evaluate the value of more efficient
+                            irrigation technologies, shifting crop choices, or adjusting planting schedules.
                         </li>
                         <li>
-                            Supports early detection of harmful algal blooms by highlighting hotspots and emerging
-                            trends between
-                            routine sampling events.
+                            <strong>Policy &amp; Risk Assessment:</strong> The integrated data products (bias-corrected
+                            climate fields, DSSAT outputs, and regression-based irrigation curves) create a foundation
+                            for broader climate-risk assessments that connect agriculture, hydrology, and policy in the
+                            ACF Basin.
                         </li>
                         <li>
-                            Demonstrates a reproducible, containerized workflow that can be adapted to other reservoirs
-                            and regions,
-                            accelerating adoption of satellite-based water quality monitoring.
+                            <strong>Reusable Workflow:</strong> The JVBC downscaling, DSSAT integration, and regression
+                            framework are modular and can be ported to other basins or sectors (e.g., hydropower,
+                            municipal supply) requiring climate-informed water-demand projections.
                         </li>
                     </ul>
                 </div>
@@ -377,7 +380,7 @@
                     block: "start"
                 });
 
-                // update active state for top nav links
+                // update active state for nav links (if relevant)
                 if (this.classList.contains("nav-link")) {
                     navLinks.forEach((l) => l.classList.remove("active"));
                     this.classList.add("active");
