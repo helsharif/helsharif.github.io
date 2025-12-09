@@ -794,3 +794,110 @@ img {
 }
 
 
+/* === Project Detail Layout === */
+
+.project-hero {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: var(--radius-md);
+  padding: 14px 18px 16px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+  margin-bottom: 18px;
+}
+
+.project-hero-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.project-hero-subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.project-pill {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-pill);
+  color: var(--text-muted);
+}
+
+.project-quick-facts {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 13px;
+}
+
+.project-quick-facts h3 {
+  font-size: 14px;
+  margin: 0 0 6px;
+}
+
+.project-quick-facts dl {
+  margin: 0;
+}
+
+.project-quick-facts dt {
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+.project-quick-facts dd {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* Two-column layout for overview-type sections */
+.project-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 22px;
+  margin-top: 10px;
+}
+
+/* Generic project-section tweaks */
+.project-section-text {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.project-bullets {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.project-bullets li + li {
+  margin-top: 4px;
+}
+
+/* Optional figure placeholder */
+.project-figure {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Mobile: stack columns on narrow screens */
+@media (max-width: 768px) {
+  .project-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+

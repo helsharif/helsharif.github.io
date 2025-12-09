@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Remote Sensing & ML for Water Quality | Husayn El Sharif</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+  <!-- Icons (for sidebar + contact) -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+
+        <div class="avatar-wrapper">
+          <div class="avatar-ring">
+            <img src="../../images/helsharif_headshot.png" alt="Husayn El Sharif headshot" class="avatar-img" />
+          </div>
+        </div>
+
+        <h1 class="sidebar-name">Husayn El Sharif</h1>
+        <p class="sidebar-title">Data Scientist &amp; ML Engineer</p>
+
+        <div class="sidebar-actions">
+          <a href="https://drive.google.com/file/d/1kPsPFBu_Iw-wJfgfFcuWoiB4nTM6y6ty/view?usp=sharing"
+             class="btn-download" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="document-text-outline"></ion-icon>
+            <span>Download Resume</span>
+          </a>
+
+          <a href="https://drive.google.com/open?id=1HMwXhiXEzCqqm4G__PJPetOIizUkK1FV&usp=drive_fs"
+             class="btn-download" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="briefcase-outline"></ion-icon>
+            <span>Download Portfolio</span>
+          </a>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-contact">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Email</span>
+              <a href="#contact" class="contact-value">
+                helsharif@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Phone</span>
+              <a href="tel:+15612471430" class="contact-value">
+                +1 (561) 247-1430
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-body">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">
+                Marietta, Georgia, USA
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-social">
+          <a href="https://github.com/helsharif" target="_blank" rel="noopener" aria-label="GitHub">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+          <a href="https://www.linkedin.com/in/husayn-el-sharif" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="main">
+
+      <!-- Top nav specific to project page -->
+      <header class="top-nav">
+        <nav>
+          <a href="../../index.html#portfolio" class="nav-link">← Back to Portfolio</a>
+          <a href="#overview" class="nav-link active">Overview</a>
+          <a href="#modeling" class="nav-link">Model Development</a>
+          <a href="#deployment" class="nav-link">Deployment</a>
+          <a href="#impact" class="nav-link">Impact</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+      </header>
+
+      <!-- ===== Project Overview ===== -->
+      <section id="overview" class="section">
+        <h2 class="section-title">Remote Sensing &amp; ML for Water Quality Assessment at Lake Lanier</h2>
+
+        <div class="project-hero">
+          <p class="project-hero-title">
+            Satellite-Based Monitoring of Chlorophyll-a for Near Real-Time Water Quality Management
+          </p>
+          <p class="project-hero-subtitle">
+            Building a Sentinel-2 + ML pipeline to map chlorophyll-a in Lake Lanier and support early warning for
+            harmful algal blooms and regulatory compliance.
+          </p>
+
+          <div class="project-meta">
+            <span class="project-pill">Remote Sensing</span>
+            <span class="project-pill">Symbolic Regression</span>
+            <span class="project-pill">Time-Series Analysis</span>
+            <span class="project-pill">Google Earth Engine</span>
+            <span class="project-pill">Dockerized Deployment</span>
+            <span class="project-pill">Regulatory Compliance</span>
+          </div>
+
+          <div class="project-layout">
+            <div class="project-section-text">
+              <p>
+                This project developed a satellite-based workflow for estimating chlorophyll-a (Chl-a) in Lake Lanier,
+                Georgia, using Sentinel-2 imagery and in-situ sampling. Chl-a is a key indicator of algal biomass and
+                eutrophication, and it is central to monitoring harmful algal blooms and water quality standards
+                compliance.
+              </p>
+              <p>
+                Traditional field sampling is expensive and sparsely distributed in space and time. By mining satellite
+                reflectance data and learning robust relationships to in-situ measurements, this workflow produces
+                weekly, lake-wide Chl-a maps that give water utilities and regulators a much richer view of changing
+                conditions.
+              </p>
+            </div>
+
+            <aside class="project-quick-facts">
+              <h3>Quick Facts</h3>
+              <dl>
+                <dt>Role</dt>
+                <dd>Lead Data Scientist / ML Engineer</dd>
+
+                <dt>Domain</dt>
+                <dd>Water Quality, Remote Sensing, Early-Warning Systems</dd>
+
+                <dt>Tech Stack</dt>
+                <dd>Python, Symbolic Regression, Sentinel-2, Google Earth Engine, JupyterLab, Docker</dd>
+
+                <dt>Stakeholder</dt>
+                <dd>Gwinnett County Dept. of Water Resources</dd>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Background & Problem ===== -->
+      <section id="background" class="section">
+        <h2 class="section-title section-title--sub">Background &amp; Problem Statement</h2>
+
+        <div class="project-section-text">
+          <p>
+            Chlorophyll-a is widely used as a proxy for algal biomass and trophic state in lakes and reservoirs.
+            Elevated Chl-a levels can indicate harmful algal blooms that threaten ecosystem health, drinking water
+            safety, and recreation.
+          </p>
+          <p>
+            In Lake Lanier, routine field assessments provide high-quality measurements but are limited in spatial and
+            temporal coverage and require significant field and lab effort. This creates blind spots in understanding
+            how water quality evolves across the full lake surface, especially between sampling events.
+          </p>
+          <p>
+            <strong>Problem Statement:</strong> How can satellite-based remote sensing using Sentinel-2 imagery be used
+            to assess and monitor chlorophyll-a concentrations in Lake Lanier, GA, in near real time to improve water
+            quality management and detect harmful algal blooms?
+          </p>
+        </div>
+      </section>
+
+      <!-- ===== Model Development ===== -->
+      <section id="modeling" class="section">
+        <h2 class="section-title">Model Development</h2>
+
+        <div class="project-section-text">
+          <p>
+            A multi-year lake sampling campaign was conducted from fall 2018 through 2020. During Sentinel-2 overpasses,
+            photic-zone chlorophyll-a concentrations were measured at multiple locations across Lake Lanier. The
+            resulting paired dataset of in-situ Chl-a and satellite reflectance formed the foundation for model
+            development.
+          </p>
+
+          <ul class="project-bullets">
+            <li>
+              Assembled a dataset linking in-situ Chl-a measurements with Sentinel-2 surface reflectance bands for each
+              sampling location and overpass date.
+            </li>
+            <li>
+              Segmented the data by season to account for changing optical properties and stratification in the lake.
+            </li>
+            <li>
+              Applied Symbolic Regression to discover functional relationships between Sentinel-2 bands and Chl-a,
+              identifying the most informative spectral combinations for water quality prediction.
+            </li>
+            <li>
+              Evaluated alternative functional forms and seasonal models to balance predictive accuracy, robustness, and
+              interpretability for operational use.
+            </li>
+          </ul>
+
+          <!-- Optional placeholders where you can later drop in images/figures -->
+          <div class="project-figure">
+            Optional: Insert map figure of Lake Lanier Chl-a field sampling locations here.
+          </div>
+
+          <div class="project-figure">
+            Optional: Insert figure summarizing Sentinel-2 reflectance bands and symbolic regression fits for Chl-a.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Deployment & Results ===== -->
+      <section id="deployment" class="section">
+        <h2 class="section-title">Model Deployment &amp; Results</h2>
+
+        <div class="project-section-text">
+          <p>
+            Once robust Chl-a models were established, they were deployed on
+            <strong>Google Earth Engine (GEE)</strong>, enabling near real-time processing of Sentinel-2 scenes and
+            generation of operational water-quality products.
+          </p>
+
+          <ul class="project-bullets">
+            <li>
+              Implemented the Chl-a estimation algorithms as GEE scripts to automatically ingest new Sentinel-2
+              imagery, apply atmospheric corrections, and compute lake-wide Chl-a maps.
+            </li>
+            <li>
+              Built interactive browser-based tools that allow users to visualize spatial patterns, query locations, and
+              export maps and data tables for further analysis.
+            </li>
+            <li>
+              Developed a JupyterLab-based companion workflow for power users, supporting exploratory analysis,
+              time-series extraction, and custom reporting.
+            </li>
+            <li>
+              Containerized the full analysis environment with <strong>Docker</strong> so the tool can be launched
+              consistently on different machines or deployed in cloud / enterprise environments without dependency
+              issues.
+            </li>
+          </ul>
+
+          <div class="project-figure">
+            Optional: Insert screenshot of the web-based interactive dashboard for Lake Lanier water quality here.
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Impact & Insights ===== -->
+      <section id="impact" class="section">
+        <h2 class="section-title">Impact &amp; Actionable Insights</h2>
+
+        <div class="project-section-text">
+          <p>
+            The deployed Chl-a Sat-Tool now serves as a decision-support platform for the
+            <strong>Gwinnett County Department of Water Resources</strong>, providing a synoptic, near real-time view of
+            water quality conditions across Lake Lanier.
+          </p>
+
+          <ul class="project-bullets">
+            <li>
+              Enables long-term lake monitoring at a fraction of the cost of traditional field campaigns and laboratory
+              analysis.
+            </li>
+            <li>
+              Reveals that large areas of Lake Lanier frequently exceed regulatory thresholds for chlorophyll-a,
+              supplying data-driven evidence to prioritize remediation and regulatory compliance efforts.
+            </li>
+            <li>
+              Supports early detection of harmful algal blooms by highlighting hotspots and emerging trends between
+              routine sampling events.
+            </li>
+            <li>
+              Demonstrates a reproducible, containerized workflow that can be adapted to other reservoirs and regions,
+              accelerating adoption of satellite-based water quality monitoring.
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // simple active-state handling for nav on click
+    const navLinks = document.querySelectorAll(".nav-link");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.forEach((l) => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
+</body>
+
+</html>
