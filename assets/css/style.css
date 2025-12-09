@@ -794,33 +794,28 @@ img {
 }
 
 
-/* === Project Detail Layout === */
+/* === Project Detail Pages === */
 
-.project-hero {
+.project-hero-image {
   background: rgba(0, 0, 0, 0.45);
   border-radius: var(--radius-md);
-  padding: 14px 18px 16px;
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
-  margin-bottom: 18px;
+  padding: 10px;
+  margin: 10px 0 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
 }
 
-.project-hero-title {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 4px;
+.project-hero-image img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
 }
 
-.project-hero-subtitle {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin: 0 0 10px;
-}
-
-.project-meta {
+/* pill-style tags under the hero image */
+.project-meta-pills {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .project-pill {
@@ -831,10 +826,13 @@ img {
   color: var(--text-muted);
 }
 
+/* quick facts card under the image */
 .project-quick-facts {
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: var(--radius-md);
   padding: 12px 14px;
+  margin-bottom: 22px;
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.4);
   font-size: 13px;
 }
 
@@ -857,32 +855,17 @@ img {
   color: var(--text-muted);
 }
 
-/* Two-column layout for overview-type sections */
-.project-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 22px;
-  margin-top: 10px;
-}
-
-/* Generic project-section tweaks */
+/* generic text styling for project sections */
 .project-section-text {
   font-size: 14px;
   color: var(--text-muted);
 }
 
-.project-bullets {
-  font-size: 13px;
-  color: var(--text-muted);
-  padding-left: 18px;
-  margin-top: 6px;
+.project-section-text p + p {
+  margin-top: 8px;
 }
 
-.project-bullets li + li {
-  margin-top: 4px;
-}
-
-/* Optional figure placeholder */
+/* reusable figure / screenshot card */
 .project-figure {
   margin-top: 12px;
   padding: 10px 12px;
