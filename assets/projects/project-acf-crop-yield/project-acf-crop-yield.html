@@ -121,12 +121,13 @@
 
             <!-- ===== Project Overview ===== -->
             <section id="overview" class="section">
-                <h2 class="section-title">Climate-Informed Crop Yield &amp; Irrigation Projections for the ACF River Basin</h2>
+                <h2 class="section-title">Climate-Informed Crop Yield &amp; Irrigation Projections for the ACF River
+                    Basin</h2>
 
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path (1000x750 4:3 image) -->
-                    <img src="../../images/projects/acf-crop-hero.png"
+                    <img src="project-acf-crop-yield-thumb.png"
                         alt="Climate-informed crop yield and irrigation projections for the ACF River Basin" />
                 </div>
 
@@ -151,7 +152,8 @@
                         <dd>Climate Risk, Crop Yield Modeling, Irrigation Planning</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>DSSAT-CSM, Python, Joint Variable Bias Correction (JVBC), CMIP6, Time-Series Analytics, GIS</dd>
+                        <dd>DSSAT-CSM, Python, Joint Variable Bias Correction (JVBC), CMIP6, Time-Series Analytics, GIS
+                        </dd>
 
                         <dt>Region &amp; Crops</dt>
                         <dd>ACF River Basin – Corn, Cotton, Peanuts, Soybeans</dd>
@@ -161,17 +163,24 @@
                 <!-- Short overview text -->
                 <div class="project-section-text">
                     <p>
-                        This project integrated soil, crop, and meteorological datasets with the DSSAT Cropping System Model
-                        (DSSAT-CSM) to assess how climate will reshape agricultural production and irrigation demand across
-                        the Apalachicola–Chattahoochee–Flint (ACF) River Basin. The analysis focused on four major crops—
-                        peanuts, corn, soybeans, and cotton—and examined yield sensitivity across normal, dry, and wet years. :contentReference[oaicite:2]{index=2}
+                        This project integrated soil, crop, and meteorological datasets with the DSSAT Cropping System
+                        Model
+                        (DSSAT-CSM) to assess how climate will reshape agricultural production and irrigation demand
+                        across
+                        the Apalachicola–Chattahoochee–Flint (ACF) River Basin. The analysis focused on four major
+                        crops—
+                        peanuts, corn, soybeans, and cotton—and examined yield sensitivity across normal, dry, and wet
+                        years. :contentReference[oaicite:2]{index=2}
                     </p>
                     <p>
-                        A Joint Variable Bias Correction (JVBC) algorithm was applied to CMIP6 climate projections, producing
-                        high-resolution, bias-corrected temperature and precipitation fields suitable for driving DSSAT and
-                        downstream regression models. These climate-informed projections were then used to estimate future
+                        A Joint Variable Bias Correction (JVBC) algorithm was applied to CMIP6 climate projections,
+                        producing
+                        high-resolution, bias-corrected temperature and precipitation fields suitable for driving DSSAT
+                        and
+                        downstream regression models. These climate-informed projections were then used to estimate
+                        future
                         crop yields and irrigation demand through the end of the century, providing decision-makers with
-                        actionable evidence for drought management and water-resources planning. 
+                        actionable evidence for drought management and water-resources planning.
                     </p>
                 </div>
             </section>
@@ -184,8 +193,10 @@
                 <div class="project-section-text">
                     <p>
                         The ACF River Basin is an agricultural and hydrologic “hotspot,” where irrigation, municipal
-                        demand, ecosystem needs, and interstate water-sharing agreements intersect. Shifts in growing-season
-                        rainfall and evaporative demand directly affect crop yields and the volume and timing of irrigation
+                        demand, ecosystem needs, and interstate water-sharing agreements intersect. Shifts in
+                        growing-season
+                        rainfall and evaporative demand directly affect crop yields and the volume and timing of
+                        irrigation
                         withdrawals.
                     </p>
                     <p>
@@ -195,20 +206,29 @@
                         for the next several decades. :contentReference[oaicite:4]{index=4}
                     </p>
                     <p>
-                        <strong>Problem Statement:</strong> How will climate-driven shifts in rainfall and evapotranspiration
-                        shape crop yields and irrigation demand in the ACF River Basin, and how can this information be used
-                        to guide more resilient farm and water-management strategies? :contentReference[oaicite:5]{index=5}
+                        <strong>Problem Statement:</strong> How will climate-driven shifts in rainfall and
+                        evapotranspiration
+                        shape crop yields and irrigation demand in the ACF River Basin, and how can this information be
+                        used
+                        to guide more resilient farm and water-management strategies?
+                        :contentReference[oaicite:5]{index=5}
                     </p>
                 </div>
             </section>
 
             <!-- ===== Model Development ===== -->
+
+            <div class="project-figure">
+                <img src="jvbc improvement perfromance.png" alt="JVBC Joint CDF Improvement" />
+            </div>
+
             <section id="modeling" class="section">
                 <h2 class="section-title">Model Development</h2>
 
                 <div class="project-section-text">
                     <p>
-                        The modeling framework combined detailed agricultural inputs with advanced climate data processing
+                        The modeling framework combined detailed agricultural inputs with advanced climate data
+                        processing
                         and crop simulation:
                     </p>
 
@@ -216,7 +236,8 @@
                         <li>
                             <strong>Data Collection:</strong> Assembled soil, land-use, and weather inputs from multiple
                             public datasets including the USDA Cropland Data Layer, Climate Research Unit Dataset,
-                            GRIDMET historical reanalysis, HarvestChoice soil profiles, and CMIP6 climate projections for
+                            GRIDMET historical reanalysis, HarvestChoice soil profiles, and CMIP6 climate projections
+                            for
                             the ACF. :contentReference[oaicite:6]{index=6}
                         </li>
                         <li>
@@ -226,10 +247,11 @@
                             conditions (normal, dry, and wet years).
                         </li>
                         <li>
-                            <strong>Joint Variable Bias Correction (JVBC):</strong> Developed and applied a JVBC algorithm
+                            <strong>Joint Variable Bias Correction (JVBC):</strong> Developed and applied a JVBC
+                            algorithm
                             to downscale coarse CMIP6 projections (~100 km) to ~10 km grid cells and to daily-to-monthly
                             resolution, while preserving the joint distribution and spatial correlation structure of
-                            temperature and precipitation. 
+                            temperature and precipitation.
                         </li>
                         <li>
                             <strong>Derived Climate Metrics:</strong> Computed growing-season precipitation, potential
@@ -237,26 +259,28 @@
                             yield variability and irrigation demand in heavily cropped sub-regions.
                         </li>
                         <li>
-                            <strong>Regression Modeling:</strong> Built regression models linking precipitation deficit to
+                            <strong>Regression Modeling:</strong> Built regression models linking precipitation deficit
+                            to
                             total irrigation demand for each crop and ACF sub-basin, enabling rapid scenario analysis
-                            across multiple climate realizations. 
+                            across multiple climate realizations.
                         </li>
                     </ul>
 
-                    <!-- Optional placeholders where you can later drop in images/figures -->
-                    <div class="project-figure">
-                        Optional: Insert map figure of the ACF River Basin and major cropped sub-regions here.
-                    </div>
 
-                    <div class="project-figure">
-                        Optional: Insert schematic showing the pipeline from CMIP6 climate projections → JVBC bias
-                        correction → DSSAT simulations → regression models for irrigation demand.
-                    </div>
                 </div>
             </section>
 
             <!-- ===== Deployment & Results ===== -->
             <section id="deployment" class="section">
+                <div class="project-figure">
+                    <img src="precip and temp projections.png" alt="Annual Temperature and Precipitation Projections" />
+                </div>
+
+                <div class="project-figure">
+                    <img src="pet and precip deficit projections.png"
+                        alt="Potential Evapotranspiration and Precipitation Deficit Projections" />
+                </div>
+
                 <h2 class="section-title">Projected Climate, Crop Response, &amp; Irrigation Demand</h2>
 
                 <div class="project-section-text">
@@ -268,39 +292,47 @@
 
                     <ul class="project-bullets">
                         <li>
-                            <strong>Projected Climate:</strong> Time-series analysis indicates substantial warming across
+                            <strong>Projected Climate:</strong> Time-series analysis indicates substantial warming
+                            across
                             the ACF Basin, while precipitation increases only slightly—insufficient to offset
-                            temperature-driven increases in evapotranspiration and atmospheric demand. 
+                            temperature-driven increases in evapotranspiration and atmospheric demand.
                         </li>
                         <li>
                             <strong>Growing-Season Deficits:</strong> Analysis of precipitation deficits (PRECIP − PET)
                             shows that agricultural droughts become more frequent, longer-lasting, and more severe.
-                            By the end of the century, over 50% of growing seasons in multiple ACF sub-basins are projected
-                            to be classified as “dry.” 
+                            By the end of the century, over 50% of growing seasons in multiple ACF sub-basins are
+                            projected
+                            to be classified as “dry.”
                         </li>
                         <li>
-                            <strong>Climate–Irrigation Relationship:</strong> Mining historical records revealed a robust
+                            <strong>Climate–Irrigation Relationship:</strong> Mining historical records revealed a
+                            robust
                             functional relationship between precipitation deficit and irrigation demand, which was then
                             applied to future climate scenarios to estimate irrigation requirements for each crop and
-                            sub-basin. 
+                            sub-basin.
                         </li>
                         <li>
                             <strong>Irrigation Projections:</strong> Results show substantial increases in irrigation
                             volumes:
                             Central ACF irrigation demand is projected to rise by ~30% over the next 30 years and ~100%
                             by end-of-century; Southern ACF demand is projected to increase by ~40% and ~130% over the
-                            same horizons. 
+                            same horizons.
                         </li>
                     </ul>
 
                     <div class="project-figure">
-                        Optional: Insert figure showing historical vs. projected precipitation deficits and frequency of
-                        “dry” growing seasons in key ACF sub-basins.
+                        <img src="growing season classification.png"
+                            alt="Projected Change in Growing Season Classification" />
                     </div>
 
                     <div class="project-figure">
-                        Optional: Insert chart comparing baseline vs. projected irrigation volumes for corn, cotton,
-                        peanuts, and soybeans in central and southern ACF sub-regions.
+                        <img src="projections irr vol 1.png"
+                            alt="Projected Change in Irrigation Volume (Central ACF)" />
+                    </div>
+
+                    <div class="project-figure">
+                        <img src="projections irr vol 2.png"
+                            alt="Projected Change in Irrigation Volume (Southern ACF)" />
                     </div>
                 </div>
             </section>
@@ -320,7 +352,7 @@
                             <strong>Water-Planning Implications:</strong> Projected increases in irrigation demand of
                             30–40% mid-century and 100–130% by end-of-century signal the need for expanded drought
                             contingency planning, reservoir operation strategies, and potential revisions to
-                            interstate water-sharing agreements. 
+                            interstate water-sharing agreements.
                         </li>
                         <li>
                             <strong>Farm-Level Adaptation:</strong> Growers can use sub-basin level projections of
