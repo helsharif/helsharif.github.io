@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Continental-Scale Climate Bias-Correction & Dashboard | Husayn El Sharif</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        <aside class="sidebar">
+            <div class="sidebar-card">
+
+                <div class="avatar-wrapper">
+                    <div class="avatar-ring">
+                        <img src="../../images/helsharif_headshot.png" alt="Husayn El Sharif headshot"
+                            class="avatar-img" />
+                    </div>
+                </div>
+
+                <h1 class="sidebar-name">Husayn El Sharif</h1>
+                <p class="sidebar-title">Data Scientist &amp; ML Engineer</p>
+
+                <div class="sidebar-actions">
+                    <a href="https://drive.google.com/file/d/1kPsPFBu_Iw-wJfgfFcuWoiB4nTM6y6ty/view?usp=sharing"
+                        class="btn-download" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="document-text-outline"></ion-icon>
+                        <span>Download Resume</span>
+                    </a>
+
+                    <a href="https://drive.google.com/open?id=1HMwXhiXEzCqqm4G__PJPetOIizUkK1FV&usp=drive_fs"
+                        class="btn-download" target="_blank" rel="noopener noreferrer">
+                        <ion-icon name="briefcase-outline"></ion-icon>
+                        <span>Download Portfolio</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-contact">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </div>
+                        <div class="contact-body">
+                            <span class="contact-label">Email</span>
+                            <a href="../../../index.html#contact" class="contact-value">
+                                helsharif@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <ion-icon name="call-outline"></ion-icon>
+                        </div>
+                        <div class="contact-body">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+15612471430" class="contact-value">
+                                +1 (561) 247-1430
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <ion-icon name="location-outline"></ion-icon>
+                        </div>
+                        <div class="contact-body">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">
+                                Marietta, Georgia, USA
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-divider"></div>
+
+                <div class="sidebar-social">
+                    <a href="https://github.com/helsharif" target="_blank" rel="noopener" aria-label="GitHub">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                    <a href="https://www.linkedin.com/in/husayn-el-sharif" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            <header class="top-nav">
+                <nav>
+                    <a href="../../../index.html" class="nav-link">← Back to Home</a>
+                    <a href="../../../index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="../../../index.html#experience" class="nav-link">Professional Experience</a>
+                    <a href="../../../index.html#education" class="nav-link">Education</a>
+                    <a href="../../../index.html#contact" class="nav-link">Contact</a>
+                </nav>
+            </header>
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">Continental-Scale Climate Bias-Correction, Projection, &amp; Interactive Dashboard</h2>
+
+                <!-- Large hero screenshot (4:3, e.g., 1000x750) -->
+                <div class="project-hero-image">
+                    <!-- Replace the src with your actual screenshot path -->
+                    <img src="../../images/projects/climate-bias-dashboard-hero.png"
+                        alt="Interactive dashboard showing bias-corrected climate projections across the continental U.S." />
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">Bias Correction (JVBC)</span>
+                    <span class="project-pill">Ensemble Climate Projections</span>
+                    <span class="project-pill">Time-Series Analytics</span>
+                    <span class="project-pill">Interactive Dashboard</span>
+                    <span class="project-pill">Python &amp; xarray</span>
+                    <span class="project-pill">Water &amp; Climate Risk</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Lead Data Scientist / Climate Analytics Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Climate Risk, Hydrology, Long-Term Planning</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, Joint Variable Bias Correction (JVBC), Multi-Model Climate Ensembles, xarray, NumPy,
+                            Pandas, Plotly / Dash / Streamlit</dd>
+
+                        <dt>Region &amp; Scale</dt>
+                        <dd>Continental United States (CONUS), ~10 km grid</dd>
+                    </dl>
+                </aside>
+
+                <!-- Short overview text -->
+                <div class="project-section-text">
+                    <p>
+                        This project built a scalable pipeline to bias-correct, analyze, and visualize multi-model climate
+                        projections across the continental United States. Raw global climate model (GCM) outputs exhibit
+                        systematic biases and unrealistic spatial patterns that limit their direct use in water-resources,
+                        infrastructure, and climate-risk planning.
+                    </p>
+                    <p>
+                        Using a Joint Variable Bias Correction (JVBC) algorithm, I transformed coarse, biased climate
+                        projections into high-resolution, spatially coherent temperature and precipitation fields. The
+                        resulting products feed an interactive dashboard that allows planners to explore how key climate
+                        variables evolve under different emissions scenarios, time horizons, and user-selected regions.
+                    </p>
+                </div>
+            </section>
+
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Global climate models are powerful tools for simulating future climate, but their native output is
+                        often too coarse and biased for regional decision-making. Temperature and precipitation fields can
+                        exhibit mean biases, distorted variability, and unrealistic spatial correlation structures when
+                        compared against observations.
+                    </p>
+                    <p>
+                        Water and infrastructure planners require climate projections that are both physically plausible
+                        and statistically consistent across large regions so they can design robust long-lived assets
+                        (reservoirs, conveyance systems, treatment plants, etc.). Ad hoc bias-correction at a few
+                        stations is not sufficient for continental-scale assessments.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong> How can we convert raw multi-model climate projections into
+                        spatially coherent, bias-corrected datasets and a user-friendly dashboard that supports
+                        continental-scale climate risk and water-resources planning?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Model Development ===== -->
+            <section id="modeling" class="section">
+                <h2 class="section-title">Bias-Correction &amp; Modeling Framework</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        I designed a modular processing pipeline that ingests historical observations and GCM simulations,
+                        applies JVBC-based bias correction, and derives climate indicators suitable for planning and
+                        communication.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>
+                            <strong>Data Assembly:</strong> Collected multi-model historical and future climate projections
+                            (temperature and precipitation) along with gridded observational or reanalysis datasets
+                            used as the “truth” reference. All data were harmonized on a common grid and calendar using
+                            <code>xarray</code> and <code>dask</code>-friendly workflows.
+                        </li>
+                        <li>
+                            <strong>Joint Variable Bias Correction (JVBC):</strong> Implemented a JVBC algorithm that
+                            simultaneously corrects temperature and precipitation, preserving their joint distribution and
+                            spatial correlation structure while removing model-specific biases in means, variance, and
+                            extremes.
+                        </li>
+                        <li>
+                            <strong>Temporal &amp; Spatial Scaling:</strong> Downscaled coarse GCM fields (~100 km) to
+                            ~10 km grid cells and to daily-to-monthly time steps, enabling both local and regional
+                            statistics to be computed consistently across CONUS.
+                        </li>
+                        <li>
+                            <strong>Derived Climate Metrics:</strong> Computed seasonal and annual precipitation, mean
+                            temperature, hot and cold extremes, and drought-relevant metrics (e.g., precipitation minus
+                            potential evapotranspiration).
+                        </li>
+                        <li>
+                            <strong>Validation &amp; Skill Assessment:</strong> Evaluated bias-corrected fields against
+                            withheld observations and reanalysis, showing substantial improvement in accuracy and spatial
+                            coherence—reducing key error metrics by more than 50% relative to raw model output.
+                        </li>
+                    </ul>
+
+                    <div class="project-figure">
+                        Optional: Insert schematic of the bias-correction pipeline, from raw GCM data → JVBC
+                        transformation → climate indicators → dashboard-ready datasets.
+                    </div>
+
+                    <div class="project-figure">
+                        Optional: Insert map panel comparing raw vs. bias-corrected annual precipitation fields over the
+                        continental U.S.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Deployment & Results ===== -->
+            <section id="deployment" class="section">
+                <h2 class="section-title">Deployment &amp; Interactive Dashboard</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Once the core bias-correction and metric-generation pipeline was stable, I focused on packaging
+                        the outputs and building an interactive experience that domain experts could explore without
+                        touching code.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>
+                            <strong>Pre-Computed Data Products:</strong> Exported bias-corrected climate fields and
+                            derived indicators as NetCDF and Parquet assets, organized by model, scenario, time horizon,
+                            and variable for efficient retrieval.
+                        </li>
+                        <li>
+                            <strong>API / Data Access Layer:</strong> Implemented lightweight access utilities in Python
+                            to query time-series or spatial slices for arbitrary locations, watersheds, or administrative
+                            regions.
+                        </li>
+                        <li>
+                            <strong>Interactive Dashboard:</strong> Built a web-based dashboard (Plotly Dash / Streamlit)
+                            that allows users to:
+                            <ul class="project-bullets">
+                                <li>Select emissions scenarios and time slices (e.g., 2030s, 2050s, 2080s).</li>
+                                <li>Visualize maps of temperature, precipitation, and drought metrics across CONUS.</li>
+                                <li>Extract and plot time-series for specific locations or user-defined regions of
+                                    interest.</li>
+                                <li>Compare raw vs. bias-corrected fields to understand the impact of the correction
+                                    method.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Performance &amp; Portability:</strong> Optimized data loading and caching so the
+                            dashboard remains responsive, and containerized the application for deployment on institutional
+                            servers or cloud environments.
+                        </li>
+                    </ul>
+
+                    <div class="project-figure">
+                        Optional: Insert screenshot of the interactive dashboard showing scenario selectors, maps, and
+                        time-series panels.
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Impact & Insights ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Impact &amp; Actionable Insights</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The bias-corrected projections and dashboard transform dense climate-model output into a
+                        decision-support tool that non-modelers can interrogate directly.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>
+                            <strong>Improved Reliability:</strong> The JVBC framework significantly improves the realism
+                            of climate projections, especially for regional precipitation patterns and variability—key
+                            drivers of drought and flood risk.
+                        </li>
+                        <li>
+                            <strong>Scalable to Many Users:</strong> Because all heavy computation is performed up front,
+                            planners, engineers, and analysts can run “what-if” scenario explorations in the dashboard
+                            without waiting on long-running model jobs.
+                        </li>
+                        <li>
+                            <strong>Supports Long-Term Planning:</strong> Utilities and agencies can use the tool to stress
+                            test infrastructure and water-management strategies under multiple climate futures, improving
+                            the robustness of long-lived investments.
+                        </li>
+                        <li>
+                            <strong>Reusable Architecture:</strong> The same bias-correction and dashboard architecture
+                            can be adapted to other regions or sectors (e.g., hydropower, urban heat, wildfire risk),
+                            accelerating future climate-analytics projects.
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            <footer class="bottom-nav">
+                <nav>
+                    <a href="../../../index.html" class="nav-link">← Back to Home</a>
+                    <a href="../../../index.html#portfolio" class="nav-link">Portfolio</a>
+                    <a href="../../../index.html#experience" class="nav-link">Professional Experience</a>
+                    <a href="../../../index.html#education" class="nav-link">Education</a>
+                    <a href="../../../index.html#contact" class="nav-link">Contact</a>
+                </nav>
+            </footer>
+
+        </main>
+    </div>
+
+    <script>
+        // all in-page anchors (e.g., #about, #portfolio, #contact)
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+
+                // ignore plain "#" links, if any
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                // prevent the default instant jump
+                e.preventDefault();
+
+                // smooth scroll to the section
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                // update active state for nav links (if relevant)
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
