@@ -710,14 +710,36 @@ img {
   margin-bottom: 18px;
 }
 
+/* Whole card becomes 2-row, 2-column grid via areas */
 #experience .exp-card {
   display: grid;
   grid-template-columns: minmax(0, 3fr) auto;
+  grid-template-areas:
+    "header right"
+    "body   right";
   column-gap: 24px;
+  align-items: flex-start;
 }
 
-#experience .exp-left {
+/* Header: role + org (top-left) */
+#experience .exp-header {
+  grid-area: header;
   min-width: 0;
+}
+
+/* Body: bullets (bottom-left) */
+#experience .exp-body {
+  grid-area: body;
+  min-width: 0;
+}
+
+/* Right column: dates + location */
+#experience .exp-right {
+  grid-area: right;
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+  white-space: nowrap;
 }
 
 #experience .timeline-role {
@@ -757,6 +779,10 @@ img {
 @media (max-width: 640px) {
   #experience .exp-card {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "right"
+      "body";
     row-gap: 4px;
   }
 
@@ -765,6 +791,7 @@ img {
     white-space: normal;
   }
 }
+
 
 /* ================== SIDEBAR DOWNLOAD BUTTONS ================== */
 
