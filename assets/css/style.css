@@ -906,6 +906,12 @@ img {
   font-style: italic;
 }
 
+.project-figure img {
+    width: 100%;
+    display: block;
+    border-radius: 14px; /* matches card style */
+}
+
 /* Mobile: stack columns on narrow screens */
 @media (max-width: 768px) {
   .project-layout {
