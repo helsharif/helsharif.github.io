@@ -9,15 +9,12 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
     <!-- Icons (for sidebar + contact) -->
-    <script type="module"
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
@@ -32,8 +29,7 @@
 
                 <div class="avatar-wrapper">
                     <div class="avatar-ring">
-                        <img src="../../images/helsharif_headshot.png"
-                            alt="Husayn El Sharif headshot"
+                        <img src="../../images/helsharif_headshot.png" alt="Husayn El Sharif headshot"
                             class="avatar-img" />
                     </div>
                 </div>
@@ -98,12 +94,11 @@
                 <div class="sidebar-divider"></div>
 
                 <div class="sidebar-social">
-                    <a href="https://github.com/helsharif" target="_blank"
-                        rel="noopener" aria-label="GitHub">
+                    <a href="https://github.com/helsharif" target="_blank" rel="noopener" aria-label="GitHub">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
-                    <a href="https://www.linkedin.com/in/husayn-el-sharif"
-                        target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/husayn-el-sharif" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
                         <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                 </div>
@@ -133,8 +128,8 @@
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual 4:3 screenshot path -->
-                    <img src="../../images/projects/retinal-disease-hero.png"
-                        alt="Deep learning dashboard for retinal disease classification from fundus images" />
+                    <img src="retinal disease diagram and tf.png"
+                        alt="Schematic of Tensorflow Computer Vision Pipeline from Retinal Image to Normal/Eye Disease Classification" />
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -161,7 +156,8 @@
                         <dd>Python, TensorFlow/Keras, EfficientNet-Bx, OpenCV, NumPy, Pandas, Matplotlib/Plotly</dd>
 
                         <dt>Dataset</dt>
-                        <dd>4,000+ retinal fundus images (456×456 px) labeled as cataract, diabetic retinopathy, glaucoma,
+                        <dd>4,000+ retinal fundus images (456×456 px) labeled as cataract, diabetic retinopathy,
+                            glaucoma,
                             or normal</dd>
                     </dl>
                 </aside>
@@ -195,8 +191,10 @@
                         requires specialized expertise that may not be available in low-resource settings.
                     </p>
                     <p>
-                        Advances in deep learning and transfer learning have enabled convolutional neural networks (CNNs)
-                        to achieve near-expert performance on a variety of medical imaging tasks. However, deploying such
+                        Advances in deep learning and transfer learning have enabled convolutional neural networks
+                        (CNNs)
+                        to achieve near-expert performance on a variety of medical imaging tasks. However, deploying
+                        such
                         models in a realistic workflow requires more than a single notebook: the full pipeline must
                         handle data ingestion, preprocessing, training, evaluation, and model interpretability.
                     </p>
@@ -258,19 +256,20 @@
 
                     <!-- Optional figure placeholders -->
                     <div class="project-figure">
-                        Optional: Insert plot of training vs. validation accuracy and loss over epochs, showing the impact
-                        of fine-tuning the EfficientNet backbone.
+                        <img src="project-retinal-disease-detection-thumb.png"
+                            alt="Retinal Disease Detection Model Results" />
                     </div>
 
                     <div class="project-figure">
-                        Optional: Insert confusion matrix image to visualize per-class performance on the held-out test set.
+                        <img src="retinal disease diagram and tf confusion matrix.png"
+                            alt="Retinal Disease Detection Model Results Confusion Matrix" />
                     </div>
                 </div>
             </section>
 
-            <!-- ===== Pipeline, Evaluation & Explainability ===== -->
+            <!-- ===== Pipeline & Evaluation ===== -->
             <section id="deployment" class="section">
-                <h2 class="section-title">Computer Vision Pipeline, Evaluation &amp; Explainability</h2>
+                <h2 class="section-title">Computer Vision Pipeline &amp;Evaluation</h2>
 
                 <div class="project-section-text">
                     <p>
@@ -297,22 +296,14 @@
                             model to properly learn underrepresented categories (e.g., glaucoma vs. normal).
                         </li>
                         <li>
-                            <strong>Model Interpretability:</strong>
-                            Generated <strong>Grad-CAM or similar saliency maps</strong> for selected test images to
-                            visualize which regions of the retina contributed most to the model’s prediction, helping to
-                            sanity-check that the model focuses on clinically relevant structures rather than artifacts.
-                        </li>
-                        <li>
                             <strong>Reproducibility:</strong>
-                            Encapsulated the experiment in a Jupyter notebook / script with explicit random seeds, dataset
+                            Encapsulated the experiment in a Jupyter notebook / script with explicit random seeds,
+                            dataset
                             splits, and configuration blocks to make the workflow reproducible and extensible.
                         </li>
                     </ul>
 
-                    <div class="project-figure">
-                        Optional: Insert Grad-CAM overlays highlighting model attention on lesions, optic disc, or other
-                        disease-relevant features.
-                    </div>
+
                 </div>
             </section>
 
@@ -323,7 +314,8 @@
                 <div class="project-section-text">
                     <p>
                         While this project is research-focused rather than deployed in a live clinic, it demonstrates a
-                        full-stack approach to medical imaging ML that can be adapted for real-world screening workflows.
+                        full-stack approach to medical imaging ML that can be adapted for real-world screening
+                        workflows.
                     </p>
 
                     <ul class="project-bullets">
@@ -345,8 +337,10 @@
                         </li>
                         <li>
                             <strong>Portfolio Demonstration:</strong>
-                            Highlights experience with computer vision, transfer learning, class imbalance, and basic model
-                            interpretability—skills that translate directly to many real-world data science and ML roles,
+                            Highlights experience with computer vision, transfer learning, class imbalance, and basic
+                            model
+                            interpretability—skills that translate directly to many real-world data science and ML
+                            roles,
                             inside and outside healthcare.
                         </li>
                     </ul>

@@ -121,12 +121,13 @@
 
             <!-- ===== Project Overview ===== -->
             <section id="overview" class="section">
-                <h2 class="section-title">AI-Automated Lead Generation Pipeline for Engineering Consultancy (RAG + Web Data)</h2>
+                <h2 class="section-title">AI-Automated Lead Generation Pipeline for Engineering Consultancy (RAG + Web
+                    Data)</h2>
 
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path (4:3, e.g., 1000×750) -->
-                    <img src="../../images/projects/lead-generation-hero.png"
+                    <img src="project-ai-lead-generation-thumb.png"
                         alt="AI-automated lead generation dashboard for engineering consultancy" />
                 </div>
 
@@ -152,7 +153,8 @@
                         <dd>B2B Lead Generation, Environmental Engineering, Sales Operations</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python, Pandas, Web Scraping, OpenAI GPT-4o, Gemini 2.0 Flash, Vector DB (RAG), REST APIs</dd>
+                        <dd>Python, Pandas, Web Scraping, OpenAI GPT-4o, Gemini 2.0 Flash, Vector DB (RAG), REST APIs
+                        </dd>
 
                         <dt>Stakeholder</dt>
                         <dd>Mid-Sized Environmental Engineering Consultancy</dd>
@@ -162,14 +164,19 @@
                 <!-- Short overview text -->
                 <div class="project-section-text">
                     <p>
-                        This project built an <strong>AI-enabled lead-generation pipeline</strong> to identify, rank, and
-                        summarize high-value prospects for a mid-sized environmental engineering consultancy. Historically,
-                        the business relied on manual Google searches, conferences, and word-of-mouth referrals, which were
+                        This project built an <strong>AI-enabled lead-generation pipeline</strong> to identify, rank,
+                        and
+                        summarize high-value prospects for a mid-sized environmental engineering consultancy.
+                        Historically,
+                        the business relied on manual Google searches, conferences, and word-of-mouth referrals, which
+                        were
                         time-consuming and often missed promising opportunities.
                     </p>
                     <p>
-                        By combining <strong>web data, regulatory databases, and retrieval-augmented generation (RAG)</strong>,
-                        the pipeline systematically discovers “ideal fit” prospects and produces context-rich briefs that sales
+                        By combining <strong>web data, regulatory databases, and retrieval-augmented generation
+                            (RAG)</strong>,
+                        the pipeline systematically discovers “ideal fit” prospects and produces context-rich briefs
+                        that sales
                         teams can plug directly into CRMs and targeted outreach campaigns.
                     </p>
                 </div>
@@ -181,21 +188,26 @@
 
                 <div class="project-section-text">
                     <p>
-                        Environmental and engineering consultancies often serve narrow industry niches, where the “right”
-                        clients are those with complex operations, regulatory exposure, and recurring compliance needs. Yet
-                        traditional lead-generation approaches—cold lists, generic web searches, or conference networking—are
+                        Environmental and engineering consultancies often serve narrow industry niches, where the
+                        “right”
+                        clients are those with complex operations, regulatory exposure, and recurring compliance needs.
+                        Yet
+                        traditional lead-generation approaches—cold lists, generic web searches, or conference
+                        networking—are
                         <strong>labor-intensive and difficult to scale</strong>.
                     </p>
                     <p>
                         At the same time, rich data about facilities and companies is available from
                         <strong>public web sources</strong> (company websites, news), and
-                        <strong>government databases</strong> such as the EPA’s ECHO system, which track permits, violations,
+                        <strong>government databases</strong> such as the EPA’s ECHO system, which track permits,
+                        violations,
                         and enforcement history.
                     </p>
                     <p>
                         <strong>Problem Statement:</strong>
                         How can AI, web data, and domain-specific RAG workflows be combined to automatically
-                        discover and prioritize high-potential clients for a niche engineering consultancy, while providing
+                        discover and prioritize high-potential clients for a niche engineering consultancy, while
+                        providing
                         enough context for <strong>targeted outreach and proposal development</strong>?
                     </p>
                 </div>
@@ -207,51 +219,51 @@
 
                 <div class="project-section-text">
                     <p>
-                        The system was designed as an end-to-end pipeline that ingests web and regulatory data, structures it
+                        The system was designed as an end-to-end pipeline that ingests web and regulatory data,
+                        structures it
                         for retrieval, and exposes it to LLMs via a RAG layer:
                     </p>
 
                     <ul class="project-bullets">
                         <li>
                             <strong>Data Ingestion &amp; Web Scraping:</strong>
-                            Automated collection of facility and company metadata from public sources including Google Search,
+                            Automated collection of facility and company metadata from public sources including Google
+                            Search,
                             the EPA’s ECHO database, and company websites (e.g., sector, NAICS codes, location, permits,
                             enforcement history).
                         </li>
                         <li>
                             <strong>Normalization &amp; Feature Engineering:</strong>
-                            Cleaned and standardized facility attributes (industry codes, permitted pollutants, violation
-                            counts, geographic region) into a structured tabular schema suitable for both analytics and RAG.
+                            Cleaned and standardized facility attributes (industry codes, permitted pollutants,
+                            violation
+                            counts, geographic region) into a structured tabular schema suitable for both analytics and
+                            RAG.
                         </li>
                         <li>
                             <strong>RAG Layer &amp; Document Store:</strong>
-                            Stored structured and semi-structured documents in a <strong>vector database</strong> to enable
-                            similarity search and grounding of LLM responses in real facility-level data, not generic model
+                            Stored structured and semi-structured documents in a <strong>vector database</strong> to
+                            enable
+                            similarity search and grounding of LLM responses in real facility-level data, not generic
+                            model
                             priors.
                         </li>
                         <li>
                             <strong>Ideal Customer Profile (ICP):</strong>
-                            Encoded domain-specific criteria—industry type, facility size, regulatory exposure, complexity of
-                            operations, and historical compliance issues—into an explicit “ideal customer profile” that drives
+                            Encoded domain-specific criteria—industry type, facility size, regulatory exposure,
+                            complexity of
+                            operations, and historical compliance issues—into an explicit “ideal customer profile” that
+                            drives
                             downstream scoring.
                         </li>
                         <li>
                             <strong>Workflow Orchestration:</strong>
-                            Used Python and Pandas scripts to orchestrate data collection, RAG queries, LLM evaluations, and
+                            Used Python and Pandas scripts to orchestrate data collection, RAG queries, LLM evaluations,
+                            and
                             markdown report generation over batches of candidate facilities.
                         </li>
                     </ul>
 
-                    <!-- Optional figure placeholders -->
-                    <div class="project-figure">
-                        Optional: Insert a schematic of the end-to-end pipeline
-                        (web sources → ECHO data → vector store → RAG + LLM → prospect briefs).
-                    </div>
 
-                    <div class="project-figure">
-                        Optional: Insert example table of engineered features used for ranking (e.g., violations, permits,
-                        sector, size).
-                    </div>
                 </div>
             </section>
 
@@ -268,25 +280,30 @@
                     <ul class="project-bullets">
                         <li>
                             <strong>Grounded LLM Evaluation:</strong>
-                            For each candidate facility, the RAG layer retrieves relevant documents (permits, enforcement
+                            For each candidate facility, the RAG layer retrieves relevant documents (permits,
+                            enforcement
                             records, company descriptions) which are fed into <strong>OpenAI GPT-4o</strong> and
                             <strong>Gemini 2.0 Flash</strong> via structured prompts.
                         </li>
                         <li>
                             <strong>Suitability Scoring:</strong>
-                            LLMs output qualitative scores such as <em>High</em>, <em>Medium</em>, or <em>Low</em> fit, tied to
+                            LLMs output qualitative scores such as <em>High</em>, <em>Medium</em>, or <em>Low</em> fit,
+                            tied to
                             the ICP criteria (e.g., recurring monitoring needs, complex treatment trains, multi-site
                             operations).
                         </li>
                         <li>
                             <strong>Prospect Brief Generation:</strong>
-                            For high- and medium-scoring facilities, the system generates short narrative briefs summarizing
-                            why the prospect is a strong fit and which services are likely to be relevant (e.g., permitting,
+                            For high- and medium-scoring facilities, the system generates short narrative briefs
+                            summarizing
+                            why the prospect is a strong fit and which services are likely to be relevant (e.g.,
+                            permitting,
                             compliance audits, monitoring design).
                         </li>
                         <li>
                             <strong>Report Packaging:</strong>
-                            Generated briefs are compiled into a markdown/HTML report that can be dropped directly into a CRM,
+                            Generated briefs are compiled into a markdown/HTML report that can be dropped directly into
+                            a CRM,
                             shared with business-development teams, or exported to PDF for review.
                         </li>
                     </ul>
@@ -303,19 +320,22 @@
 
                 <div class="project-section-text">
                     <p>
-                        The AI-automated pipeline substantially improved the efficiency and quality of lead generation for the
+                        The AI-automated pipeline substantially improved the efficiency and quality of lead generation
+                        for the
                         consultancy:
                     </p>
 
                     <ul class="project-bullets">
                         <li>
                             <strong>Order-of-Magnitude Time Savings:</strong>
-                            Reduced the effort to identify and research <strong>50–100 high-potential prospects</strong> from
+                            Reduced the effort to identify and research <strong>50–100 high-potential prospects</strong>
+                            from
                             several days of manual work to a few hours of automated runs.
                         </li>
                         <li>
                             <strong>Discovery of “Non-Obvious” Leads:</strong>
-                            Surfaced facilities with significant regulatory exposure or complex operations that traditional
+                            Surfaced facilities with significant regulatory exposure or complex operations that
+                            traditional
                             word-of-mouth and conference-based approaches would likely miss.
                         </li>
                         <li>
@@ -325,8 +345,10 @@
                         </li>
                         <li>
                             <strong>Reusable RAG Framework:</strong>
-                            Established a modular <strong>RAG + LLM</strong> template that can be extended to other verticals
-                            (e.g., water utilities, industrial manufacturing, healthcare labs) with minimal reconfiguration.
+                            Established a modular <strong>RAG + LLM</strong> template that can be extended to other
+                            verticals
+                            (e.g., water utilities, industrial manufacturing, healthcare labs) with minimal
+                            reconfiguration.
                         </li>
                     </ul>
                 </div>

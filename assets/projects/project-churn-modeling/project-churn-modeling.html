@@ -122,13 +122,14 @@
 
             <!-- ===== Project Overview ===== -->
             <section id="overview" class="section">
-                <h2 class="section-title">Customer Churn Modeling &amp; Retention Optimization with SparkML, MLflow, &amp;
+                <h2 class="section-title">Customer Churn Modeling &amp; Retention Optimization with SparkML, MLflow,
+                    &amp;
                     Neural Networks</h2>
 
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
                     <!-- Replace src with your actual 4:3 screenshot path -->
-                    <img src="../../images/projects/churn-modeling-hero.png"
+                    <img src="project-churn-modeling-thumb.png"
                         alt="Customer churn modeling dashboards and ML pipeline visualizations" />
                 </div>
 
@@ -156,7 +157,8 @@
                         <dd>Python, Pandas, TensorFlow/Keras, SparkML on Databricks, MLflow, Plotly</dd>
 
                         <dt>Dataset</dt>
-                        <dd>7,000+ home phone &amp; internet customers with demographics, service usage, billing, and churn
+                        <dd>7,000+ home phone &amp; internet customers with demographics, service usage, billing, and
+                            churn
                             labels</dd>
                     </dl>
                 </aside>
@@ -166,7 +168,8 @@
                     <p>
                         This project focuses on predicting customer churn for a telecommunications provider serving more
                         than
-                        7,000 home phone and internet customers. The goal is to flag high-risk customers early and give the
+                        7,000 home phone and internet customers. The goal is to flag high-risk customers early and give
+                        the
                         business enough lead time to intervene with targeted retention offers.
                     </p>
                     <p>
@@ -187,12 +190,15 @@
                         In subscription businesses like telecom, retaining existing customers is far more cost-effective
                         than
                         acquiring new ones. However, churn drivers are often complex, spanning pricing, service quality,
-                        contract terms, and customer demographics. Without data-driven insight, retention programs can be
+                        contract terms, and customer demographics. Without data-driven insight, retention programs can
+                        be
                         scattered and inefficient.
                     </p>
                     <p>
-                        The telco dataset used in this project includes customer demographics (age, dependents, partner),
-                        service details (phone, internet, streaming, technical support), contract and billing information
+                        The telco dataset used in this project includes customer demographics (age, dependents,
+                        partner),
+                        service details (phone, internet, streaming, technical support), contract and billing
+                        information
                         (month-to-month vs. annual, paperless billing, payment method), and a churn label indicating
                         whether each customer left within the past month.
                     </p>
@@ -207,6 +213,11 @@
 
             <!-- ===== Model Development ===== -->
             <section id="modeling" class="section">
+
+                <div class="project-figure">
+                    <img src="telco data attributes.png" alt="Telco Data Attributes" />
+                </div>
+
                 <h2 class="section-title">Model Development</h2>
 
                 <div class="project-section-text">
@@ -225,13 +236,15 @@
                         <li>
                             <strong>Exploratory Findings:</strong> Early analysis revealed that many customers who churn
                             do so within their first month of service, and that churn risk is substantially higher for
-                            customers paying $70–$110 per month on month-to-month contracts compared with lower-paying or
+                            customers paying $70–$110 per month on month-to-month contracts compared with lower-paying
+                            or
                             longer-term customers.
                         </li>
                         <li>
                             <strong>Preprocessing &amp; Feature Engineering:</strong> Categorical variables were
                             encoded into numeric form, continuous variables were cleaned and standardized as needed, and
-                            the data was shuffled and split into 80% training and 20% testing sets with stratification by
+                            the data was shuffled and split into 80% training and 20% testing sets with stratification
+                            by
                             churn label to preserve class proportions.
                         </li>
                         <li>
@@ -246,6 +259,13 @@
                     </p>
 
                     <ul class="project-bullets">
+
+                        <div class="project-figure">
+                            <img src="logreg vs neural network performance table.png"
+                                alt="Logistic Regression vs Neural Network Performance Tables" />
+                        </div>
+
+
                         <li>
                             <strong>Logistic Regression (Baseline):</strong> A Logistic Regression model was trained to
                             estimate churn probabilities and provide interpretable coefficients for each feature. On the
@@ -269,7 +289,8 @@
                     </div>
 
                     <div class="project-figure">
-                        Optional: Insert bar chart of top churn drivers (e.g., MonthlyCharges, Contract type, Tenure) based
+                        Optional: Insert bar chart of top churn drivers (e.g., MonthlyCharges, Contract type, Tenure)
+                        based
                         on model coefficients / feature importance.
                     </div>
                 </div>
@@ -277,6 +298,13 @@
 
             <!-- ===== Deployment & Results ===== -->
             <section id="deployment" class="section">
+
+                <div class="project-figure">
+                    <img src="databricks mlflow implementation telco churn classification.png"
+                        alt="Databricks MLflow Implementation for Telco Churn Classification" />
+                </div>
+
+
                 <h2 class="section-title">SparkML, Databricks &amp; MLflow Deployment</h2>
 
                 <div class="project-section-text">
@@ -297,29 +325,27 @@
                             the structure of the earlier Python/scikit-learn implementation but at production scale.
                         </li>
                         <li>
-                            <strong>MLflow Experiment Tracking:</strong> MLflow was used to track experiments, hyperparameters,
+                            <strong>MLflow Experiment Tracking:</strong> MLflow was used to track experiments,
+                            hyperparameters,
                             metrics, and model artifacts, enabling side-by-side comparison of different feature
                             configurations, regularization strengths, and decision thresholds.
                         </li>
                         <li>
-                            <strong>Threshold Optimization:</strong> To address class imbalance, the default 0.5 decision
+                            <strong>Threshold Optimization:</strong> To address class imbalance, the default 0.5
+                            decision
                             threshold was tuned toward the baseline churn rate (~26%). This improved churn recall from
-                            roughly 50% to about 78%, giving the business greater visibility into at-risk customers at the
+                            roughly 50% to about 78%, giving the business greater visibility into at-risk customers at
+                            the
                             cost of a controlled increase in false positives.
                         </li>
                         <li>
-                            <strong>Interactive Analysis:</strong> Plotly-based visualizations were integrated to explore
-                            precision–recall trade-offs, ROC curves, and churn-risk distribution across customer segments.
+                            <strong>Interactive Analysis:</strong> Plotly-based visualizations were integrated to
+                            explore
+                            precision–recall trade-offs, ROC curves, and churn-risk distribution across customer
+                            segments.
                         </li>
                     </ul>
 
-                    <div class="project-figure">
-                        Optional: Insert screenshot of Databricks notebook + MLflow UI showing experiment runs and metrics.
-                    </div>
-
-                    <div class="project-figure">
-                        Optional: Insert Plotly figure of decision-threshold vs. churn recall/precision curves.
-                    </div>
                 </div>
             </section>
 
@@ -336,28 +362,34 @@
                     <ul class="project-bullets">
                         <li>
                             <strong>Targeted Retention Offers:</strong> Model results show that customers on
-                            month-to-month contracts with monthly charges above ~$70 are significantly more likely to churn.
+                            month-to-month contracts with monthly charges above ~$70 are significantly more likely to
+                            churn.
                             These customers become prime candidates for introductory discounts, bundled services, or
                             incentives to switch to longer-term contracts.
                         </li>
                         <li>
-                            <strong>Early-Lifecycle Interventions:</strong> Many churn events occur during the first month
-                            of service, suggesting the need for stronger onboarding, proactive support, and early feedback
+                            <strong>Early-Lifecycle Interventions:</strong> Many churn events occur during the first
+                            month
+                            of service, suggesting the need for stronger onboarding, proactive support, and early
+                            feedback
                             loops for new customers.
                         </li>
                         <li>
                             <strong>Explainable Drivers of Churn:</strong> Logistic Regression provides interpretable
-                            coefficients, clearly linking churn risk to attributes like contract length, tenure, and billing
+                            coefficients, clearly linking churn risk to attributes like contract length, tenure, and
+                            billing
                             method. These insights can be shared directly with marketing and customer-success teams.
                         </li>
                         <li>
                             <strong>Scalable MLOps Template:</strong> The Databricks + SparkML + MLflow implementation
-                            serves as a reusable template for other subscription-based businesses, enabling them to plug in
+                            serves as a reusable template for other subscription-based businesses, enabling them to plug
+                            in
                             their own customer tables, retrain, and monitor churn models in a production environment.
                         </li>
                         <li>
                             <strong>Balanced Performance:</strong> By carefully tuning class imbalance handling and
-                            decision thresholds, the models strike a practical balance between catching at-risk customers
+                            decision thresholds, the models strike a practical balance between catching at-risk
+                            customers
                             and minimizing unnecessary retention spend.
                         </li>
                     </ul>

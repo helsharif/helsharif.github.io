@@ -121,12 +121,13 @@
 
             <!-- ===== Project Overview ===== -->
             <section id="overview" class="section">
-                <h2 class="section-title">Continental-Scale Climate Bias-Correction, Projection, &amp; Interactive Dashboard</h2>
+                <h2 class="section-title">Continental-Scale Climate Bias-Correction, Projection, &amp; Interactive
+                    Dashboard</h2>
 
                 <!-- Large hero screenshot (4:3, e.g., 1000x750) -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path -->
-                    <img src="../../images/projects/climate-bias-dashboard-hero.png"
+                    <img src="project-climate-bias-correction-thumb.png"
                         alt="Interactive dashboard showing bias-corrected climate projections across the continental U.S." />
                 </div>
 
@@ -162,9 +163,11 @@
                 <!-- Short overview text -->
                 <div class="project-section-text">
                     <p>
-                        This project built a scalable pipeline to bias-correct, analyze, and visualize multi-model climate
+                        This project built a scalable pipeline to bias-correct, analyze, and visualize multi-model
+                        climate
                         projections across the continental United States. Raw global climate model (GCM) outputs exhibit
-                        systematic biases and unrealistic spatial patterns that limit their direct use in water-resources,
+                        systematic biases and unrealistic spatial patterns that limit their direct use in
+                        water-resources,
                         infrastructure, and climate-risk planning.
                     </p>
                     <p>
@@ -183,8 +186,10 @@
 
                 <div class="project-section-text">
                     <p>
-                        Global climate models are powerful tools for simulating future climate, but their native output is
-                        often too coarse and biased for regional decision-making. Temperature and precipitation fields can
+                        Global climate models are powerful tools for simulating future climate, but their native output
+                        is
+                        often too coarse and biased for regional decision-making. Temperature and precipitation fields
+                        can
                         exhibit mean biases, distorted variability, and unrealistic spatial correlation structures when
                         compared against observations.
                     </p>
@@ -208,21 +213,24 @@
 
                 <div class="project-section-text">
                     <p>
-                        I designed a modular processing pipeline that ingests historical observations and GCM simulations,
+                        I designed a modular processing pipeline that ingests historical observations and GCM
+                        simulations,
                         applies JVBC-based bias correction, and derives climate indicators suitable for planning and
                         communication.
                     </p>
 
                     <ul class="project-bullets">
                         <li>
-                            <strong>Data Assembly:</strong> Collected multi-model historical and future climate projections
+                            <strong>Data Assembly:</strong> Collected multi-model historical and future climate
+                            projections
                             (temperature and precipitation) along with gridded observational or reanalysis datasets
                             used as the “truth” reference. All data were harmonized on a common grid and calendar using
                             <code>xarray</code> and <code>dask</code>-friendly workflows.
                         </li>
                         <li>
                             <strong>Joint Variable Bias Correction (JVBC):</strong> Implemented a JVBC algorithm that
-                            simultaneously corrects temperature and precipitation, preserving their joint distribution and
+                            simultaneously corrects temperature and precipitation, preserving their joint distribution
+                            and
                             spatial correlation structure while removing model-specific biases in means, variance, and
                             extremes.
                         </li>
@@ -238,19 +246,18 @@
                         </li>
                         <li>
                             <strong>Validation &amp; Skill Assessment:</strong> Evaluated bias-corrected fields against
-                            withheld observations and reanalysis, showing substantial improvement in accuracy and spatial
+                            withheld observations and reanalysis, showing substantial improvement in accuracy and
+                            spatial
                             coherence—reducing key error metrics by more than 50% relative to raw model output.
                         </li>
                     </ul>
 
                     <div class="project-figure">
-                        Optional: Insert schematic of the bias-correction pipeline, from raw GCM data → JVBC
-                        transformation → climate indicators → dashboard-ready datasets.
+                        <img src="climate assessment se us.png" alt="Climate Assessment Southeastern U.S." />
                     </div>
 
                     <div class="project-figure">
-                        Optional: Insert map panel comparing raw vs. bias-corrected annual precipitation fields over the
-                        continental U.S.
+                        <img src="climate assessment sw us.png" alt="Climate Assessment Southwestern U.S." />
                     </div>
                 </div>
             </section>
@@ -274,11 +281,13 @@
                         </li>
                         <li>
                             <strong>API / Data Access Layer:</strong> Implemented lightweight access utilities in Python
-                            to query time-series or spatial slices for arbitrary locations, watersheds, or administrative
+                            to query time-series or spatial slices for arbitrary locations, watersheds, or
+                            administrative
                             regions.
                         </li>
                         <li>
-                            <strong>Interactive Dashboard:</strong> Built a web-based dashboard (Plotly Dash / Streamlit)
+                            <strong>Interactive Dashboard:</strong> Built a web-based dashboard (Plotly Dash /
+                            Streamlit)
                             that allows users to:
                             <ul class="project-bullets">
                                 <li>Select emissions scenarios and time slices (e.g., 2030s, 2050s, 2080s).</li>
@@ -291,15 +300,13 @@
                         </li>
                         <li>
                             <strong>Performance &amp; Portability:</strong> Optimized data loading and caching so the
-                            dashboard remains responsive, and containerized the application for deployment on institutional
+                            dashboard remains responsive, and containerized the application for deployment on
+                            institutional
                             servers or cloud environments.
                         </li>
                     </ul>
 
-                    <div class="project-figure">
-                        Optional: Insert screenshot of the interactive dashboard showing scenario selectors, maps, and
-                        time-series panels.
-                    </div>
+
                 </div>
             </section>
 
@@ -320,13 +327,16 @@
                             drivers of drought and flood risk.
                         </li>
                         <li>
-                            <strong>Scalable to Many Users:</strong> Because all heavy computation is performed up front,
+                            <strong>Scalable to Many Users:</strong> Because all heavy computation is performed up
+                            front,
                             planners, engineers, and analysts can run “what-if” scenario explorations in the dashboard
                             without waiting on long-running model jobs.
                         </li>
                         <li>
-                            <strong>Supports Long-Term Planning:</strong> Utilities and agencies can use the tool to stress
-                            test infrastructure and water-management strategies under multiple climate futures, improving
+                            <strong>Supports Long-Term Planning:</strong> Utilities and agencies can use the tool to
+                            stress
+                            test infrastructure and water-management strategies under multiple climate futures,
+                            improving
                             the robustness of long-lived investments.
                         </li>
                         <li>

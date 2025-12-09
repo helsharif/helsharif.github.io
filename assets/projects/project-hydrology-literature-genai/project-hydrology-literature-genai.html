@@ -9,15 +9,12 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
     <!-- Icons (for sidebar + contact) -->
-    <script type="module"
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule
-        src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
@@ -32,8 +29,7 @@
 
                 <div class="avatar-wrapper">
                     <div class="avatar-ring">
-                        <img src="../../images/helsharif_headshot.png"
-                            alt="Husayn El Sharif headshot"
+                        <img src="../../images/helsharif_headshot.png" alt="Husayn El Sharif headshot"
                             class="avatar-img" />
                     </div>
                 </div>
@@ -98,12 +94,11 @@
                 <div class="sidebar-divider"></div>
 
                 <div class="sidebar-social">
-                    <a href="https://github.com/helsharif" target="_blank"
-                        rel="noopener" aria-label="GitHub">
+                    <a href="https://github.com/helsharif" target="_blank" rel="noopener" aria-label="GitHub">
                         <ion-icon name="logo-github"></ion-icon>
                     </a>
-                    <a href="https://www.linkedin.com/in/husayn-el-sharif"
-                        target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/husayn-el-sharif" target="_blank" rel="noopener"
+                        aria-label="LinkedIn">
                         <ion-icon name="logo-linkedin"></ion-icon>
                     </a>
                 </div>
@@ -133,7 +128,7 @@
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual 4:3 screenshot path -->
-                    <img src="../../images/projects/hydrology-literature-genai-hero.png"
+                    <img src="lit review 3 pages.png"
                         alt="Multi-agent GenAI interface for automated hydrology literature review" />
                 </div>
 
@@ -158,25 +153,32 @@
                         <dd>Hydrology, Scientific Literature Review, GenAI Automation</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python, CrewAI, OpenAI / Gemini LLMs, Retrieval-Augmented Generation (RAG), Web Scraping, Markdown/HTML Reporting</dd>
+                        <dd>Python, CrewAI, OpenAI / Gemini LLMs, Retrieval-Augmented Generation (RAG), Web Scraping,
+                            Markdown/HTML Reporting</dd>
 
                         <dt>Objective</dt>
-                        <dd>Reduce a 3–7 day manual hydrology literature review to a same-day, AI-augmented workflow</dd>
+                        <dd>Reduce a 3–7 day manual hydrology literature review to a same-day, AI-augmented workflow
+                        </dd>
                     </dl>
                 </aside>
 
                 <!-- Short overview text -->
                 <div class="project-section-text">
                     <p>
-                        This project built a <strong>multi-agent GenAI system</strong> that automates large portions of the
-                        hydrology literature review process. Instead of manually searching databases, downloading papers,
-                        and synthesizing findings, a coordinated set of AI agents handles topic scoping, document retrieval,
+                        This project built a <strong>multi-agent GenAI system</strong> that automates large portions of
+                        the
+                        hydrology literature review process. Instead of manually searching databases, downloading
+                        papers,
+                        and synthesizing findings, a coordinated set of AI agents handles topic scoping, document
+                        retrieval,
                         summarization, and synthesis into researcher-ready reports.
                     </p>
                     <p>
                         Using <strong>CrewAI</strong> as the orchestration layer and modern LLMs (GPT / Gemini) as the
-                        reasoning engine, the system can take a high-level research question—such as climate change impacts on
-                        low flows or remote sensing–based flood mapping—and produce a structured, cited overview within hours,
+                        reasoning engine, the system can take a high-level research question—such as climate change
+                        impacts on
+                        low flows or remote sensing–based flood mapping—and produce a structured, cited overview within
+                        hours,
                         rather than days.
                     </p>
                 </div>
@@ -188,19 +190,24 @@
 
                 <div class="project-section-text">
                     <p>
-                        Hydrology and water-resources research often begins with a <strong>time-consuming literature review</strong>:
-                        identifying relevant papers, sorting through overlapping topics, and extracting key methods and findings.
+                        Hydrology and water-resources research often begins with a <strong>time-consuming literature
+                            review</strong>:
+                        identifying relevant papers, sorting through overlapping topics, and extracting key methods and
+                        findings.
                         For complex topics—like climate-driven changes in extremes, remote sensing of water quality, or
-                        machine-learning applications in hydrology—this can take <strong>3–7 days of focused effort</strong>.
+                        machine-learning applications in hydrology—this can take <strong>3–7 days of focused
+                            effort</strong>.
                     </p>
                     <p>
                         Recent advances in GenAI, multi-agent frameworks, and retrieval-augmented generation present an
-                        opportunity to offload much of this mechanical work to AI systems, while keeping the human expert in
+                        opportunity to offload much of this mechanical work to AI systems, while keeping the human
+                        expert in
                         control of interpretation and final judgment.
                     </p>
                     <p>
                         <strong>Problem Statement:</strong>
-                        How can we design a multi-agent GenAI workflow that automates the most repetitive parts of hydrology
+                        How can we design a multi-agent GenAI workflow that automates the most repetitive parts of
+                        hydrology
                         literature review—search, filtering, summarization, and basic synthesis—without sacrificing
                         transparency or introducing hallucinated citations?
                     </p>
@@ -209,12 +216,19 @@
 
             <!-- ===== System Design & Agents ===== -->
             <section id="modeling" class="section">
+
+                <div class="project-figure">
+                    <img src="project-hydrology-literature-genai-thumb.png"
+                        alt="Hydrology Literature GenAI System Architecture" />
+                </div>
+
                 <h2 class="section-title">System Design &amp; Agent Architecture</h2>
 
                 <div class="project-section-text">
                     <p>
                         The system is organized around a crew of specialized agents, each with a clear role and shared
-                        context. CrewAI handles coordination, task delegation, and passing of intermediate artifacts between
+                        context. CrewAI handles coordination, task delegation, and passing of intermediate artifacts
+                        between
                         agents.
                     </p>
 
@@ -222,22 +236,27 @@
                         <li>
                             <strong>Input Prompt Template:</strong>
                             The user provides a research topic (e.g., “machine learning for flood forecasting in
-                            data-scarce basins”) plus optional constraints (time window, geographic region, key methods).
+                            data-scarce basins”) plus optional constraints (time window, geographic region, key
+                            methods).
                         </li>
                         <li>
                             <strong>Research Planner Agent:</strong>
-                            Interprets the query, decomposes it into sub-topics (datasets, methods, hydrologic variables,
+                            Interprets the query, decomposes it into sub-topics (datasets, methods, hydrologic
+                            variables,
                             study regions), and drafts a search strategy for downstream agents.
                         </li>
                         <li>
                             <strong>Search &amp; Retrieval Agent:</strong>
-                            Uses web search and/or API calls to pull candidate papers from sources like Google Scholar, open
-                            repositories, and institutional pages, capturing titles, abstracts, URLs, and metadata into a
+                            Uses web search and/or API calls to pull candidate papers from sources like Google Scholar,
+                            open
+                            repositories, and institutional pages, capturing titles, abstracts, URLs, and metadata into
+                            a
                             structured format.
                         </li>
                         <li>
                             <strong>Relevance Filter Agent:</strong>
-                            Evaluates each candidate against the topic and constraints, discarding off-topic or low-relevance
+                            Evaluates each candidate against the topic and constraints, discarding off-topic or
+                            low-relevance
                             papers and prioritizing high-signal sources (e.g., peer-reviewed articles, major conference
                             papers, review articles).
                         </li>
@@ -273,22 +292,28 @@
                     <ul class="project-bullets">
                         <li>
                             <strong>Document Store &amp; RAG:</strong>
-                            Parsed abstracts and key text segments are stored in a lightweight vector index, allowing agents
-                            to retrieve relevant passages for each question they answer during summarization and synthesis.
+                            Parsed abstracts and key text segments are stored in a lightweight vector index, allowing
+                            agents
+                            to retrieve relevant passages for each question they answer during summarization and
+                            synthesis.
                         </li>
                         <li>
                             <strong>Citation Tracking:</strong>
-                            Each summary item is associated with explicit citation metadata (authors, year, title, link),
-                            and the Synthesis agent is instructed to reference these citations rather than invent new ones.
+                            Each summary item is associated with explicit citation metadata (authors, year, title,
+                            link),
+                            and the Synthesis agent is instructed to reference these citations rather than invent new
+                            ones.
                         </li>
                         <li>
                             <strong>Configurable Depth:</strong>
-                            Users can toggle between a “quick scan” mode (fewer papers, shorter summaries) and a “deep dive”
+                            Users can toggle between a “quick scan” mode (fewer papers, shorter summaries) and a “deep
+                            dive”
                             mode (more sources, richer synthesis) depending on time constraints.
                         </li>
                         <li>
                             <strong>Output Formats:</strong>
-                            The final product is rendered as a structured <strong>Markdown / HTML report</strong>, including:
+                            The final product is rendered as a structured <strong>Markdown / HTML report</strong>,
+                            including:
                             <ul class="project-bullets">
                                 <li>Executive summary of the topic</li>
                                 <li>Bullet-point summaries of individual papers</li>
@@ -298,14 +323,15 @@
                         </li>
                         <li>
                             <strong>Human-in-the-Loop Editing:</strong>
-                            The report is intentionally concise and structured so the human researcher can quickly audit,
+                            The report is intentionally concise and structured so the human researcher can quickly
+                            audit,
                             adjust, and expand it into a full literature review or manuscript section.
                         </li>
                     </ul>
 
                     <div class="project-figure">
-                        Optional: Insert screenshot of a generated Markdown/HTML literature review with citations and
-                        categorized findings.
+                        <img src="example multi agent output.png"
+                            alt="Example output from multi-agent system showing structured literature review with citations and categorized findings" />
                     </div>
                 </div>
             </section>
@@ -323,8 +349,9 @@
                     <ul class="project-bullets">
                         <li>
                             <strong>Productivity Gains:</strong>
-                            Early tests indicate that the system can reduce a <strong>3–7 day manual hydrology literature
-                            review to a same-day workflow</strong>, especially for scoping reviews and method scans.
+                            Early tests indicate that the system can reduce a <strong>3–7 day manual hydrology
+                                literature
+                                review to a same-day workflow</strong>, especially for scoping reviews and method scans.
                         </li>
                         <li>
                             <strong>Better Coverage:</strong>
@@ -338,7 +365,8 @@
                         </li>
                         <li>
                             <strong>Extensibility:</strong>
-                            The same architecture can be adapted to other technical domains—climate science, water quality,
+                            The same architecture can be adapted to other technical domains—climate science, water
+                            quality,
                             remote sensing—by updating the agent instructions and retrieval sources.
                         </li>
                         <li>
