@@ -1,0 +1,44 @@
+name: Sync resume and portfolio from Google Drive
+
+on:
+  # Run manually from the Actions tab
+  workflow_dispatch:
+
+  # Run every day at 6:00 UTC
+  schedule:
+    - cron: "0 6 * * *"
+
+jobs:
+  sync-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Make assets directory
+        run: mkdir -p "assets/resume_portfolio_pdfs"
+
+      - name: Download resume from Google Drive
+        run: |
+          curl -L "https://drive.google.com/uc?export=download&id=1kPsPFBu_Iw-wJfgfFcuWoiB4nTM6y6ty" \
+            -o "assets/resume_portfolio_pdfs/Husayn El Sharif Resume.pdf"
+
+      - name: Download portfolio from Google Drive
+        run: |
+          curl -L "https://drive.google.com/uc?export=download&id=1HMwXhiXEzCqqm4G__PJPetOIizUkK1FV" \
+            -o "assets/resume_portfolio_pdfs/Data Science Portfolio Husayn El Sharif.pdf"
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add "assets/resume_portfolio_pdfs"
+          git commit -m "Daily sync of resume and portfolio PDFs"
+          git push
