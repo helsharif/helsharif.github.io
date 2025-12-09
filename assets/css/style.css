@@ -451,6 +451,7 @@ img {
   font-size: 14px;
   font-weight: 600;
   margin: 0 0 2px;
+  color: var(--accent);   /* GOLD TEXT */
 }
 
 /* Org + dates */
