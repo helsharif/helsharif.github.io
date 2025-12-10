@@ -307,6 +307,22 @@ img {
   display: none;
 }
 
+
+/* Container that narrows and centers the About Me text */
+.about-content {
+  max-width: 800px;       /* adjust to taste: 700–900px works well */
+  margin: 0 auto;         /* centers the content */
+  padding: 0 2rem;        /* left/right inner padding */
+}
+
+/* Paragraph formatting */
+.about-content .intro-text {
+  text-align: justify;           /* justify the text */
+  line-height: 1.7;              /* cleaner, more readable spacing */
+  margin-bottom: 1.2rem;         /* space between paragraphs */
+}
+
+
 .intro-text {
   font-size: 14px;
   color: var(--text-muted);
