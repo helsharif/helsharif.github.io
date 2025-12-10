@@ -105,13 +105,7 @@ img {
   background: #111827;
 }
 
-.avatar-ring {
-  transition: transform 0.6s ease;
-}
 
-.avatar-wrapper:hover .avatar-ring {
-  transform: rotate(8deg);
-}
 
 .sidebar-name {
   margin: 6px 0 4px;
