@@ -105,16 +105,13 @@ img {
   background: #111827;
 }
 
-.avatar-wrapper,
 .avatar-ring {
-  transition: all 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 .avatar-wrapper:hover .avatar-ring {
-  border-color: #f0d98a; /* a muted gold that fits your theme */
-  box-shadow: 0 0 6px rgba(240, 217, 138, 0.25);
+  transform: rotate(8deg);
 }
-
 
 .sidebar-name {
   margin: 6px 0 4px;
