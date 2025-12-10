@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const e2 = "harif";
   const e3 = "@gm";
   const e4 = "ail";
-  const e6 = ".c";
-  const e7 = "om";
+  const e5 = ".c";
+  const e6 = "om";
 
-  const fullEmail = e1 + e2 + e3 + e4 + e5 + e6 + e7;
+  const fullEmail = e1 + e2 + e3 + e4 + e5 + e6;
 
   const emailLink = document.getElementById("email-link");
   if (emailLink) {
