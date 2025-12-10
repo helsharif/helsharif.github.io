@@ -105,7 +105,14 @@ img {
   background: #111827;
 }
 
+/* Subtle hover effect on avatar ring */
+.avatar-ring {
+  transition: box-shadow 0.3s ease;
+}
 
+.avatar-wrapper:hover .avatar-ring {
+  box-shadow: 0 28px 50px rgba(0, 0, 0, 0.70);
+}
 
 .sidebar-name {
   margin: 6px 0 4px;
