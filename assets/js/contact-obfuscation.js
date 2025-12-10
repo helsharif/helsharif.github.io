@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const emailLink = document.getElementById("email-link");
   if (emailLink) {
     emailLink.textContent = fullEmail;
-    emailLink.href = "mailto:" + fullEmail;
+    emailLink.href = "/#contact";
   }
 
 });
