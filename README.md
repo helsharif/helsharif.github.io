@@ -1,7 +1,7 @@
 # Hi, I'm Husayn El Sharif 👋  
 ### Senior Data Scientist • Machine Learning Engineer • Georgia Tech Ph.D.
 
-Hi, I’m **Husayn**. I’m a **Senior Data Scientist** and **Georgia Tech Ph.D.** with over eight years of experience working with machine learning, geospatial analytics, and complex real world data. I enjoy taking messy information and turning it into insights that **help people make better decisions**.
+Hi, I’m **Husayn**. I’m a **Senior Data Scientist** and **Georgia Tech Ph.D.** with over ten years of experience working with machine learning, geospatial analytics, and complex real world data. I enjoy taking messy information and turning it into insights that **help people make better decisions**.
 
 My work spans remote sensing, environmental analytics, and applied AI, backed by **models, pipelines, and dashboards** I’ve built for researchers, engineers, and operational teams. I also mentor students and early career professionals who are developing their skills in data science and programming.
 
