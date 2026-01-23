@@ -43,7 +43,7 @@ NLP, Prompt Engineering & Fine-Tuning, RAG, Vector Embeddings, LangChain, CrewAI
 Matplotlib, Seaborn, Plotly, Tableau  
 
 **Cloud Platforms & MLOps**  
-AWS, Google Cloud, Databricks, Snowflake, MLflow, Docker, Streamlit, Hugging Face  
+AWS, Google Cloud, Databricks, Snowflake, MLflow, Docker, dbt, Streamlit, Hugging Face  
 
 **Geospatial Analysis**  
 ArcGIS, QGIS, GeoPandas, Google Earth Engine  
