@@ -350,6 +350,25 @@ img {
   margin: 0 0 10px;
 }
 
+/* Github Repo */
+
+.project-github-link {
+    font-weight: 600;
+    text-decoration: none;
+    color: #0a66c2; /* subtle professional blue */
+}
+
+.project-github-link:hover {
+    text-decoration: underline;
+}
+
+.project-github-note {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
+
+
 /* ================== SKILLS TABLE ================== */
 
 .skills-table {
