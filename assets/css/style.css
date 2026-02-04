@@ -400,10 +400,10 @@ img {
   color: var(--text-muted);
 }
 
-/* ================== WITHIN PROJECT DATA TABLE ================== */
+/* ================== PROJECT DATA TABLE ================== */
 
 .project-table-wrapper {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     overflow-x: auto;
 }
 
@@ -411,23 +411,52 @@ img {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
+    background-color: #121417;
+    color: #f1f1f1;
 }
 
-.project-table th,
-.project-table td {
-    border: 1px solid #e0e0e0;
-    padding: 0.75rem;
-    vertical-align: top;
-}
-
+/* Header */
 .project-table th {
-    background-color: #f8f9fa;
+    background-color: #1e2228;
+    color: #ffffff;
     font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid #3a3f45;
+    padding: 0.85rem 0.9rem;
 }
 
+/* Cells */
 .project-table td {
-    line-height: 1.4;
+    border-bottom: 1px solid #2f343a;
+    padding: 0.8rem 0.9rem;
+    vertical-align: top;
+    line-height: 1.5;
 }
+
+/* Zebra striping for readability */
+.project-table tbody tr:nth-child(even) {
+    background-color: #161a1f;
+}
+
+/* Cluster ID column: compact + centered */
+.project-table td:first-child {
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Meter list column: easier scanning */
+.project-table td:last-child {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #d6d6d6;
+}
+
+/* Hover effect (optional but nice) */
+.project-table tbody tr:hover {
+    background-color: #1f242b;
+}
+
 
 
 
