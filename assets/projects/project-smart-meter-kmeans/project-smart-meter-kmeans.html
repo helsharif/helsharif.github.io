@@ -1,0 +1,371 @@
+---
+title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data
+                </h2>
+
+                <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
+                <div class="project-hero-image">
+                    <img src="K-Means Cluster Normalized Heatmap Result.png"
+                        alt="K-means cluster feature heatmap (normalized centroids) summarizing AMI meter behavioral fingerprints" />
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">AMI Analytics</span>
+                    <span class="project-pill">Unsupervised Learning</span>
+                    <span class="project-pill">K-Means Clustering</span>
+                    <span class="project-pill">Power Quality</span>
+                    <span class="project-pill">Feature Engineering</span>
+                    <span class="project-pill">Scikit-learn</span>
+                    <span class="project-pill">Plotly</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Data Scientist / ML Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Advanced Metering Infrastructure (AMI), Grid Reliability</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, Pandas, NumPy, Scikit-learn, Plotly</dd>
+
+                        <dt>Methods</dt>
+                        <dd>Time-series aggregation, feature engineering, k-means clustering, silhouette &amp; elbow
+                            diagnostics</dd>
+
+                        <dt>Dataset</dt>
+                        <dd>High-frequency smart meter telemetry (kWh, voltage, current, frequency)</dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project uses <strong>k-means clustering</strong> to segment smart meters into behaviorally
+                        similar groups
+                        based on engineered features derived from high-frequency AMI measurements. The result is a
+                        practical
+                        <strong>segmentation layer</strong> that utilities can use to prioritize monitoring, investigate
+                        power-quality issues,
+                        and support reliability workflows when labeled outage data is limited.
+                    </p>
+                    <p>
+                        The clustering output is designed to be <strong>interpretable</strong>: each cluster has a
+                        distinct feature “fingerprint”
+                        that maps to operational narratives such as stable baseline meters, demand-driven variability,
+                        and power-quality volatility.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Utilities ingest massive volumes of AMI data at high cadence. While this data offers rich
+                        visibility into customer load and
+                        grid conditions, extracting actionable signals at scale is challenging without labels.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong>
+                        Can we use unsupervised learning to segment meters into interpretable groups that help identify
+                        potential reliability risk and power-quality instability without requiring outage labels?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Data ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Dataset</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The workflow uses real high-frequency smart meter data containing timestamped measurements of
+                        <strong>energy (kWh)</strong>, <strong>voltage</strong>, <strong>current</strong>, and
+                        <strong>frequency</strong>.
+                        Measurements were resampled to a <strong>30-minute interval</strong> to reduce noise while
+                        retaining operational patterns.
+                    </p>
+                    <p>
+                        <strong>Source:</strong> Harvard Dataverse — “High frequency smart meter data from two districts
+                        in India (Mathura and Bareilly)” (Agrawal et al., 2021).
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Feature Engineering ===== -->
+            <section id="features" class="section">
+                <h2 class="section-title">Feature Engineering</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Rather than clustering raw time series, each meter was represented as a single feature vector
+                        summarizing behavior over time.
+                        This is typical for operational AMI analytics where the goal is scalable fleet segmentation.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Load behavior:</strong> mean kWh, variability (CV), ramp metrics (mean and p95).
+                        </li>
+                        <li><strong>Voltage stability:</strong> mean voltage, voltage variability, voltage ramping.</li>
+                        <li><strong>Frequency stability:</strong> percent of measurements outside nominal tolerance
+                            band.</li>
+                        <li><strong>Electrical stress &amp; coupling:</strong> mean and peak current, voltage–current
+                            correlation, energy–voltage correlation.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Clustering ===== -->
+            <section id="clustering" class="section">
+                <h2 class="section-title">K-Means Clustering &amp; Model Selection</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        K-means was evaluated across multiple cluster counts using the elbow method (inertia) and
+                        silhouette score.
+                        The final selection of <strong>k = 4</strong> balances diagnostic signals with operational
+                        interpretability.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="K-Means Elbow Method Results.png"
+                            alt="Elbow method plot showing inertia by number of clusters for k-means" />
+                    </div>
+
+                    <div class="project-figure">
+                        <img src="K-Means Silhouette Score Results.png"
+                            alt="Silhouette score plot by number of clusters for k-means" />
+                    </div>
+
+                    <p>
+                        Silhouette values indicate <strong>moderate separation</strong>, which is common in real AMI
+                        behavioral data where meter characteristics vary along a continuum.
+                        The focus here is interpretability and operational usefulness rather than perfectly separable
+                        clusters.
+                    </p>
+                    </div>
+                    <div class="project-table-wrapper">
+                        <h3 class="project-subtitle">Cluster Membership Summary</h3>
+                    
+                        <p>
+                            The table below summarizes cluster membership, showing how individual smart meters group into
+                            behaviorally distinct cohorts based on load dynamics and power-quality characteristics.
+                        </p>
+
+
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Cluster ID</th>
+                                <th>Cluster Description</th>
+                                <th># Meters</th>
+                                <th>Meter IDs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>0</td>
+                                <td>Stable Baseline</td>
+                                <td>24</td>
+                                <td>
+                                    BR02, BR03, BR05, BR07, BR08, BR09, BR10, BR11, BR13, BR14,
+                                    BR15, BR16, BR17, BR19, BR20, BR22, BR27, BR28, BR29, BR30,
+                                    BR49, BR50, BR51, BR52
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Demand-Variable (Low Load)</td>
+                                <td>8</td>
+                                <td>
+                                    BR33, BR34, BR39, BR42, BR43, BR44, BR46, BR48
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Power-Quality Volatile</td>
+                                <td>6</td>
+                                <td>
+                                    BR32, BR35, BR36, BR37, BR38, BR45
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>High-Load, High-Ramping</td>
+                                <td>8</td>
+                                <td>
+                                    BR04, BR06, BR12, BR18, BR23, BR24, BR26, BR31
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <!-- ===== Results ===== -->
+            <section id="results" class="section">
+                <h2 class="section-title">Results &amp; Cluster Interpretation</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The heatmap below shows <strong>normalized (z-score) cluster centroids</strong>.
+                        <strong>Red</strong> indicates above-average behavior, <strong>blue</strong> indicates
+                        below-average behavior,
+                        and <strong>white</strong> indicates near-average behavior relative to the full meter
+                        population.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="K-Means Cluster Normalized Heatmap Result.png"
+                            alt="Cluster feature heatmap showing normalized centroids for load, voltage, frequency, and current features" />
+                    </div>
+
+                    <ul class="project-bullets">
+                        <li><strong>Cluster 0 — Stable Baseline:</strong> low load variability with stable voltage and
+                            frequency; low monitoring priority.</li>
+                        <li><strong>Cluster 1 — Demand-Variable (Low Load):</strong> low average usage but high relative
+                            variability; consistent with customer-driven intermittency.</li>
+                        <li><strong>Cluster 2 — Power-Quality Volatile:</strong> elevated voltage variability, frequency
+                            excursions, and stronger coupling signals; candidate group for feeder/transformer
+                            investigation.</li>
+                        <li><strong>Cluster 3 — High-Load, High-Ramping:</strong> high consumption and rapid load
+                            changes with stable power quality; relevant for capacity planning and peak stress
+                            amplification.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Operational &amp; Business Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates how unsupervised segmentation can translate AMI telemetry into
+                        actionable monitoring workflows:
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Prioritize investigation:</strong> focus engineering attention on power-quality
+                            volatile meters (e.g., Cluster 2).</li>
+                        <li><strong>Targeted monitoring:</strong> establish behavior-based cohorts for ongoing alerting
+                            and dashboarding.</li>
+                        <li><strong>Foundation for predictive models:</strong> use cluster membership as a feature for
+                            future outage prediction and asset health models.</li>
+                        <li><strong>Scalable fleet analytics:</strong> move from meter-level inspection to cohort-level
+                            decision making.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+
+</body>
+
+</html>

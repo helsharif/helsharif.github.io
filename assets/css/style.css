@@ -381,6 +381,37 @@ img {
   color: var(--text-muted);
 }
 
+/* ================== WITHIN PROJECT DATA TABLE ================== */
+
+.project-table-wrapper {
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.project-table th,
+.project-table td {
+    border: 1px solid #e0e0e0;
+    padding: 0.75rem;
+    vertical-align: top;
+}
+
+.project-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+}
+
+.project-table td {
+    line-height: 1.4;
+}
+
+
+
 /* ================== PORTFOLIO GRID ================== */
 
 .projects-grid {
