@@ -279,7 +279,7 @@ img {
 }
 
 .bottom-nav .nav-link:hover {
-  color: var(--text-primary);
+  color: var(--text-main);
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -355,7 +355,7 @@ img {
 .project-github-link {
     font-weight: 600;
     text-decoration: none;
-    color: #0a66c2; /* subtle professional blue */
+    color: var(--accent);
 }
 
 .project-github-link:hover {
@@ -364,7 +364,7 @@ img {
 
 .project-github-note {
     font-size: 0.9rem;
-    color: #555;
+    color: var(--text-muted);
     margin-top: 0.5rem;
 }
 
@@ -407,6 +407,13 @@ img {
     overflow-x: auto;
 }
 
+.project-table-wrapper p {
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+
+
 .project-table {
     width: 100%;
     border-collapse: collapse;
@@ -423,6 +430,7 @@ img {
     text-align: left;
     border-bottom: 2px solid #3a3f45;
     padding: 0.85rem 0.9rem;
+    white-space: nowrap;
 }
 
 /* Cells */
