@@ -25,7 +25,7 @@ jobs:
 
       - name: Download resume from Google Drive
         run: |
-          curl -L "https://drive.google.com/uc?export=download&id=1kPsPFBu_Iw-wJfgfFcuWoiB4nTM6y6ty" \
+          curl -L "https://drive.google.com/uc?export=download&id=1wDQPjJwyHNo4rddjjpQaXQKt1G56CX4f" \
             -o "assets/resume_portfolio_pdfs/Husayn El Sharif Resume.pdf"
 
       - name: Download portfolio from Google Drive
