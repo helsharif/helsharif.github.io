@@ -1,0 +1,378 @@
+---
+title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Public Health A/B Testing &amp; Predictive Analytics (XGBoost)
+                </h2>
+
+                <!-- Hero image -->
+                <div class="project-hero-image">
+                    <img src="outreach_campaign_infographic.png"
+                        alt="CDC-style outreach campaign A/B test infographic showing Message A vs Message B"
+                        loading="lazy" />
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">Public Health Analytics</span>
+                    <span class="project-pill">A/B Testing</span>
+                    <span class="project-pill">Permutation Test</span>
+                    <span class="project-pill">XGBoost</span>
+                    <span class="project-pill">SHAP</span>
+                    <span class="project-pill">Uplift Targeting</span>
+                    <span class="project-pill">Scikit-learn</span>
+                    <span class="project-pill">Plotly</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Data Scientist / ML Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Public Health Outreach (CDC-style messaging)</dd>
+
+                        <dt>Goal</dt>
+                        <dd>Measure causal lift (A/B test) and support targeting (predictive + uplift)</dd>
+
+                        <dt>Methods</dt>
+                        <dd>Permutation test, XGBoost classification, SHAP interpretability, counterfactual uplift (pB − pA)
+                        </dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, Pandas, NumPy, Plotly, Scikit-learn, XGBoost</dd>
+
+                        <dt>Dataset</dt>
+                        <dd>Reproducible synthetic dataset generated via Python script (portfolio-safe)</dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates an end-to-end workflow commonly used in healthcare and public health
+                        analytics: <strong>causal experimentation</strong> (A/B testing) to quantify whether a message
+                        improves outcomes, followed by <strong>predictive modeling</strong> and <strong>uplift targeting</strong>
+                        to help answer an operational question:
+                        <em>who should we target before sending?</em>
+                    </p>
+                    <p>
+                        The data is <strong>synthetic</strong> but intentionally designed to mirror realistic dynamics:
+                        access barriers, health risk, prior engagement history, channel choice (SMS/email/IVR), timing,
+                        and heterogeneous responsiveness across subgroups.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Public health agencies often run large-scale outreach campaigns (SMS, email, IVR) to encourage
+                        preventive care such as vaccine boosters. Choosing which message strategy to deploy—and to whom—
+                        is a practical analytics problem with real constraints.
+                    </p>
+
+                    <p>
+                        <strong>Questions addressed:</strong>
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Causal impact:</strong> Does a personalized message outperform a standard reminder?</li>
+                        <li><strong>Effect size:</strong> How large is the lift (absolute and relative)?</li>
+                        <li><strong>Predictive:</strong> Can we predict scheduling using <em>pre-send</em> features only?</li>
+                        <li><strong>Targeting:</strong> Who benefits most from Message B vs Message A (uplift)?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Data ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Synthetic Dataset (CDC-Style Outreach Simulation)</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The dataset is generated via a reproducible Python script and includes:
+                        demographics, region, channel, timing, health risk, access barriers, and prior engagement signals.
+                        Treatment assignment is randomized to support valid A/B inference.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Behavioral funnel:</strong> open → click → schedule (7 days) → complete (30 days)</li>
+                        <li><strong>Heterogeneous effects:</strong> different responsiveness by risk and barriers</li>
+                        <li><strong>Portfolio-safe:</strong> synthetic only; no PHI</li>
+                    </ul>
+
+                    <p>
+                        <strong>Code:</strong> <code>src/ab_test_data_generator.py</code><br />
+                        <strong>Data:</strong> <code>data/cdc_outreach_ab_synthetic.csv</code>
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== A/B Testing ===== -->
+            <section id="ab-testing" class="section">
+                <h2 class="section-title">A/B Testing Methodology (Permutation Test)</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Instead of relying on parametric assumptions, the A/B test uses a
+                        <strong>permutation test</strong> to estimate the null distribution of lift under random assignment.
+                        This approach is robust, interpretable, and closely mirrors real experimentation workflows.
+                    </p>
+
+                    <h3 class="project-subtitle">Lift Definition</h3>
+                    <p>
+                        <code>Lift = (p_B - p_A) / p_A</code>
+                    </p>
+
+                    <h3 class="project-subtitle">Observed Results</h3>
+                    <ul class="project-bullets">
+                        <li><strong>Control rate (A):</strong> 26.30% (n = 10,021)</li>
+                        <li><strong>Treatment rate (B):</strong> 30.71% (n = 9,979)</li>
+                        <li><strong>Absolute lift:</strong> +4.41 percentage points</li>
+                        <li><strong>Relative lift:</strong> +16.76%</li>
+                    </ul>
+
+                    <p>
+                        Because the permuted lifts cluster around 0 (no effect), the observed lift lies far in the right tail,
+                        yielding a p-value close to 0 and supporting a statistically significant treatment effect.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="permutation_results_histogram.png"
+                            alt="Permutation test null distribution of relative lift with observed lift highlighted"
+                            loading="lazy" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Predictive Analytics ===== -->
+            <section id="predictive" class="section">
+                <h2 class="section-title">Predictive Analytics (XGBoost – Pre-Send Model)</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        To support operational decision-making, a <strong>pre-send</strong> XGBoost model predicts the probability
+                        of scheduling within 7 days (<code>scheduled_7d</code>) using only features available before delivery.
+                        This avoids leakage from post-send engagement signals (opens/clicks) and reflects deployment constraints.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Model:</strong> XGBoost binary classifier</li>
+                        <li><strong>Preprocessing:</strong> one-hot encoding (categorical) + passthrough (numeric)</li>
+                        <li><strong>Imbalance:</strong> class weighting + recall-oriented threshold tuning</li>
+                        <li><strong>Interpretability:</strong> SHAP global, directional, and dependence analysis</li>
+                    </ul>
+                </div>
+
+                <h3 class="project-subtitle">Global Feature Importance (Mean |SHAP|)</h3>
+                <div class="project-section-text">
+                    <p>
+                        Mean absolute SHAP values show which features influence predictions most strongly overall.
+                        Access barriers dominate importance, followed by health risk and prior engagement history.
+                        Message variant and channel contribute, but structural constraints are the main bottleneck.
+                    </p>
+                </div>
+                <div class="project-figure">
+                    <img src="mean_absval_shap_feature_influence.png"
+                        alt="Global feature importance using mean absolute SHAP values"
+                        loading="lazy" />
+                </div>
+
+                <h3 class="project-subtitle">Directional Influence (Mean Signed SHAP)</h3>
+                <div class="project-section-text">
+                    <p>
+                        Mean signed SHAP values indicate whether features tend to push predicted scheduling probability up or down on average.
+                        Higher access barriers reduce predicted scheduling, while higher risk and Message B tend to increase it.
+                        (Note: mean signed SHAP can mask nonlinear or interaction effects—see dependence plot.)
+                    </p>
+                </div>
+                <div class="project-figure">
+                    <img src="directional_shap_feature_influence.png"
+                        alt="Directional feature influence using mean signed SHAP values"
+                        loading="lazy" />
+                </div>
+
+                <h3 class="project-subtitle">SHAP Dependence: Risk Score</h3>
+                <div class="project-section-text">
+                    <p>
+                        The effect of <code>risk_score</code> is <strong>nonlinear</strong>:
+                        low-risk individuals tend to have negative SHAP values (lower predicted scheduling),
+                        while higher-risk individuals increasingly show positive SHAP contributions.
+                        This supports risk-prioritized outreach.
+                    </p>
+                </div>
+                <div class="project-figure">
+                    <img src="shap_vs_riskscore.png"
+                        alt="SHAP dependence plot showing SHAP values versus risk score"
+                        loading="lazy" />
+                </div>
+            </section>
+
+            <!-- ===== Targeting ===== -->
+            <section id="targeting" class="section">
+                <h2 class="section-title">Uplift Targeting (Who to Target Before Sending?)</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        SHAP explains <em>why</em> the model predicts scheduling; targeting requires estimating who benefits most from Message B.
+                        This is done using a counterfactual approach:
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Predict <code>p_A</code>: probability of scheduling if Message A is sent</li>
+                        <li>Predict <code>p_B</code>: probability of scheduling if Message B is sent</li>
+                        <li>Compute <strong>uplift</strong>: <code>uplift = p_B − p_A</code></li>
+                        <li>Rank individuals by uplift to allocate Message B under budget constraints</li>
+                    </ul>
+
+                    <p>
+                        This creates an operational workflow: prioritize Message B for individuals with the largest predicted uplift,
+                        and send Message A (or a lower-cost alternative) to the remainder.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Actionable Insights ===== -->
+            <section id="insights" class="section">
+                <h2 class="section-title">Actionable Insights</h2>
+
+                <div class="project-section-text">
+                    <ul class="project-bullets">
+                        <li><strong>Pair messaging with barrier reduction:</strong> since access barriers dominate, combine outreach with transportation support, extended hours, or simplified scheduling.</li>
+                        <li><strong>Prioritize high-risk populations:</strong> higher risk increasingly contributes to scheduling propensity; focus personalized outreach where health benefit and responsiveness are highest.</li>
+                        <li><strong>Use multi-touch for poor adherence:</strong> missed appointment history suggests additional follow-up or assisted scheduling may be needed.</li>
+                        <li><strong>Allocate limited resources via uplift ranking:</strong> deploy Message B to the top uplift segment to maximize conversions per outreach cost.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The full, reproducible implementation—dataset generation, A/B testing, XGBoost modeling, SHAP explainability,
+                        and uplift targeting—is available on GitHub:
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/public-health-ab-testing" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🔗 View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        Includes: <code>01_data_generation_and_AB_testing.ipynb</code>, <code>02_predictive_analytics_xgboost.ipynb</code>,
+                        dataset generator, synthetic CSV, and documentation.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+
+</body>
+
+</html>
