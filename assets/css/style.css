@@ -979,6 +979,17 @@ img {
   }
 }
 
+/* ================== LINK HANDLING IN CONTACT SIDEBAR ================== */
+
+.contact-value {
+  word-break: break-all;   /* prevents overflow on long URLs */
+}
+
+.contact-value:hover {
+  text-decoration: underline;
+  color: var(--text-main);
+}
+
 /* ================== PROJECT DETAIL PAGES ================== */
 
 .project-hero-image {
