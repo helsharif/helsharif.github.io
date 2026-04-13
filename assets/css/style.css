@@ -933,9 +933,11 @@ img {
 @media (max-width: 640px) {
   #experience .timeline-item {
     flex-direction: column;
+    align-items: center;
   }
 
   #experience .exp-card {
+    width: 100%;
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
