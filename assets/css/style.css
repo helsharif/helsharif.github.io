@@ -832,6 +832,9 @@ img {
 }
 
 #experience .timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
   background: rgba(0, 0, 0, 0.55);
   border-radius: 20px;
   padding: 14px 18px 16px;
@@ -839,24 +842,12 @@ img {
   margin-bottom: 18px;
 }
 
-/* Whole card becomes grid with logo, header/body, and right columns */
-#experience .exp-card {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 3fr) auto;
-  grid-template-areas:
-    "logo header right"
-    "logo body   right";
-  column-gap: 18px;
-  align-items: flex-start;
-}
-
 /* Company logo */
 #experience .exp-logo {
-  grid-area: logo;
-  align-self: center;
   width: 100px;
   height: 100px;
   flex-shrink: 0;
+  align-self: center;
 }
 
 #experience .exp-logo img {
@@ -864,6 +855,19 @@ img {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
+}
+
+/* Card takes remaining space */
+#experience .exp-card {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) auto;
+  grid-template-areas:
+    "header right"
+    "body   right";
+  column-gap: 24px;
+  align-items: flex-start;
 }
 
 /* Header: role + org (top-left) */
@@ -927,19 +931,23 @@ img {
 
 /* Mobile stacking */
 @media (max-width: 640px) {
+  #experience .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #experience .exp-logo {
+    align-self: flex-start;
+    margin-bottom: 8px;
+  }
+
   #experience .exp-card {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "logo"
       "header"
       "right"
       "body";
     row-gap: 4px;
-  }
-
-  #experience .exp-logo {
-    justify-self: start;
-    margin-bottom: 8px;
   }
 
   #experience .exp-right {
