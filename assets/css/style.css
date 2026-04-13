@@ -839,15 +839,31 @@ img {
   margin-bottom: 18px;
 }
 
-/* Whole card becomes 2-row, 2-column grid via areas */
+/* Whole card becomes grid with logo, header/body, and right columns */
 #experience .exp-card {
   display: grid;
-  grid-template-columns: minmax(0, 3fr) auto;
+  grid-template-columns: 100px minmax(0, 3fr) auto;
   grid-template-areas:
-    "header right"
-    "body   right";
-  column-gap: 24px;
+    "logo header right"
+    "logo body   right";
+  column-gap: 18px;
   align-items: flex-start;
+}
+
+/* Company logo */
+#experience .exp-logo {
+  grid-area: logo;
+  align-self: center;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+#experience .exp-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
 }
 
 /* Header: role + org (top-left) */
@@ -914,10 +930,16 @@ img {
   #experience .exp-card {
     grid-template-columns: 1fr;
     grid-template-areas:
+      "logo"
       "header"
       "right"
       "body";
     row-gap: 4px;
+  }
+
+  #experience .exp-logo {
+    justify-self: start;
+    margin-bottom: 8px;
   }
 
   #experience .exp-right {
