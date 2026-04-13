@@ -63,8 +63,8 @@ img {
 
 /* SIDEBAR */
 .sidebar {
-  flex: 0 0 300px;
-  max-width: 320px;
+  flex: 0 0 330px;
+  max-width: 350px;
 }
 
 .sidebar-card {
@@ -982,7 +982,8 @@ img {
 /* ================== LINK HANDLING IN CONTACT SIDEBAR ================== */
 
 .contact-value {
-  word-break: break-all;   /* prevents overflow on long URLs */
+  word-break: normal;
+  overflow-wrap: break-word;   /* only break if truly needed, at natural points */
 }
 
 .contact-value:hover {
