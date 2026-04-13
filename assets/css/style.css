@@ -936,6 +936,10 @@ img {
     align-items: center;
   }
 
+  #experience .exp-logo {
+    align-self: center;
+  }
+
   #experience .exp-card {
     width: 100%;
     grid-template-columns: 1fr;
