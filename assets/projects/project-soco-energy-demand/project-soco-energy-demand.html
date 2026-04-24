@@ -1,0 +1,416 @@
+---
+title: "SOCO Energy Demand Forecasting | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>SOCO Energy Demand Forecasting | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    SOCO Energy Demand Forecasting with Weather, Grid Operations Data &amp; Machine Learning
+                </h2>
+
+                <!-- Large hero screenshot (4:3 – 1000×750px) -->
+                <div class="project-hero-image">
+                    <img src="/assets/projects/project-soco-energy-demand/soco_energy_demand_forecasting_thumb.png"
+                        alt="SOCO energy demand forecasting project dashboard hero image" />
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">Energy Forecasting</span>
+                    <span class="project-pill">Time Series ML</span>
+                    <span class="project-pill">XGBoost</span>
+                    <span class="project-pill">Prophet</span>
+                    <span class="project-pill">Optuna</span>
+                    <span class="project-pill">MLflow</span>
+                    <span class="project-pill">Streamlit</span>
+                    <span class="project-pill">PUDL / EIA-930</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Data Scientist / Machine Learning Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Electric utility grid operations, balancing authority load forecasting</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, Pandas, NumPy, DuckDB, Great Expectations, XGBoost, Prophet, SARIMAX, Optuna, MLflow, Plotly, Streamlit</dd>
+
+                        <dt>Dataset</dt>
+                        <dd>92,833 hourly observations, 82 cleaned features, 2015-07-01 to 2026-02-01</dd>
+
+                        <dt>Best Model</dt>
+                        <dd>XGBoost (Tuned): RMSE 1,147 MWh, MAPE 2.90%, 71% lower RMSE than SARIMAX</dd>
+
+                        <dt>Live Demo</dt>
+                        <dd><a href="https://helsharif.github.io/soco-energy-demand-forecasting/" target="_blank" rel="noopener noreferrer">https://helsharif.github.io/soco-energy-demand-forecasting/</a></dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project builds an end-to-end machine learning workflow to forecast electricity demand for
+                        the <strong>SOCO balancing authority</strong> 24–48 hours ahead using real grid operations data,
+                        historical weather observations, calendar effects, and domain-driven lag features.
+                    </p>
+                    <p>
+                        The work emphasizes production-style ML: a modular data pipeline, automated quality checks,
+                        exploratory time-series analysis, feature engineering, classical forecasting baselines,
+                        Optuna-tuned models, MLflow experiment tracking, and a public Streamlit portfolio app.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Electric utilities rely on day-ahead demand forecasts to schedule generation, plan transmission
+                        dispatch, coordinate market bids, and maintain reserve margins. Forecast errors carry direct
+                        operational costs: overforecasting can lead to excess reserve commitments, while underforecasting
+                        may require emergency re-dispatch when demand is higher than expected.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong>
+                        Can weather data, calendar structure, and horizon-safe historical demand features be combined
+                        into a lightweight ML forecasting system that outperforms classical time-series baselines for
+                        24–48 hour SOCO electricity demand prediction?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Data ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Dataset &amp; Data Sources</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The target variable is <strong>demand_imputed_pudl_mwh</strong>, an hourly PUDL-imputed demand
+                        series for the SOCO balancing authority. The cleaned dataset contains <strong>92,833 hourly rows</strong>
+                        and spans July 2015 through February 2026.
+                    </p>
+                    <p>
+                        Energy operations data comes from <strong>PUDL / EIA-930</strong>, including demand, day-ahead
+                        demand forecasts, net generation, and interchange fields. Weather data comes from the
+                        <strong>Open-Meteo Historical API</strong> for seven representative SOCO-region cities:
+                        Albany, Atlanta, Birmingham, Huntsville, Meridian, Mobile, and Savannah.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-soco-energy-demand/soco_target_time_series.png"
+                            alt="Ten years of hourly SOCO electricity demand from 2015 to 2026" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Data Pipeline ===== -->
+            <section id="pipeline" class="section">
+                <h2 class="section-title">Data Pipeline &amp; Quality Gate</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project uses a modular pipeline before modeling so that ingestion, validation, and cleaning
+                        can be rerun consistently from scripts or imported as library functions.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Loader:</strong> parses the raw merged CSV, fixes timezone-aware datetimes, and enforces expected dtypes.</li>
+                        <li><strong>Quality checks:</strong> runs an automated quality gate that returns structured success, failure, warning, and statistics outputs.</li>
+                        <li><strong>Cleaner:</strong> removes near-fully-null columns, deduplicates timestamps, drops null targets, and forward-fills missing day-ahead forecast values.</li>
+                        <li><strong>Cleaning outcome:</strong> 86 raw columns reduced to 82 cleaned columns, 3,899 day-ahead forecast nulls forward-filled, zero null targets, and quality gate passed.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== EDA ===== -->
+            <section id="eda" class="section">
+                <h2 class="section-title">Exploratory Data Analysis</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        EDA focused on the drivers of hourly electricity demand and the forecast horizon constraints that
+                        matter for operational load forecasting. Demand exhibits strong daily and weekly autocorrelation,
+                        a dual-peak seasonal pattern, lower weekend and holiday usage, and a U-shaped relationship with
+                        temperature due to heating and cooling load.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Diurnal cycle:</strong> demand typically troughs overnight and peaks in the afternoon.</li>
+                        <li><strong>Seasonality:</strong> summer cooling demand and winter heating demand create a bimodal annual pattern.</li>
+                        <li><strong>Weather signal:</strong> temperature and dew point carry meaningful predictive information for HVAC-driven load.</li>
+                        <li><strong>Autocorrelation:</strong> 24-hour and 168-hour structure motivates lag and rolling-window features.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Feature Engineering ===== -->
+            <section id="features" class="section">
+                <h2 class="section-title">Feature Engineering</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Feature engineering converts the cleaned hourly dataset into a model-ready table while avoiding
+                        forecast-horizon leakage. The final pipeline reduces the cleaned dataset to <strong>45 retained features</strong>
+                        after engineered feature creation and two-pass redundancy pruning.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Lag features:</strong> 24h, 48h, and 168h demand lags plus a 24h lag of the balancing authority forecast.</li>
+                        <li><strong>Rolling statistics:</strong> 24h and 168h shifted rolling mean, standard deviation, minimum, and maximum values.</li>
+                        <li><strong>Weather transforms:</strong> heating degree hours and cooling degree hours to represent the U-shaped temperature-demand curve.</li>
+                        <li><strong>Regional aggregates:</strong> weather variables averaged across seven SOCO-region cities to reduce multicollinearity.</li>
+                        <li><strong>Interactions:</strong> terms such as temperature × hour and weekend × hour to capture time-of-day load shape changes.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Modeling ===== -->
+            <section id="modeling" class="section">
+                <h2 class="section-title">Modeling Approach</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The modeling workflow compares classical forecasting baselines with a tuned gradient-boosted tree
+                        model. Prophet and SARIMAX establish interpretable time-series baselines, while XGBoost uses the
+                        engineered lag, rolling, weather, calendar, and interaction features in a supervised regression setup.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>SARIMAX:</strong> seasonal baseline with exogenous weather and holiday regressors.</li>
+                        <li><strong>Prophet:</strong> Fourier seasonality, US federal holidays, and selected weather regressors.</li>
+                        <li><strong>Prophet tuning:</strong> Optuna TPE search over changepoint, seasonality, holiday, mode, and changepoint-range parameters.</li>
+                        <li><strong>XGBoost tuning:</strong> Optuna TPE search with TimeSeriesSplit cross-validation across tree depth, estimators, learning rate, sampling, and regularization parameters.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Results ===== -->
+            <section id="results" class="section">
+                <h2 class="section-title">Results &amp; Forecast Performance</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The tuned XGBoost model is the final winner. It achieves <strong>RMSE = 1,147 MWh</strong> and
+                        <strong>MAPE = 2.90%</strong>, reducing RMSE by 71% compared with the SARIMAX baseline and
+                        substantially outperforming the tuned Prophet model.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-soco-energy-demand/predicted_vs_actual_demand_test_period_60days.png"
+                            alt="Predicted versus actual SOCO demand during the first 60 days of the test period" />
+                    </div>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Final Model Comparison</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>MAE (MWh)</th>
+                                <th>RMSE (MWh)</th>
+                                <th>MAPE</th>
+                                <th>vs SARIMAX RMSE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>XGBoost (Tuned)</strong></td>
+                                <td><strong>817</strong></td>
+                                <td><strong>1,147</strong></td>
+                                <td><strong>2.90%</strong></td>
+                                <td><strong>−71%</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Prophet (Tuned)</td>
+                                <td>1,494</td>
+                                <td>1,956</td>
+                                <td>5.42%</td>
+                                <td>−51%</td>
+                            </tr>
+                            <tr>
+                                <td>SARIMAX(1,1,1)(1,0,1,24)</td>
+                                <td>3,268</td>
+                                <td>4,003</td>
+                                <td>13.52%</td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Deployment ===== -->
+            <section id="deployment" class="section">
+                <h2 class="section-title">Experiment Tracking &amp; Portfolio App</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project goes beyond notebook modeling by logging trained model runs, parameters, metrics,
+                        and artifacts with <strong>MLflow</strong>. The final outputs are packaged into a public
+                        <strong>Streamlit</strong> portfolio dashboard with pages for project overview, EDA, model
+                        results, and methodology.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>MLflow:</strong> tracks SARIMAX, Prophet, and XGBoost experiments with metrics and model artifacts.</li>
+                        <li><strong>Streamlit app:</strong> presents the workflow as an interactive portfolio showcase for hiring managers and technical reviewers.</li>
+                        <li><strong>Testing:</strong> includes pytest smoke tests for model code and pipeline components.</li>
+                        <li><strong>Future work:</strong> planned FastAPI inference endpoint for serving forecasts programmatically.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Operational &amp; Portfolio Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates a practical forecasting workflow that connects energy-sector domain
+                        knowledge with production-minded ML engineering.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Utility relevance:</strong> frames demand forecasting around dispatch, reserve planning, and day-ahead operational decisions.</li>
+                        <li><strong>Domain-driven features:</strong> uses autocorrelation, HVAC weather effects, calendar structure, and horizon-safe lags.</li>
+                        <li><strong>Model comparison discipline:</strong> benchmarks XGBoost against classical time-series models rather than reporting a single model in isolation.</li>
+                        <li><strong>Reproducible portfolio asset:</strong> combines data pipeline, modeling, tracking, testing, documentation, and a live demo.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">Github Repository &amp; Live Demo</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The full implementation and public dashboard are available through the links below.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/soco-energy-demand-forecasting" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🔗 View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://helsharif.github.io/soco-energy-demand-forecasting/" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🚀 Open Live Streamlit Demo
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The repository includes the data pipeline, feature engineering code, trained model artifacts,
+                        MLflow logging scripts, exported EDA figures, tests, and the Streamlit app used for the portfolio demo.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+
+</body>
+
+</html>
