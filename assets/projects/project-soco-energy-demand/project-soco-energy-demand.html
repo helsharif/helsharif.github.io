@@ -232,12 +232,16 @@ title: "SOCO Energy Demand Forecasting | Husayn El Sharif"
             <!-- ===== Modeling ===== -->
             <section id="modeling" class="section">
                 <h2 class="section-title">Modeling Approach</h2>
-
+            
                 <div class="project-section-text">
                     <p>
-                        The modeling workflow compares classical forecasting baselines with a tuned gradient-boosted tree
-                        model. Prophet and SARIMAX establish interpretable time-series baselines, while XGBoost uses the
-                        engineered lag, rolling, weather, calendar, and interaction features in a supervised regression setup.
+                        The modeling workflow compares three approaches across the same 80/20 chronological test split.
+                        SARIMAX(1,1,1)(1,1,1,24) serves as the classical time-series baseline, evaluated with a rolling 24-hour
+                        horizon — forecasting one day ahead before re-anchoring to actual observations. Prophet (Tuned) provides an
+                        Optuna-optimized probabilistic baseline using built-in seasonality decomposition and 9 weather
+                        and calendar regressors. XGBoost uses the full set of engineered lag, rolling, weather, calendar, and
+                        interaction features in a supervised regression setup, exploiting tabular structure that the
+                        time-series models cannot access natively.
                     </p>
 
                     <ul class="project-bullets">
@@ -256,18 +260,18 @@ title: "SOCO Energy Demand Forecasting | Husayn El Sharif"
                 <div class="project-section-text">
                     <p>
                         The tuned XGBoost model is the final winner. It achieves <strong>RMSE = 1,147 MWh</strong> and
-                        <strong>MAPE = 2.90%</strong>, reducing RMSE by 71% compared with the SARIMAX baseline and
+                        <strong>MAPE = 2.90%</strong>, reducing RMSE by 37% compared with the SARIMAX baseline and
                         substantially outperforming the tuned Prophet model.
                     </p>
 
                     <div class="project-figure">
-                        <img src="/assets/projects/project-soco-energy-demand/predicted_vs_actual_demand_test_period_60days.png"
-                            alt="Predicted versus actual SOCO demand during the first 60 days of the test period" />
+                        <img src="/assets/projects/project-soco-energy-demand/predicted_vs_actual_demand_test_period_45days.png"
+                            alt="Predicted versus actual SOCO demand during the first 45 days of the test period" />
                     </div>
                 </div>
 
                 <div class="project-table-wrapper">
-                    <h3 class="project-subtitle">Final Model Comparison</h3>
+                    <h3 class="project-subtitle">Final Model Comparison (Full Test Set)</h3>
                     <table class="project-table">
                         <thead>
                             <tr>
@@ -284,20 +288,20 @@ title: "SOCO Energy Demand Forecasting | Husayn El Sharif"
                                 <td><strong>817</strong></td>
                                 <td><strong>1,147</strong></td>
                                 <td><strong>2.90%</strong></td>
-                                <td><strong>−71%</strong></td>
+                                <td><strong>−37%</strong></td>
                             </tr>
                             <tr>
                                 <td>Prophet (Tuned)</td>
                                 <td>1,494</td>
                                 <td>1,956</td>
                                 <td>5.42%</td>
-                                <td>−51%</td>
+                                <td>+6.1%</td>
                             </tr>
                             <tr>
                                 <td>SARIMAX(1,1,1)(1,0,1,24)</td>
-                                <td>3,268</td>
-                                <td>4,003</td>
-                                <td>13.52%</td>
+                                <td>1,305</td>
+                                <td>1,829</td>
+                                <td>4.8%</td>
                                 <td>—</td>
                             </tr>
                         </tbody>
