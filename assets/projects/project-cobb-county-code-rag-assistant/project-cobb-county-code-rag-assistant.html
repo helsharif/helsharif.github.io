@@ -1,0 +1,411 @@
+---
+title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Cobb County Building &amp; Fire Code RAG Assistant | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Cobb County Building &amp; Fire Code Agentic RAG Assistant
+                </h2>
+
+                <!-- Large hero screenshot (4:3 - 1000x750px) -->
+                <div class="project-hero-image">
+                    <img src="/assets/projects/project-cobb-county-code-rag-assistant/project-cobb-county-code-rag-assistant-thumb.png"
+                        alt="Cobb County building and fire code agentic RAG project architecture flowchart" />
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">Agentic RAG</span>
+                    <span class="project-pill">LangChain</span>
+                    <span class="project-pill">Chroma Vector Database</span>
+                    <span class="project-pill">Embeddings</span>
+                    <span class="project-pill">Streamlit</span>
+                    <span class="project-pill">Docker</span>
+                    <span class="project-pill">LangSmith</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Machine Learning Engineer / RAG Developer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Local government, building permits, fire code, public-sector document search</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python 3.12, Streamlit, LangChain, Chroma, OpenAI, optional Gemini, SerpAPI, Docker, LangSmith</dd>
+
+                        <dt>Corpus</dt>
+                        <dd>41 local PDFs, 4,093+ loaded pages, 13,844 vector chunks, with source and page metadata</dd>
+
+                        <dt>Core Workflow</dt>
+                        <dd>Local PDF retrieval first, evidence quality check, web fallback for current-code or weak-evidence questions</dd>
+
+                        <dt>Live Demo</dt>
+                        <dd><a href="https://cobb-county-code-rag-assistant.streamlit.app/" target="_blank" rel="noopener noreferrer">https://cobb-county-code-rag-assistant.streamlit.app/</a></dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project is an <strong>agentic retrieval-augmented generation (RAG) application</strong> for Cobb County,
+                        Georgia building and fire code questions. It uses local PDF documents as the primary knowledge base,
+                        then falls back to official web sources when the local evidence is weak or when a question asks about
+                        current, adopted, recently changed, or effective-date information.
+                    </p>
+                    <p>
+                        The goal is to demonstrate a production-minded RAG workflow: document ingestion, chunking, vector search,
+                        LLM-assisted routing, source-grounded synthesis, web verification, observability, Docker support, and a
+                        recruiter-friendly Streamlit interface.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Building and fire code information is difficult to search because it is spread across ordinances,
+                        code PDFs, county forms, permit guidance, checklists, and state-level code references. A homeowner,
+                        contractor, reviewer, or administrative user may know the question they want to ask, but not the exact
+                        document, section, or page where the answer appears.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong>
+                        Can a deployable RAG assistant help users ask natural-language questions about Cobb County code and
+                        permitting documents while keeping answers grounded in cited local documents and current web evidence
+                        when verification is needed?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== App Interface ===== -->
+            <section id="app-ui" class="section">
+                <h2 class="section-title">Streamlit Chat Interface</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The front end is a simple Streamlit chat application designed for fast review by recruiters, technical
+                        interviewers, and portfolio visitors. Users submit a code or permitting question, then receive a concise
+                        2-3 paragraph answer with source references and a visible answer-source label.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-cobb-county-code-rag-assistant/streamlit-app-ui-cobb-county-rag.png"
+                            alt="Streamlit user interface for the Cobb County building and fire code RAG assistant" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Data ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Document Corpus &amp; Data Policy</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The local corpus is designed around Cobb County, Georgia building and fire code research. It includes
+                        county ordinance PDFs, Fire Marshal forms and checklists, building permit guidance, tenant build-out
+                        documents, fire inspection documents, hydrant and sprinkler resources, emergency equipment guidance,
+                        and Georgia code references.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Local PDFs used during development:</strong> 41 files.</li>
+                        <li><strong>Raw PDF size:</strong> approximately 60 MB.</li>
+                        <li><strong>Loaded pages:</strong> 4,093+ pages.</li>
+                        <li><strong>Vector chunks:</strong> 13,844 chunks stored in Chroma.</li>
+                        <li><strong>Repository policy:</strong> raw PDFs are excluded, while the generated vectorstore is tracked with Git LFS for Streamlit Community Cloud deployment.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Architecture ===== -->
+            <section id="architecture" class="section">
+                <h2 class="section-title">Agentic RAG Architecture</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The app uses an agentic RAG workflow rather than a single prompt-only LLM call. A lightweight LLM router
+                        evaluates the question, local retrieval searches the Chroma vector database, an evidence check decides
+                        whether local context is sufficient, and web search is triggered when the question requires current
+                        verification or the retrieved local evidence is incomplete.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Query routing:</strong> flags whether the question needs local documents, web search, or both.</li>
+                        <li><strong>Local retrieval:</strong> searches embedded Cobb County PDF chunks with file and page metadata.</li>
+                        <li><strong>Evidence checking:</strong> evaluates whether the retrieved passages clearly answer the question.</li>
+                        <li><strong>Web fallback:</strong> prioritizes public county and state web sources for current-code verification.</li>
+                        <li><strong>Guardrails:</strong> avoids legal, engineering, or permit-guarantee advice and uses conservative language.</li>
+                    </ul>
+                </div>
+
+                <div class="project-figure">
+                    <img src="/assets/projects/project-cobb-county-code-rag-assistant/project-cobb-county-code-rag-assistant-thumb.png"
+                        alt="Agentic RAG flowchart showing local retrieval, evidence check, web fallback, and grounded response generation" />
+                </div>
+            </section>
+
+            <!-- ===== Retrieval Engineering ===== -->
+            <section id="retrieval" class="section">
+                <h2 class="section-title">Retrieval Engineering</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project does not train a conventional tabular ML model. Instead, the engineering work focuses on
+                        building a reliable retrieval system over long, heterogeneous PDF documents. The key design requirement
+                        is preserving enough metadata for users to verify where an answer came from.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>PDF parsing:</strong> documents are loaded page by page.</li>
+                        <li><strong>Text chunking:</strong> pages are split into overlapping chunks so code context is not lost.</li>
+                        <li><strong>Metadata tracking:</strong> file name, source path, and page number are retained.</li>
+                        <li><strong>Embeddings:</strong> each chunk is converted into a vector representation.</li>
+                        <li><strong>Vector indexing:</strong> chunks and metadata are stored in Chroma for semantic search.</li>
+                        <li><strong>Fallback thresholding:</strong> weak retrieval or current-code language can trigger web search.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Observability ===== -->
+            <section id="observability" class="section">
+                <h2 class="section-title">LangSmith Tracing &amp; Validation</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        LangSmith traces were used to inspect the full chain input, routing context, local PDF evidence,
+                        web-search evidence, token usage, latency, and final answers. This helped verify that the app was not
+                        just producing plausible responses, but using the intended retrieval and fallback workflow.
+                    </p>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-cobb-county-code-rag-assistant/Langsmith_trace_local_and_web.png"
+                            alt="LangSmith trace showing local document and web context used by the RAG assistant" />
+                    </div>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-cobb-county-code-rag-assistant/LangSmith_Trace_WebSearch.png"
+                            alt="LangSmith trace showing web search fallback for a Cobb County fee schedule question" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Results ===== -->
+            <section id="results" class="section">
+                <h2 class="section-title">Results &amp; System Checks</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project was validated through ingestion checks, retrieval smoke tests, current-code routing tests,
+                        web search fallback tests, syntax checks, Docker support, and manual review of representative questions.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Validation Summary</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Test Area</th>
+                                <th>Result</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PDF ingestion</td>
+                                <td><strong>Passed</strong></td>
+                                <td>Loaded Cobb County and Georgia code PDFs</td>
+                            </tr>
+                            <tr>
+                                <td>Vector index build</td>
+                                <td><strong>Passed</strong></td>
+                                <td>Indexed 13,844 chunks into Chroma</td>
+                            </tr>
+                            <tr>
+                                <td>Local retrieval smoke test</td>
+                                <td><strong>Passed</strong></td>
+                                <td>Retrieved relevant fire inspection and code sources</td>
+                            </tr>
+                            <tr>
+                                <td>LLM query router</td>
+                                <td><strong>Passed</strong></td>
+                                <td>Flags current, dated, adopted-code, and fee-schedule questions for verification</td>
+                            </tr>
+                            <tr>
+                                <td>Web fallback</td>
+                                <td><strong>Passed</strong></td>
+                                <td>SerpAPI Google Search works from the app environment</td>
+                            </tr>
+                            <tr>
+                                <td>Deployment support</td>
+                                <td><strong>Included</strong></td>
+                                <td>Streamlit Community Cloud, Dockerfile, and docker-compose.yml</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Applied ML Engineering Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates how modern LLM systems can be adapted to document-heavy public-sector
+                        workflows where answers must be grounded, current, and easy to verify. It is especially relevant to
+                        customer-facing AI platforms, conversational question answering, search and retrieval, agent workflows,
+                        and intelligent automation.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>RAG system design:</strong> combines local retrieval, routing, evidence checking, and web fallback.</li>
+                        <li><strong>Operational grounding:</strong> returns source references instead of unsupported open-ended answers.</li>
+                        <li><strong>Production mindset:</strong> includes reproducible ingestion, Docker support, environment templates, and hosted app deployment.</li>
+                        <li><strong>Observability:</strong> uses LangSmith traces to inspect routing decisions and generated outputs.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository &amp; Live Demo</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The full implementation and hosted Streamlit demo are available through the links below.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/cobb-county-code-rag-assistant" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🔗 View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://cobb-county-code-rag-assistant.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🚀 Open Live Demo
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The repository includes the Streamlit app, LangChain agent workflow, Chroma retriever, ingestion scripts,
+                        Docker files, environment template, and documentation for rebuilding the local vector index.
+                    </p>
+
+                    <p class="project-github-note">
+                        Disclaimer: this is a portfolio demonstration and educational project. It is not legal, engineering,
+                        building code, fire code, or permitting advice. Users should verify requirements directly with Cobb County,
+                        the Georgia Department of Community Affairs, the State Fire Marshal, and the authority having jurisdiction.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+
+</body>
+
+</html>
