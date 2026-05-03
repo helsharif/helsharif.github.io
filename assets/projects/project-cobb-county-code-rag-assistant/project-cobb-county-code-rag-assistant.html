@@ -273,7 +273,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                 <div class="project-section-text">
                     <p>
                         LangSmith traces were used to inspect the full chain input, routing context, local PDF evidence,
-                        web-search evidence, token usage, latency, and final answers. The project also includes a fixed 20-question golden evaluation set and cached LangSmith experiment scores for faithfulness, answer relevance, context precision, and context recall. This helped verify that the app was not
+                        web-search evidence, token usage, latency, and final answers. The project also includes a fixed 100-question golden evaluation set and cached LangSmith experiment scores for faithfulness, answer relevance, context precision, and context recall. This helped verify that the app was not
                         just producing plausible responses, but using the intended retrieval and fallback workflow.
                     </p>
 
@@ -296,7 +296,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                 <div class="project-section-text">
                     <p>
                         The Settings &amp; Eval dashboard compares the Original PyPDF backend against the Docling-enhanced
-                        backend using the same fixed 20-question golden dataset. Metrics are persisted under
+                        backend using the same fixed 100-question golden dataset. Metrics are persisted under
                         <code>eval_results/</code> so the dashboard can load results immediately without automatically
                         launching a new evaluation run.
                     </p>
@@ -312,7 +312,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                         <img src="/assets/projects/project-cobb-county-code-rag-assistant/pypdf-vs-docling-rag-eval-metrics.png"
                             alt="RAG evaluation metrics comparing PyPDF and Docling PDF parsing backends" />
                         <p class="project-figure-caption">
-                            PyPDF vs. Docling retrieval evaluation on the fixed 20-question golden dataset. Both methods score strongly on faithfulness, answer relevance, and context precision, while the Original PyPDF backend shows higher context recall in this run.
+                            PyPDF vs. Docling RAG evaluation on the fixed 100-question golden dataset. Both parsing backends achieve strong faithfulness and answer relevance, with Docling showing modest gains across all reported metrics, including context precision and context recall.
                         </p>
                     </div>
                 </div>
