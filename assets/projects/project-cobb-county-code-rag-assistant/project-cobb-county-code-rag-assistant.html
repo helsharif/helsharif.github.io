@@ -79,6 +79,8 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     <span class="project-pill">Agentic RAG</span>
                     <span class="project-pill">LangChain</span>
                     <span class="project-pill">Chroma Vector Database</span>
+                    <span class="project-pill">PyPDF</span>
+                    <span class="project-pill">Docling</span>
                     <span class="project-pill">Embeddings</span>
                     <span class="project-pill">Streamlit</span>
                     <span class="project-pill">Docker</span>
@@ -96,13 +98,16 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                         <dd>Local government, building permits, fire code, public-sector document search</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python 3.12, Streamlit, LangChain, Chroma, OpenAI, optional Gemini, SerpAPI, Docker, LangSmith</dd>
+                        <dd>Python 3.12, Streamlit, LangChain, Chroma, PyPDF/LangChain loaders, Docling, OpenAI, optional Gemini, SerpAPI, Docker, LangSmith</dd>
 
                         <dt>Corpus</dt>
-                        <dd>41 local PDFs, 4,093+ loaded pages, 13,844 vector chunks, with source and page metadata</dd>
+                        <dd>41 local PDFs, approximately 60 MB, 4,093+ loaded pages, 13,844 vector chunks, with source, parser, chunk, and page metadata</dd>
 
                         <dt>Core Workflow</dt>
-                        <dd>Local PDF retrieval first, evidence quality check, web fallback for current-code or weak-evidence questions</dd>
+                        <dd>Settings-selected retrieval backend, local PDF retrieval first, evidence quality check, web fallback for current-code or weak-evidence questions</dd>
+
+                        <dt>Retrieval Backends</dt>
+                        <dd>Original PyPDF collection and Docling-enhanced layout-aware collection</dd>
 
                         <dt>Live Demo</dt>
                         <dd><a href="https://cobb-county-code-rag-assistant.streamlit.app/" target="_blank" rel="noopener noreferrer">https://cobb-county-code-rag-assistant.streamlit.app/</a></dd>
@@ -112,13 +117,13 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                 <div class="project-section-text">
                     <p>
                         This project is an <strong>agentic retrieval-augmented generation (RAG) application</strong> for Cobb County,
-                        Georgia building and fire code questions. It uses local PDF documents as the primary knowledge base,
+                        Georgia building and fire code questions. It uses local PDF documents as the primary knowledge base, supports both an Original PyPDF retrieval pipeline and a Docling-enhanced layout-aware parsing pipeline,
                         then falls back to official web sources when the local evidence is weak or when a question asks about
                         current, adopted, recently changed, or effective-date information.
                     </p>
                     <p>
-                        The goal is to demonstrate a production-minded RAG workflow: document ingestion, chunking, vector search,
-                        LLM-assisted routing, source-grounded synthesis, web verification, observability, Docker support, and a
+                        The goal is to demonstrate a production-minded RAG workflow: document ingestion, dual vector indexing, chunking, vector search,
+                        LLM-assisted routing, source-grounded synthesis, web verification, evaluation, observability, Docker support, and a
                         recruiter-friendly Streamlit interface.
                     </p>
                 </div>
@@ -152,7 +157,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     <p>
                         The front end is a simple Streamlit chat application designed for fast review by recruiters, technical
                         interviewers, and portfolio visitors. Users submit a code or permitting question, then receive a concise
-                        2-3 paragraph answer with source references and a visible answer-source label.
+                        2-3 paragraph answer with source references and a visible answer-source label. A Settings &amp; Eval dashboard lets users switch between the Original and Docling retrieval backends and view cached LangSmith evaluation metrics without restarting the app.
                     </p>
 
                     <div class="project-figure">
@@ -181,6 +186,31 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                         <li><strong>Vector chunks:</strong> 13,844 chunks stored in Chroma.</li>
                         <li><strong>Repository policy:</strong> raw PDFs are excluded, while the generated vectorstore is tracked with Git LFS for Streamlit Community Cloud deployment.</li>
                     </ul>
+
+                    <div class="project-table-wrapper">
+                        <h3 class="project-subtitle">Supported Chroma Collections</h3>
+                        <table class="project-table">
+                            <thead>
+                                <tr>
+                                    <th>Collection</th>
+                                    <th>UI Label</th>
+                                    <th>PDF Processing</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>cobb_code_docs_original</code></td>
+                                    <td>Original</td>
+                                    <td>Original PyPDF/LangChain page extraction</td>
+                                </tr>
+                                <tr>
+                                    <td><code>cobb_code_docs_docling</code></td>
+                                    <td>Docling</td>
+                                    <td>Docling layout-aware PDF conversion to Markdown before chunking</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
 
@@ -197,6 +227,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     </p>
 
                     <ul class="project-bullets">
+                        <li><strong>Settings selector:</strong> switches new questions between Original and Docling retrieval without requiring an app restart.</li>
                         <li><strong>Query routing:</strong> flags whether the question needs local documents, web search, or both.</li>
                         <li><strong>Local retrieval:</strong> searches embedded Cobb County PDF chunks with file and page metadata.</li>
                         <li><strong>Evidence checking:</strong> evaluates whether the retrieved passages clearly answer the question.</li>
@@ -218,16 +249,18 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                 <div class="project-section-text">
                     <p>
                         This project does not train a conventional tabular ML model. Instead, the engineering work focuses on
-                        building a reliable retrieval system over long, heterogeneous PDF documents. The key design requirement
-                        is preserving enough metadata for users to verify where an answer came from.
+                        building a reliable retrieval system over long, heterogeneous PDF documents. The app now builds two
+                        Chroma collections from the same local PDF corpus so the original PyPDF extraction behavior can be
+                        compared directly against a Docling-enhanced parsing workflow.
                     </p>
 
                     <ul class="project-bullets">
-                        <li><strong>PDF parsing:</strong> documents are loaded page by page.</li>
-                        <li><strong>Text chunking:</strong> pages are split into overlapping chunks so code context is not lost.</li>
-                        <li><strong>Metadata tracking:</strong> file name, source path, and page number are retained.</li>
-                        <li><strong>Embeddings:</strong> each chunk is converted into a vector representation.</li>
-                        <li><strong>Vector indexing:</strong> chunks and metadata are stored in Chroma for semantic search.</li>
+                        <li><strong>Original parsing:</strong> preserves the initial PyPDF/LangChain page extraction pipeline.</li>
+                        <li><strong>Docling parsing:</strong> converts layout-aware PDF content to Markdown before chunking, which can help with headings, tables, sections, and multi-column regulatory documents.</li>
+                        <li><strong>Large PDF handling:</strong> PyMuPDF reads internal bookmarks or table-of-contents entries first; oversized sections are processed in overlapping page windows.</li>
+                        <li><strong>Text chunking:</strong> pages, sections, or page windows are split into overlapping chunks so code context is not lost.</li>
+                        <li><strong>Metadata tracking:</strong> file name, source path, parser type, chunk index, section, and page range are retained where available.</li>
+                        <li><strong>Embeddings and indexing:</strong> each chunk is embedded and stored in Chroma under the selected collection.</li>
                         <li><strong>Fallback thresholding:</strong> weak retrieval or current-code language can trigger web search.</li>
                     </ul>
                 </div>
@@ -235,12 +268,12 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
 
             <!-- ===== Observability ===== -->
             <section id="observability" class="section">
-                <h2 class="section-title">LangSmith Tracing &amp; Validation</h2>
+                <h2 class="section-title">LangSmith Tracing, Evaluation &amp; Validation</h2>
 
                 <div class="project-section-text">
                     <p>
                         LangSmith traces were used to inspect the full chain input, routing context, local PDF evidence,
-                        web-search evidence, token usage, latency, and final answers. This helped verify that the app was not
+                        web-search evidence, token usage, latency, and final answers. The project also includes a fixed 20-question golden evaluation set and cached LangSmith experiment scores for faithfulness, answer relevance, context precision, and context recall. This helped verify that the app was not
                         just producing plausible responses, but using the intended retrieval and fallback workflow.
                     </p>
 
@@ -252,6 +285,35 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     <div class="project-figure">
                         <img src="/assets/projects/project-cobb-county-code-rag-assistant/LangSmith_Trace_WebSearch.png"
                             alt="LangSmith trace showing web search fallback for a Cobb County fee schedule question" />
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Evaluation ===== -->
+            <section id="evaluation" class="section">
+                <h2 class="section-title">PyPDF vs. Docling RAG Evaluation</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The Settings &amp; Eval dashboard compares the Original PyPDF backend against the Docling-enhanced
+                        backend using the same fixed 20-question golden dataset. Metrics are persisted under
+                        <code>eval_results/</code> so the dashboard can load results immediately without automatically
+                        launching a new evaluation run.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Faithfulness:</strong> whether the answer stays supported by retrieved context.</li>
+                        <li><strong>Answer relevance:</strong> whether the response addresses the user's question.</li>
+                        <li><strong>Context precision:</strong> whether retrieved context is useful rather than noisy.</li>
+                        <li><strong>Context recall:</strong> whether enough supporting context was retrieved.</li>
+                    </ul>
+
+                    <div class="project-figure">
+                        <img src="/assets/projects/project-cobb-county-code-rag-assistant/pypdf-vs-docling-rag-eval-metrics.png"
+                            alt="RAG evaluation metrics comparing PyPDF and Docling PDF parsing backends" />
+                        <p class="project-figure-caption">
+                            PyPDF vs. Docling retrieval evaluation on the fixed 20-question golden dataset. Both methods score strongly on faithfulness, answer relevance, and context precision, while the Original PyPDF backend shows higher context recall in this run.
+                        </p>
                     </div>
                 </div>
             </section>
@@ -287,6 +349,21 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                                 <td>Vector index build</td>
                                 <td><strong>Passed</strong></td>
                                 <td>Indexed 13,844 chunks into Chroma</td>
+                            </tr>
+                            <tr>
+                                <td>Docling-enhanced indexing</td>
+                                <td><strong>Added</strong></td>
+                                <td>Builds <code>cobb_code_docs_docling</code> from Docling Markdown output</td>
+                            </tr>
+                            <tr>
+                                <td>Retrieval backend switching</td>
+                                <td><strong>Added</strong></td>
+                                <td>Settings &amp; Eval tab switches between Original and Docling collections</td>
+                            </tr>
+                            <tr>
+                                <td>LangSmith evaluation cache</td>
+                                <td><strong>Added</strong></td>
+                                <td>Saves per-backend metrics under <code>eval_results/</code></td>
                             </tr>
                             <tr>
                                 <td>Local retrieval smoke test</td>
@@ -326,10 +403,10 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     </p>
 
                     <ul class="project-bullets">
-                        <li><strong>RAG system design:</strong> combines local retrieval, routing, evidence checking, and web fallback.</li>
+                        <li><strong>RAG system design:</strong> combines selectable retrieval backends, local retrieval, routing, evidence checking, and web fallback.</li>
                         <li><strong>Operational grounding:</strong> returns source references instead of unsupported open-ended answers.</li>
                         <li><strong>Production mindset:</strong> includes reproducible ingestion, Docker support, environment templates, and hosted app deployment.</li>
-                        <li><strong>Observability:</strong> uses LangSmith traces to inspect routing decisions and generated outputs.</li>
+                        <li><strong>Evaluation and observability:</strong> uses LangSmith traces and fixed golden-set metrics to inspect retrieval quality, routing decisions, and generated outputs.</li>
                     </ul>
                 </div>
             </section>
@@ -358,8 +435,8 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                     </p>
 
                     <p class="project-github-note">
-                        The repository includes the Streamlit app, LangChain agent workflow, Chroma retriever, ingestion scripts,
-                        Docker files, environment template, and documentation for rebuilding the local vector index.
+                        The repository includes the Streamlit app, LangChain agent workflow, Chroma retriever, PyPDF and Docling ingestion scripts,
+                        LangSmith evaluation workflow, Docker files, environment template, and documentation for rebuilding the local vector indexes.
                     </p>
 
                     <p class="project-github-note">
