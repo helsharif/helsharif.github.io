@@ -1105,6 +1105,15 @@ img {
   border-radius: 14px;
 }
 
+.gslide-image {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.gslide-image img {
+  border-radius: 18px;
+}
+
 
 
 @media (max-width: 768px) {
