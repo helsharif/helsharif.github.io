@@ -1115,9 +1115,9 @@ img {
 }
 
 .gslide-description.description-bottom {
-  background: var(--bg-pill);
+  background: var(--bg-card) !important;
   border-radius: 0 0 18px 18px;
-  color: var(--text-muted);
+  color: var(--text-main) !important;
   overflow: hidden;
 }
 
@@ -1125,17 +1125,19 @@ img {
   margin-top: 0;
 }
 
+.glightbox-clean .gslide-title,
 .gslide-title {
-  color: var(--text-main);
-  font-family: var(--font-body);
+  color: var(--text-main) !important;
+  font-family: var(--font-body) !important;
   font-size: 13px;
   font-weight: 400;
   margin-bottom: 0;
 }
 
+.glightbox-clean .gslide-desc,
 .gslide-desc {
-  color: var(--text-muted);
-  font-family: var(--font-body);
+  color: var(--text-muted) !important;
+  font-family: var(--font-body) !important;
 }
 
 
