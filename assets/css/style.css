@@ -1115,14 +1115,14 @@ img {
 }
 
 .gslide-description.description-bottom {
-  width: fit-content !important;
-  max-width: calc(100% - 32px);
+  width: 100% !important;
+  min-height: 54px;
   margin: 14px auto 0 !important;
-  padding: 4px 10px !important;
+  padding: 12px 18px !important;
   background: var(--bg-pill) !important;
-  border-radius: var(--radius-pill);
+  border-radius: 18px;
   color: var(--text-muted) !important;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .gslide-image + .gslide-description.description-bottom {
@@ -1130,18 +1130,23 @@ img {
 }
 
 .gslide-description.description-bottom .gdesc-inner {
+  min-height: 30px;
   padding: 0 !important;
   background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .glightbox-clean .gslide-title,
 .gslide-title {
   color: var(--text-muted) !important;
   font-family: var(--font-body) !important;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.4;
   margin-bottom: 0;
+  text-align: center;
 }
 
 .glightbox-clean .gslide-desc,
