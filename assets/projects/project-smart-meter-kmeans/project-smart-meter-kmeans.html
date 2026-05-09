@@ -46,6 +46,8 @@ title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -70,8 +72,11 @@ title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn
 
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
-                    <img src="K-Means Cluster Normalized Heatmap Result.png"
+                    <a href="K-Means Cluster Normalized Heatmap Result.png" class="portfolio-lightbox" data-gallery="smart-meter-kmeans"
+                        data-title="K-means cluster feature heatmap (normalized centroids) summarizing AMI meter behavioral fingerprints">
+                        <img src="K-Means Cluster Normalized Heatmap Result.png"
                         alt="K-means cluster feature heatmap (normalized centroids) summarizing AMI meter behavioral fingerprints" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -199,13 +204,19 @@ title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn
                     </p>
 
                     <div class="project-figure">
-                        <img src="K-Means Elbow Method Results.png"
+                        <a href="K-Means Elbow Method Results.png" class="portfolio-lightbox" data-gallery="smart-meter-kmeans"
+                            data-title="Elbow method plot showing inertia by number of clusters for k-means">
+                            <img src="K-Means Elbow Method Results.png"
                             alt="Elbow method plot showing inertia by number of clusters for k-means" />
+                        </a>
                     </div>
 
                     <div class="project-figure">
-                        <img src="K-Means Silhouette Score Results.png"
+                        <a href="K-Means Silhouette Score Results.png" class="portfolio-lightbox" data-gallery="smart-meter-kmeans"
+                            data-title="Silhouette score plot by number of clusters for k-means">
+                            <img src="K-Means Silhouette Score Results.png"
                             alt="Silhouette score plot by number of clusters for k-means" />
+                        </a>
                     </div>
 
                     <p>
@@ -288,8 +299,11 @@ title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn
                     </p>
 
                     <div class="project-figure">
-                        <img src="K-Means Cluster Normalized Heatmap Result.png"
+                        <a href="K-Means Cluster Normalized Heatmap Result.png" class="portfolio-lightbox" data-gallery="smart-meter-kmeans"
+                            data-title="Cluster feature heatmap showing normalized centroids for load, voltage, frequency, and current features">
+                            <img src="K-Means Cluster Normalized Heatmap Result.png"
                             alt="Cluster feature heatmap showing normalized centroids for load, voltage, frequency, and current features" />
+                        </a>
                     </div>
 
                     <ul class="project-bullets">
@@ -391,6 +405,17 @@ title: "Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data | Husayn
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>

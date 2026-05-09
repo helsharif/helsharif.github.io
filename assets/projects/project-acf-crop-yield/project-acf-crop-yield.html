@@ -48,6 +48,8 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -72,8 +74,11 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path (1000x750 4:3 image) -->
-                    <img src="project-acf-crop-yield-16x9.png"
+                    <a href="project-acf-crop-yield-16x9.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                        data-title="Climate-informed crop yield and irrigation projections for the ACF River Basin">
+                        <img src="project-acf-crop-yield-16x9.png"
                         alt="Climate-informed crop yield and irrigation projections for the ACF River Basin" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -164,7 +169,10 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
             <!-- ===== Model Development ===== -->
 
             <div class="project-figure">
-                <img src="jvbc improvement perfromance.png" alt="JVBC Joint CDF Improvement" />
+                <a href="jvbc improvement perfromance.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                    data-title="JVBC Joint CDF Improvement">
+                    <img src="jvbc improvement perfromance.png" alt="JVBC Joint CDF Improvement" />
+                </a>
             </div>
 
             <section id="modeling" class="section">
@@ -218,12 +226,18 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
             <!-- ===== Deployment & Results ===== -->
             <section id="deployment" class="section">
                 <div class="project-figure">
-                    <img src="precip and temp projections.png" alt="Annual Temperature and Precipitation Projections" />
+                    <a href="precip and temp projections.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                        data-title="Annual Temperature and Precipitation Projections">
+                        <img src="precip and temp projections.png" alt="Annual Temperature and Precipitation Projections" />
+                    </a>
                 </div>
 
                 <div class="project-figure">
-                    <img src="pet and precip deficit projections.png"
+                    <a href="pet and precip deficit projections.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                        data-title="Potential Evapotranspiration and Precipitation Deficit Projections">
+                        <img src="pet and precip deficit projections.png"
                         alt="Potential Evapotranspiration and Precipitation Deficit Projections" />
+                    </a>
                 </div>
 
                 <h2 class="section-title">Projected Climate, Crop Response, &amp; Irrigation Demand</h2>
@@ -266,18 +280,27 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
                     </ul>
 
                     <div class="project-figure">
-                        <img src="growing season classification.png"
+                        <a href="growing season classification.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                            data-title="Projected Change in Growing Season Classification">
+                            <img src="growing season classification.png"
                             alt="Projected Change in Growing Season Classification" />
+                        </a>
                     </div>
 
                     <div class="project-figure">
-                        <img src="projections irr vol 1.png"
+                        <a href="projections irr vol 1.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                            data-title="Projected Change in Irrigation Volume (Central ACF)">
+                            <img src="projections irr vol 1.png"
                             alt="Projected Change in Irrigation Volume (Central ACF)" />
+                        </a>
                     </div>
 
                     <div class="project-figure">
-                        <img src="projections irr vol 2.png"
+                        <a href="projections irr vol 2.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
+                            data-title="Projected Change in Irrigation Volume (Southern ACF)">
+                            <img src="projections irr vol 2.png"
                             alt="Projected Change in Irrigation Volume (Southern ACF)" />
+                        </a>
                     </div>
                 </div>
             </section>
@@ -360,6 +383,17 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>

@@ -48,6 +48,8 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <!-- Keep this path consistent with your other project pages -->
     <link rel="stylesheet" href="../../css/style.css" />
@@ -74,8 +76,11 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
                     <!-- Replace src with your actual 4:3 screenshot path -->
-                    <img src="project-churn-modeling-thumb.png"
+                    <a href="project-churn-modeling-thumb.png" class="portfolio-lightbox" data-gallery="churn-modeling"
+                        data-title="Customer churn modeling dashboards and ML pipeline visualizations">
+                        <img src="project-churn-modeling-thumb.png"
                         alt="Customer churn modeling dashboards and ML pipeline visualizations" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -160,7 +165,10 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
             <section id="modeling" class="section">
 
                 <div class="project-figure">
-                    <img src="telco data attributes.png" alt="Telco Data Attributes" />
+                    <a href="telco data attributes.png" class="portfolio-lightbox" data-gallery="churn-modeling"
+                        data-title="Telco Data Attributes">
+                        <img src="telco data attributes.png" alt="Telco Data Attributes" />
+                    </a>
                 </div>
 
                 <h2 class="section-title">Model Development</h2>
@@ -200,8 +208,11 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
                     </ul>
 
                     <div class="project-figure">
-                        <img src="logreg vs neural network performance table.png"
+                        <a href="logreg vs neural network performance table.png" class="portfolio-lightbox" data-gallery="churn-modeling"
+                            data-title="Logistic Regression vs Neural Network Performance Tables">
+                            <img src="logreg vs neural network performance table.png"
                             alt="Logistic Regression vs Neural Network Performance Tables" />
+                        </a>
                     </div>
 
                     <p>
@@ -220,7 +231,10 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
                         </li>
 
                         <div class="project-figure">
-                            <img src="neural_network_diagram.svg" alt="Neural Network Diagram for Churn Prediction" />
+                            <a href="neural_network_diagram.svg" class="portfolio-lightbox" data-gallery="churn-modeling"
+                                data-title="Neural Network Diagram for Churn Prediction">
+                                <img src="neural_network_diagram.svg" alt="Neural Network Diagram for Churn Prediction" />
+                            </a>
                         </div>
 
                         <li>
@@ -240,8 +254,11 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
             <section id="deployment" class="section">
 
                 <div class="project-figure">
-                    <img src="databricks mlflow implementation telco churn classification.png"
+                    <a href="databricks mlflow implementation telco churn classification.png" class="portfolio-lightbox" data-gallery="churn-modeling"
+                        data-title="Databricks MLflow Implementation for Telco Churn Classification">
+                        <img src="databricks mlflow implementation telco churn classification.png"
                         alt="Databricks MLflow Implementation for Telco Churn Classification" />
+                    </a>
                 </div>
 
 
@@ -377,6 +394,17 @@ title: "Customer Churn Modeling & Retention Optimization | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>

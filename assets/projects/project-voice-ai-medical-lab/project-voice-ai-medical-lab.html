@@ -46,6 +46,8 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -71,8 +73,11 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
                     <!-- Replace src with your actual screenshot path (1000x750 or 16:9 image) -->
-                    <img src="voice ai agent img 01.png"
+                    <a href="voice ai agent img 01.png" class="portfolio-lightbox" data-gallery="voice-ai-medical-lab"
+                        data-title="Voice-AI customer service agent for medical lab appointments">
+                        <img src="voice ai agent img 01.png"
                         alt="Voice-AI customer service agent for medical lab appointments" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -179,8 +184,11 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
                     </p>
 
                     <div class="project-figure">
-                        <img src="voice ai access med labs.png"
+                        <a href="voice ai access med labs.png" class="portfolio-lightbox" data-gallery="voice-ai-medical-lab"
+                            data-title="Access Medical Labs website serves as a knowledge base for caller inquiries">
+                            <img src="voice ai access med labs.png"
                             alt="Access Medical Labs website serves as a knowledge base for caller inquiries" />
+                        </a>
                     </div>
 
                     <h3>Knowledge Base Construction</h3>
@@ -204,8 +212,11 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
 
                     <div class="project-figure">
                         <!-- Retell prompt builder screenshot -->
-                        <img src="voice prompt retell ai.png"
+                        <a href="voice prompt retell ai.png" class="portfolio-lightbox" data-gallery="voice-ai-medical-lab"
+                            data-title="Prompt engineering for Access Medical Labs voice AI agent in Retell AI interface">
+                            <img src="voice prompt retell ai.png"
                             alt="Prompt engineering for Access Medical Labs voice AI agent in Retell AI interface" />
+                        </a>
                     </div>
 
                     <h3>Prompt Engineering &amp; Conversation Design</h3>
@@ -287,8 +298,11 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
 
                     <div class="project-figure">
                         <!-- Sentiment / analytics screenshot -->
-                        <img src="voice ai call sentiment analysis.png"
+                        <a href="voice ai call sentiment analysis.png" class="portfolio-lightbox" data-gallery="voice-ai-medical-lab"
+                            data-title="Post-call sentiment analysis of voice AI conversation in Retell AI dashboard">
+                            <img src="voice ai call sentiment analysis.png"
                             alt="Post-call sentiment analysis of voice AI conversation in Retell AI dashboard" />
+                        </a>
                     </div>
 
                     <h3>Testing &amp; Evaluation</h3>
@@ -419,6 +433,17 @@ title: "Voice-AI Customer Service Agent for Medical Lab Appointments | Husayn El
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>

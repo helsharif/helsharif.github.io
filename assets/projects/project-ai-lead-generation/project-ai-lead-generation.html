@@ -48,6 +48,8 @@ title: "AI-Automated Lead Generation Pipeline | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -72,8 +74,11 @@ title: "AI-Automated Lead Generation Pipeline | Husayn El Sharif"
                 <!-- Large hero screenshot -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path (4:3, e.g., 1000×750) -->
-                    <img src="project-ai-lead-generation-thumb.png"
+                    <a href="project-ai-lead-generation-thumb.png" class="portfolio-lightbox" data-gallery="ai-lead-generation"
+                        data-title="AI-automated lead generation dashboard for engineering consultancy">
+                        <img src="project-ai-lead-generation-thumb.png"
                         alt="AI-automated lead generation dashboard for engineering consultancy" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -338,6 +343,17 @@ title: "AI-Automated Lead Generation Pipeline | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>

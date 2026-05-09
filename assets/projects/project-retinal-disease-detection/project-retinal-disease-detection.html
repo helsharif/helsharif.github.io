@@ -48,6 +48,8 @@ title: "AI-Powered Retinal Disease Detection | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -73,8 +75,11 @@ title: "AI-Powered Retinal Disease Detection | Husayn El Sharif"
                 <!-- Large hero screenshot (4:3 – e.g., 1000×750px) -->
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual 4:3 screenshot path -->
-                    <img src="retinal disease diagram and tf.png"
+                    <a href="retinal disease diagram and tf.png" class="portfolio-lightbox" data-gallery="retinal-disease-detection"
+                        data-title="Schematic of Tensorflow Computer Vision Pipeline from Retinal Image to Normal/Eye Disease Classification">
+                        <img src="retinal disease diagram and tf.png"
                         alt="Schematic of Tensorflow Computer Vision Pipeline from Retinal Image to Normal/Eye Disease Classification" />
+                    </a>
                 </div>
 
                 <!-- Tech / domain pills -->
@@ -204,13 +209,19 @@ title: "AI-Powered Retinal Disease Detection | Husayn El Sharif"
 
                     <!-- Optional figure placeholders -->
                     <div class="project-figure">
-                        <img src="project-retinal-disease-detection-thumb.png"
+                        <a href="project-retinal-disease-detection-thumb.png" class="portfolio-lightbox" data-gallery="retinal-disease-detection"
+                            data-title="Retinal Disease Detection Model Results">
+                            <img src="project-retinal-disease-detection-thumb.png"
                             alt="Retinal Disease Detection Model Results" />
+                        </a>
                     </div>
 
                     <div class="project-figure">
-                        <img src="retinal disease diagram and tf confusion matrix.png"
+                        <a href="retinal disease diagram and tf confusion matrix.png" class="portfolio-lightbox" data-gallery="retinal-disease-detection"
+                            data-title="Retinal Disease Detection Model Results Confusion Matrix">
+                            <img src="retinal disease diagram and tf confusion matrix.png"
                             alt="Retinal Disease Detection Model Results Confusion Matrix" />
+                        </a>
                     </div>
                 </div>
             </section>
@@ -336,6 +347,17 @@ title: "AI-Powered Retinal Disease Detection | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
+
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: ".portfolio-lightbox",
+            touchNavigation: true,
+            loop: true,
+            zoomable: true
+        });
+    </script>
 </body>
 
 </html>
