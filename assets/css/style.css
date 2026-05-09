@@ -1114,6 +1114,30 @@ img {
   border-radius: 18px;
 }
 
+.gslide-description.description-bottom {
+  background: var(--bg-pill);
+  border-radius: 0 0 18px 18px;
+  color: var(--text-muted);
+  overflow: hidden;
+}
+
+.gslide-image + .gslide-description.description-bottom {
+  margin-top: 0;
+}
+
+.gslide-title {
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.gslide-desc {
+  color: var(--text-muted);
+  font-family: var(--font-body);
+}
+
 
 
 @media (max-width: 768px) {
