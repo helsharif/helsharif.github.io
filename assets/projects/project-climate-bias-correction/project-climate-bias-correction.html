@@ -48,8 +48,8 @@ title: "Continental-Scale Climate Bias-Correction & Dashboard | Husayn El Sharif
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -75,7 +75,7 @@ title: "Continental-Scale Climate Bias-Correction & Dashboard | Husayn El Sharif
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path -->
                     <a href="project-climate-bias-correction-thumb.png" class="portfolio-lightbox" data-gallery="climate-bias-correction"
-                        data-title="Interactive dashboard showing bias-corrected climate projections across the continental U.S.">
+                        data-title="Interactive dashboard showing bias-corrected climate projections across the continental U.S." data-pswp-width="1000" data-pswp-height="750">
                         <img src="project-climate-bias-correction-thumb.png"
                         alt="Interactive dashboard showing bias-corrected climate projections across the continental U.S." />
                     </a>
@@ -207,14 +207,14 @@ title: "Continental-Scale Climate Bias-Correction & Dashboard | Husayn El Sharif
 
                     <div class="project-figure">
                         <a href="climate assessment se us.png" class="portfolio-lightbox" data-gallery="climate-bias-correction"
-                            data-title="Climate Assessment Southeastern U.S.">
+                            data-title="Climate Assessment Southeastern U.S." data-pswp-width="1024" data-pswp-height="576">
                             <img src="climate assessment se us.png" alt="Climate Assessment Southeastern U.S." />
                         </a>
                     </div>
 
                     <div class="project-figure">
                         <a href="climate assessment sw us.png" class="portfolio-lightbox" data-gallery="climate-bias-correction"
-                            data-title="Climate Assessment Southwestern U.S.">
+                            data-title="Climate Assessment Southwestern U.S." data-pswp-width="1000" data-pswp-height="750">
                             <img src="climate assessment sw us.png" alt="Climate Assessment Southwestern U.S." />
                         </a>
                     </div>
@@ -348,17 +348,8 @@ title: "Continental-Scale Climate Bias-Correction & Dashboard | Husayn El Sharif
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
-
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        const lightbox = GLightbox({
-            selector: ".portfolio-lightbox",
-            touchNavigation: true,
-            loop: true,
-            zoomable: true
-        });
-    </script>
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
 </body>
 
 </html>

@@ -45,8 +45,8 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -72,7 +72,7 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
                 <!-- Hero image -->
                 <div class="project-hero-image">
                     <a href="outreach_campaign_infographic.png" class="portfolio-lightbox" data-gallery="public-health-ab-testing-xgboost"
-                        data-title="CDC-style outreach campaign A/B test infographic showing Message A vs Message B">
+                        data-title="CDC-style outreach campaign A/B test infographic showing Message A vs Message B" data-pswp-width="1000" data-pswp-height="750">
                         <img src="outreach_campaign_infographic.png"
                         alt="CDC-style outreach campaign A/B test infographic showing Message A vs Message B"
                         loading="lazy" />
@@ -208,7 +208,7 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
 
                     <div class="project-figure">
                         <a href="permutation_results_histogram.png" class="portfolio-lightbox" data-gallery="public-health-ab-testing-xgboost"
-                            data-title="Permutation test null distribution of relative lift with observed lift highlighted">
+                            data-title="Permutation test null distribution of relative lift with observed lift highlighted" data-pswp-width="1000" data-pswp-height="750">
                             <img src="permutation_results_histogram.png"
                             alt="Permutation test null distribution of relative lift with observed lift highlighted"
                             loading="lazy" />
@@ -246,7 +246,7 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
                 </div>
                 <div class="project-figure">
                     <a href="mean_absval_shap_feature_influence.png" class="portfolio-lightbox" data-gallery="public-health-ab-testing-xgboost"
-                        data-title="Global feature importance using mean absolute SHAP values">
+                        data-title="Global feature importance using mean absolute SHAP values" data-pswp-width="1000" data-pswp-height="750">
                         <img src="mean_absval_shap_feature_influence.png"
                         alt="Global feature importance using mean absolute SHAP values"
                         loading="lazy" />
@@ -263,7 +263,7 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
                 </div>
                 <div class="project-figure">
                     <a href="directional_shap_feature_influence.png" class="portfolio-lightbox" data-gallery="public-health-ab-testing-xgboost"
-                        data-title="Directional feature influence using mean signed SHAP values">
+                        data-title="Directional feature influence using mean signed SHAP values" data-pswp-width="1000" data-pswp-height="750">
                         <img src="directional_shap_feature_influence.png"
                         alt="Directional feature influence using mean signed SHAP values"
                         loading="lazy" />
@@ -281,7 +281,7 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
                 </div>
                 <div class="project-figure">
                     <a href="shap_vs_riskscore.png" class="portfolio-lightbox" data-gallery="public-health-ab-testing-xgboost"
-                        data-title="SHAP dependence plot showing SHAP values versus risk score">
+                        data-title="SHAP dependence plot showing SHAP values versus risk score" data-pswp-width="1000" data-pswp-height="750">
                         <img src="shap_vs_riskscore.png"
                         alt="SHAP dependence plot showing SHAP values versus risk score"
                         loading="lazy" />
@@ -387,17 +387,8 @@ title: "Public Health A/B Testing & Predictive Analytics (XGBoost) | Husayn El S
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
-
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        const lightbox = GLightbox({
-            selector: ".portfolio-lightbox",
-            touchNavigation: true,
-            loop: true,
-            zoomable: true
-        });
-    </script>
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
 </body>
 
 </html>

@@ -46,8 +46,8 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
@@ -75,7 +75,7 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
                 <div class="project-hero-image">
                     <a href="soco_energy_demand_forecasting_thumb.png" class="portfolio-lightbox"
                         data-gallery="soco-energy-demand"
-                        data-title="Technical infographic summarizing the SOCO 48-hour energy demand forecasting project">
+                        data-title="Technical infographic summarizing the SOCO 48-hour energy demand forecasting project" data-pswp-width="1000" data-pswp-height="750">
                         <img src="soco_energy_demand_forecasting_thumb.png"
                             alt="Technical infographic summarizing the SOCO 48-hour energy demand forecasting project" />
                     </a>
@@ -185,7 +185,7 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
                     <div class="project-figure">
                         <a href="soco_target_time_series.png" class="portfolio-lightbox"
                             data-gallery="soco-energy-demand"
-                            data-title="Full SOCO hourly electricity demand history from 2015 to 2026">
+                            data-title="Full SOCO hourly electricity demand history from 2015 to 2026" data-pswp-width="2400" data-pswp-height="1400">
                             <img src="soco_target_time_series.png"
                                 alt="Full SOCO hourly electricity demand history from 2015 to 2026" />
                         </a>
@@ -274,7 +274,7 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
 
                     <div class="project-figure">
                         <a href="soco_streamlit_app_1.png" class="portfolio-lightbox" data-gallery="soco-energy-demand"
-                            data-title="Streamlit dashboard showing actual versus predicted SOCO energy demand with model controls">
+                            data-title="Streamlit dashboard showing actual versus predicted SOCO energy demand with model controls" data-pswp-width="1560" data-pswp-height="1104">
                             <img src="soco_streamlit_app_1.png"
                                 alt="Streamlit dashboard showing actual versus predicted SOCO energy demand with model controls" />
                         </a>
@@ -361,7 +361,7 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
                     <div class="project-figure">
                         <a href="soco_xgboost_pruned_top_20_shap_features.png" class="portfolio-lightbox"
                             data-gallery="soco-energy-demand"
-                            data-title="Top 20 feature importance values for the XGBoost pruned Top-50 energy demand forecasting model">
+                            data-title="Top 20 feature importance values for the XGBoost pruned Top-50 energy demand forecasting model" data-pswp-width="1176" data-pswp-height="896">
                             <img src="soco_xgboost_pruned_top_20_shap_features.png"
                                 alt="Top 20 feature importance values for the XGBoost pruned Top-50 energy demand forecasting model" />
                         </a>
@@ -487,16 +487,8 @@ title: "SOCO 48-Hour Energy Demand Forecasting | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        const lightbox = GLightbox({
-            selector: ".portfolio-lightbox",
-            touchNavigation: true,
-            loop: true,
-            zoomable: true
-        });
-    </script>
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
 
 </body>
 

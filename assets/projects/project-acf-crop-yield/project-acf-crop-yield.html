@@ -48,8 +48,8 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <!-- GLightbox CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../../css/style.css" />
 </head>
@@ -75,7 +75,7 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
                 <div class="project-hero-image">
                     <!-- Replace the src with your actual screenshot path (1000x750 4:3 image) -->
                     <a href="project-acf-crop-yield-16x9.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                        data-title="Climate-informed crop yield and irrigation projections for the ACF River Basin">
+                        data-title="Climate-informed crop yield and irrigation projections for the ACF River Basin" data-pswp-width="1024" data-pswp-height="576">
                         <img src="project-acf-crop-yield-16x9.png"
                         alt="Climate-informed crop yield and irrigation projections for the ACF River Basin" />
                     </a>
@@ -170,7 +170,7 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
             <div class="project-figure">
                 <a href="jvbc improvement perfromance.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                    data-title="JVBC Joint CDF Improvement">
+                    data-title="JVBC Joint CDF Improvement" data-pswp-width="1000" data-pswp-height="750">
                     <img src="jvbc improvement perfromance.png" alt="JVBC Joint CDF Improvement" />
                 </a>
             </div>
@@ -227,14 +227,14 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
             <section id="deployment" class="section">
                 <div class="project-figure">
                     <a href="precip and temp projections.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                        data-title="Annual Temperature and Precipitation Projections">
+                        data-title="Annual Temperature and Precipitation Projections" data-pswp-width="1024" data-pswp-height="576">
                         <img src="precip and temp projections.png" alt="Annual Temperature and Precipitation Projections" />
                     </a>
                 </div>
 
                 <div class="project-figure">
                     <a href="pet and precip deficit projections.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                        data-title="Potential Evapotranspiration and Precipitation Deficit Projections">
+                        data-title="Potential Evapotranspiration and Precipitation Deficit Projections" data-pswp-width="1024" data-pswp-height="576">
                         <img src="pet and precip deficit projections.png"
                         alt="Potential Evapotranspiration and Precipitation Deficit Projections" />
                     </a>
@@ -281,7 +281,7 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
                     <div class="project-figure">
                         <a href="growing season classification.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                            data-title="Projected Change in Growing Season Classification">
+                            data-title="Projected Change in Growing Season Classification" data-pswp-width="1024" data-pswp-height="576">
                             <img src="growing season classification.png"
                             alt="Projected Change in Growing Season Classification" />
                         </a>
@@ -289,7 +289,7 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
                     <div class="project-figure">
                         <a href="projections irr vol 1.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                            data-title="Projected Change in Irrigation Volume (Central ACF)">
+                            data-title="Projected Change in Irrigation Volume (Central ACF)" data-pswp-width="1024" data-pswp-height="576">
                             <img src="projections irr vol 1.png"
                             alt="Projected Change in Irrigation Volume (Central ACF)" />
                         </a>
@@ -297,7 +297,7 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
                     <div class="project-figure">
                         <a href="projections irr vol 2.png" class="portfolio-lightbox" data-gallery="acf-crop-yield"
-                            data-title="Projected Change in Irrigation Volume (Southern ACF)">
+                            data-title="Projected Change in Irrigation Volume (Southern ACF)" data-pswp-width="1024" data-pswp-height="576">
                             <img src="projections irr vol 2.png"
                             alt="Projected Change in Irrigation Volume (Southern ACF)" />
                         </a>
@@ -383,17 +383,8 @@ title: "Climate-Informed Crop Yield & Irrigation Projections | Husayn El Sharif"
 
     <script src="/assets/js/contact-obfuscation.js"></script>
 
-
-    <!-- GLightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        const lightbox = GLightbox({
-            selector: ".portfolio-lightbox",
-            touchNavigation: true,
-            loop: true,
-            zoomable: true
-        });
-    </script>
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
 </body>
 
 </html>
