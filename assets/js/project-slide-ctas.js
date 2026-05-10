@@ -76,6 +76,12 @@
     window.requestAnimationFrame(updateVisibility);
   }
 
+  function requestInitialVisibilityUpdate() {
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(updateVisibility);
+    });
+  }
+
   if (sessionStorage.getItem(storageKey) === "true") {
     ctaNav.classList.add("is-dismissed");
     return;
@@ -101,7 +107,7 @@
 
     window.addEventListener("scroll", requestVisibilityUpdate, { passive: true });
     window.addEventListener("resize", requestVisibilityUpdate);
-    updateVisibility();
+    requestInitialVisibilityUpdate();
   } catch (error) {
     ctaNav.remove();
   }
