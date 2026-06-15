@@ -1,0 +1,516 @@
+---
+title: "Autodesk Agentic RAG App | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Autodesk Agentic RAG App | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Autodesk Agentic RAG App
+                </h2>
+
+                <div class="project-hero-image">
+                    <a href="Autodesk Rag App Overview.png" class="portfolio-lightbox" data-gallery="autodesk-rag-app"
+                        data-title="Autodesk RAG app architecture and workflow overview" data-pswp-width="1500" data-pswp-height="845">
+                        <img src="Autodesk Rag App Overview.png"
+                            alt="Autodesk RAG app architecture and workflow summary" />
+                    </a>
+                </div>
+
+                <div class="project-meta-pills">
+                    <span class="project-pill">Agentic RAG</span>
+                    <span class="project-pill">Hybrid Retrieval</span>
+                    <span class="project-pill">Chroma</span>
+                    <span class="project-pill">BM25</span>
+                    <span class="project-pill">Weighted RRF</span>
+                    <span class="project-pill">Cross-Encoder Reranking</span>
+                    <span class="project-pill">LangSmith</span>
+                    <span class="project-pill">Streamlit</span>
+                    <span class="project-pill">Hugging Face Spaces</span>
+                    <span class="project-pill">Docker</span>
+                    <span class="project-pill">Supabase Monitoring</span>
+                </div>
+
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Machine Learning Engineer / RAG Developer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Autodesk product knowledge, software support, CAD/CAM/CAE workflows, and customer-facing technical Q&amp;A</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, Streamlit, LangChain/LangSmith, Chroma, BM25, OpenAI embeddings, cross-encoder reranking, SerpAPI, Supabase, Docker, Hugging Face Spaces</dd>
+
+                        <dt>Corpus</dt>
+                        <dd>1,218 raw Autodesk HTML pages cleaned to 974 retained Markdown documents and 19,611 indexed chunks</dd>
+
+                        <dt>Search Modes</dt>
+                        <dd>Local document search, local + Autodesk.com official web evidence, and local + capped open-web evidence</dd>
+
+                        <dt>Recommended Demo Mode</dt>
+                        <dd>Option 2: Local Document Search + Autodesk.com, based on the strongest overall evaluation balance</dd>
+
+                        <dt>Repository</dt>
+                        <dd><a href="https://github.com/helsharif/autodesk-rag-app/" target="_blank" rel="noopener noreferrer">github.com/helsharif/autodesk-rag-app</a></dd>
+
+                        <dt>Live Demo</dt>
+                        <dd><a href="https://huggingface.co/spaces/helsharif/autodesk-rag-assistant" target="_blank" rel="noopener noreferrer">huggingface.co/spaces/helsharif/autodesk-rag-assistant</a></dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project is an <strong>agentic retrieval-augmented generation application</strong> for answering Autodesk
+                        product and workflow questions with grounded local evidence, optional web verification, source citations,
+                        and conservative no-answer behavior when evidence is insufficient.
+                    </p>
+                    <p>
+                        The system moves beyond a basic chatbot by combining corpus cleaning, dense and lexical retrieval, reciprocal
+                        rank fusion, source caps, same-document context expansion, cross-encoder reranking, adequacy checks, prompt-injection
+                        hardening, LangSmith evaluation, monitoring hooks, and a public Docker deployment on Hugging Face Spaces.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Autodesk product information spans product pages, support content, feature descriptions, system requirements,
+                        licensing pages, industry workflows, and comparison pages. A user may ask a natural-language question about
+                        Fusion, AutoCAD, Revit, Inventor, Maya, or related workflows, but the answer often requires retrieving the
+                        right product-specific evidence and avoiding unsupported generalizations.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong>
+                        Can a hosted RAG assistant answer Autodesk product and workflow questions with concise, cited responses while
+                        combining local corpus evidence, official Autodesk.com verification, open-web corroboration when selected,
+                        and strict safeguards against unsupported or prompt-injected answers?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== App Interface ===== -->
+            <section id="app-ui" class="section">
+                <h2 class="section-title">Streamlit App Interface</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The Streamlit interface is organized around four review-friendly areas: Ask, Settings &amp; Eval, Monitoring,
+                        and About the App. Users can submit Autodesk questions, switch search modes, inspect cached evaluation metrics,
+                        and review runtime monitoring summaries when Supabase is configured.
+                    </p>
+
+                    <div class="project-figure">
+                        <a href="Autodesk RAG App UI Ask.png" class="portfolio-lightbox" data-gallery="autodesk-rag-app"
+                            data-title="Ask tab for the Autodesk RAG assistant" data-pswp-width="926" data-pswp-height="1135">
+                            <img src="Autodesk RAG App UI Ask.png"
+                                alt="Ask tab for the Autodesk RAG assistant" />
+                        </a>
+                    </div>
+
+                    <div class="project-figure">
+                        <a href="Autodesk RAG App UI Settings Eval.png" class="portfolio-lightbox" data-gallery="autodesk-rag-app"
+                            data-title="Settings and evaluation tab for selecting search mode and reviewing metrics" data-pswp-width="1263" data-pswp-height="1116">
+                            <img src="Autodesk RAG App UI Settings Eval.png"
+                                alt="Settings and evaluation tab for the Autodesk RAG assistant" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Live Demo ===== -->
+            <section id="live-demo" class="section">
+                <h2 class="section-title">Live Demo Walkthrough</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The demo video shows the hosted application flow, including asking Autodesk product questions, selecting
+                        evidence policies, and reviewing how the assistant presents sourced answers.
+                    </p>
+                </div>
+
+                <div class="project-video-embed project-video-embed--local">
+                    <video controls preload="metadata" poster="Autodesk Rag App Overview.png">
+                        <source src="autodesk-rag-demo.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- ===== Data ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Corpus Cleaning &amp; Indexing</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The data pipeline converts raw Autodesk HTML pages into RAG-ready Markdown and retains metadata needed for
+                        source-grounded retrieval. The cleaning stage removes boilerplate, drops very small or non-English pages after
+                        enrichment, and writes per-file diagnostics for review.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Raw HTML files found:</strong> 1,218 Autodesk pages.</li>
+                        <li><strong>Retained cleaned documents:</strong> 974 Markdown files after purge rules.</li>
+                        <li><strong>Raw-to-cleaned size reduction:</strong> 303.27 MB of HTML to 4.37 MB of Markdown.</li>
+                        <li><strong>Character reduction:</strong> 317,446,072 raw characters to 3,574,578 cleaned characters, approximately 98.87% smaller.</li>
+                        <li><strong>Indexed chunks:</strong> 19,611 chunks stored in both Chroma and BM25 artifacts.</li>
+                        <li><strong>Embedding model:</strong> OpenAI <code>text-embedding-3-small</code> with 1,536-dimensional vectors.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Architecture ===== -->
+            <section id="architecture" class="section">
+                <h2 class="section-title">Agentic RAG Architecture</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The runtime agent treats the user question, retrieved local excerpts, and web snippets as untrusted inputs.
+                        It applies deterministic safety checks, routes the query, retrieves local and optional web evidence, reranks
+                        the combined candidates, checks answerability, and only then generates a concise answer with citations.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Security screen:</strong> blocks obvious jailbreak, prompt-reveal, secret-exfiltration, and unsafe cyber requests before the router LLM.</li>
+                        <li><strong>Query routing:</strong> identifies Autodesk relevance, current/latest/pricing needs, and compare/contrast questions.</li>
+                        <li><strong>Hybrid retrieval:</strong> searches Chroma vectors and BM25 keyword indexes in parallel.</li>
+                        <li><strong>Rank fusion:</strong> merges dense and lexical results with weighted reciprocal rank fusion and per-source caps.</li>
+                        <li><strong>Compare-aware retrieval:</strong> extracts product entities, retrieves focused subqueries, deduplicates, and balances evidence across compared products.</li>
+                        <li><strong>Context expansion:</strong> adds neighboring chunks from the same source document to reduce chunk-boundary failures.</li>
+                        <li><strong>Reranking:</strong> uses <code>cross-encoder/ms-marco-MiniLM-L6-v2</code> to rerank local and web evidence together.</li>
+                        <li><strong>Adequacy gate:</strong> returns a conservative no-answer response when evidence does not explicitly support an answer.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Search Modes ===== -->
+            <section id="retrieval" class="section">
+                <h2 class="section-title">Search Modes &amp; Retrieval Engineering</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The app exposes three search policies so reviewers can compare a controlled local-corpus baseline against
+                        modes that add official Autodesk.com evidence or broader open-web corroboration.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Runtime Search Modes</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Search Mode</th>
+                                <th>Behavior</th>
+                                <th>Best Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Local Document Search</td>
+                                <td>Uses only local Autodesk corpus chunks from Chroma and BM25.</td>
+                                <td>Fast controlled baseline.</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Local Document Search + Autodesk.com</td>
+                                <td>Combines local retrieval with official Autodesk.com web evidence.</td>
+                                <td>Preferred demo mode for current official Autodesk facts.</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Local Document Search + Open Web Search</td>
+                                <td>Combines local retrieval with capped open-web evidence.</td>
+                                <td>Broader corroboration when official-only search may miss context.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Observability ===== -->
+            <section id="observability" class="section">
+                <h2 class="section-title">Evaluation &amp; Monitoring</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project uses a fixed 50-question golden dataset and LangSmith experiments to score faithfulness, answer
+                        relevance, context precision, context recall, and latency for each search mode. The Streamlit evaluation tab
+                        can create or reuse the LangSmith dataset, run selected modes, and cache the resulting metrics for display.
+                    </p>
+
+                    <div class="project-figure">
+                        <a href="Autodesk RAG App UI Monitoring.png" class="portfolio-lightbox" data-gallery="autodesk-rag-app"
+                            data-title="Monitoring tab showing logged interaction diagnostics and retrieval metadata" data-pswp-width="1295" data-pswp-height="1177">
+                            <img src="Autodesk RAG App UI Monitoring.png"
+                                alt="Monitoring tab for the Autodesk RAG assistant" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Results ===== -->
+            <section id="results" class="section">
+                <h2 class="section-title">Evaluation Results</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        All three search modes were evaluated against the same 50-question test set. Option 2 is the strongest
+                        overall portfolio demo mode because it improves answer relevance and context recall with official Autodesk.com
+                        evidence while keeping source authority more controlled than open-web search.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">LangSmith Evaluation Summary</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Option</th>
+                                <th>Search Mode</th>
+                                <th>Faithfulness</th>
+                                <th>Answer Relevance</th>
+                                <th>Context Precision</th>
+                                <th>Context Recall</th>
+                                <th>Avg Latency</th>
+                                <th>P50</th>
+                                <th>P99</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Local Document Search</td>
+                                <td><strong>0.91</strong></td>
+                                <td>0.66</td>
+                                <td>0.72</td>
+                                <td>0.58</td>
+                                <td>6.31s</td>
+                                <td>6.55s</td>
+                                <td>15.11s</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Local + Autodesk.com</td>
+                                <td>0.87</td>
+                                <td><strong>0.85</strong></td>
+                                <td>0.81</td>
+                                <td><strong>0.74</strong></td>
+                                <td>12.99s</td>
+                                <td>12.43s</td>
+                                <td>22.87s</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Local + Open Web Search</td>
+                                <td>0.84</td>
+                                <td>0.78</td>
+                                <td><strong>0.86</strong></td>
+                                <td>0.62</td>
+                                <td>14.11s</td>
+                                <td>12.34s</td>
+                                <td>73.17s</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Key Insights ===== -->
+            <section id="insights" class="section">
+                <h2 class="section-title">Key Insights</h2>
+
+                <div class="project-section-text">
+                    <ul class="project-bullets">
+                        <li><strong>Official web evidence improved answer quality:</strong> Autodesk.com search raised answer relevance and context recall over local-only retrieval.</li>
+                        <li><strong>Local-only retrieval remained the fastest and most faithful:</strong> Option 1 had the lowest latency and highest faithfulness score.</li>
+                        <li><strong>Open-web search added context but increased uncertainty:</strong> Option 3 had the best context precision, but weaker authority control and a much higher P99 latency.</li>
+                        <li><strong>Corpus cleaning was essential:</strong> aggressive HTML cleanup reduced raw text volume by approximately 98.87% while preserving product-specific Markdown evidence.</li>
+                        <li><strong>RAG safety needs multiple layers:</strong> the app combines deterministic security screening, sanitized retrieval queries, untrusted-context handling, and an adequacy gate.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Applied AI Engineering Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates how to build a public, reviewable RAG application for a realistic product-support
+                        domain where answers need to be concise, grounded, current when needed, and inspectable by technical reviewers.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Production-minded retrieval:</strong> combines local vectors, lexical search, rank fusion, source caps, context expansion, and reranking.</li>
+                        <li><strong>Operational deployment:</strong> packages the app with Docker for Hugging Face Spaces and keeps raw local artifacts out of the hosted build context.</li>
+                        <li><strong>Evaluation discipline:</strong> uses a fixed golden dataset and LangSmith metrics instead of relying on ad hoc demo questions.</li>
+                        <li><strong>Monitoring path:</strong> supports Supabase-backed logging of latency, source counts, web fallback behavior, answerability outcome, and model metadata.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Presentation ===== -->
+            <section id="presentation" class="section">
+                <h2 class="section-title">Project Presentation</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The presentation below summarizes the project motivation, architecture, retrieval strategy, evaluation, and
+                        deployment path.
+                    </p>
+                </div>
+
+                <div class="project-presentation-embed">
+                    <iframe src="https://1drv.ms/p/c/5215a89a0899002e/IQRCHOvy_ViASaHrU7Ux9dnvASPRKAL5pzu2AFVcakNdQh4" width="402" height="327" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository &amp; Live Demo</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The full implementation and hosted Hugging Face Space are available through the links below.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/autodesk-rag-app/" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://huggingface.co/spaces/helsharif/autodesk-rag-assistant" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            Open Live Demo on Hugging Face Spaces
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The repository includes the Streamlit app, core agent workflow, retrieval modules, corpus cleaning scripts,
+                        index-building notebooks, LangSmith evaluation workflow, monitoring hooks, Docker deployment files, and
+                        documentation for reproducing the pipeline.
+                    </p>
+
+                    <p class="project-github-note">
+                        Disclaimer: this is a portfolio demonstration and educational project. Autodesk product details, pricing,
+                        licensing, and availability may change, so users should verify official requirements directly with Autodesk.
+                    </p>
+                </div>
+            </section>
+
+
+            <nav class="project-slide-ctas" data-project-slide-ctas data-scroll-threshold="0.85" aria-label="Previous and next portfolio projects"></nav>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+    <script src="/assets/js/project-slide-ctas.js"></script>
+
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
+</body>
+
+</html>
