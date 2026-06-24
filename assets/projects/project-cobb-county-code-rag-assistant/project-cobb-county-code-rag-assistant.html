@@ -101,7 +101,7 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                         <dd>Local government, building permits, fire code, public-sector document search</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python 3.12, Streamlit, LangChain, Chroma, local BM25 corpus, PyPDF/LangChain loaders, Docling, OpenAI, optional Gemini, SerpAPI, Docker, LangSmith</dd>
+                        <dd>Python, Streamlit, LangSmith/LangChain, Chroma, local BM25 corpus, PyPDF, Docling, OpenAI, SerpAPI, Docker, Databricks</dd>
 
                         <dt>Corpus</dt>
                         <dd>41 local PDFs, approximately 60 MB, 4,093+ loaded pages, and 13,844 vector chunks with source, parser, chunk, and page metadata</dd>
@@ -522,6 +522,98 @@ title: "Cobb County Building & Fire Code Agentic RAG Assistant | Husayn El Shari
                         <li><strong>Production mindset:</strong> includes reproducible ingestion, Docker support, environment templates, Git LFS artifacts, and hosted app deployment.</li>
                         <li><strong>Evaluation and observability:</strong> uses LangSmith traces and fixed golden-set metrics to inspect retrieval quality, routing decisions, latency, and generated outputs.</li>
                     </ul>
+                </div>
+            </section>
+
+            <!-- ===== Databricks Implementation ===== -->
+            <section id="databricks-implementation" class="section">
+                <h2 class="section-title">Databricks Implementation</h2>
+
+                <div class="project-figure">
+                    <a href="databricks_cobb_rag_document_chunks_hybrid_index.png" class="portfolio-lightbox" data-gallery="cobb-county-code-rag-assistant"
+                        data-title="Databricks AI Search hybrid index for Cobb County building and fire code document chunks" data-pswp-width="3440" data-pswp-height="1279">
+                        <img src="databricks_cobb_rag_document_chunks_hybrid_index.png"
+                        alt="Databricks AI Search hybrid index for Cobb County building and fire code document chunks" />
+                    </a>
+                </div>
+
+                <div class="project-section-text">
+                    <p>
+                        I also implemented a Databricks version of the app under <code>databricks_implementation/</code>,
+                        adapting the local RAG workflow to a managed lakehouse deployment. Source documents are loaded from a
+                        Unity Catalog volume, chunked into the managed Delta table <code>cobb_rag.fire_code.document_chunks</code>,
+                        indexed through Databricks AI Search hybrid retrieval, and served through a Databricks Streamlit app.
+                    </p>
+
+                    <p>
+                        The Databricks pipeline preserves the important production behaviors from the local app where practical:
+                        hybrid document retrieval, same-document neighbor context expansion, optional CrossEncoder reranking,
+                        source-grounded answer generation, and evaluation against the same fixed 50-question golden test set.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Lakehouse storage:</strong> documents and generated chunks are organized in Unity Catalog assets for governed retrieval workflows.</li>
+                        <li><strong>Managed search:</strong> the local Chroma/BM25 layer is replaced with a Databricks AI Search hybrid index over the chunk table.</li>
+                        <li><strong>Deployment target:</strong> the Streamlit interface is packaged as a Databricks app for workspace-hosted querying.</li>
+                        <li><strong>Evaluation parity:</strong> Databricks results are saved under <code>databricks_implementation/eval_results/</code> using the same 50-question benchmark.</li>
+                    </ul>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Databricks Evaluation Performance</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Setting</th>
+                                <th>Questions</th>
+                                <th>Faithfulness</th>
+                                <th>Answer Relevance</th>
+                                <th>Context Precision</th>
+                                <th>Context Recall</th>
+                                <th>Avg Latency (s)</th>
+                                <th>P50 (s)</th>
+                                <th>P99 (s)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Databricks AI Search Hybrid + CrossEncoder</td>
+                                <td>50</td>
+                                <td>0.920</td>
+                                <td>0.880</td>
+                                <td>0.875</td>
+                                <td>0.855</td>
+                                <td>9.69</td>
+                                <td>8.92</td>
+                                <td>24.67</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="project-section-text">
+                    <p>
+                        In the recorded run <code>databricks-rag-eval-20260627-055203</code>, the Databricks deployment maintained
+                        strong grounding and retrieval quality while moving storage, indexing, and serving into managed platform services.
+                        Average latency was 9.69 seconds, with 8.92 seconds at P50 and 24.67 seconds at P99, reflecting the managed
+                        app and model-serving path plus occasional heavier retrieval or generation cases.
+                    </p>
+                </div>
+
+                <div class="project-figure">
+                    <a href="databricks_cobb_rag_unity_catalog.png" class="portfolio-lightbox" data-gallery="cobb-county-code-rag-assistant"
+                        data-title="Unity Catalog assets for the Databricks Cobb County RAG implementation" data-pswp-width="1578" data-pswp-height="883">
+                        <img src="databricks_cobb_rag_unity_catalog.png"
+                        alt="Unity Catalog assets for the Databricks Cobb County RAG implementation" />
+                    </a>
+                </div>
+
+                <div class="project-figure">
+                    <a href="databricks_cobb_rag_streamlit_app_example_query.png" class="portfolio-lightbox" data-gallery="cobb-county-code-rag-assistant"
+                        data-title="Databricks Streamlit app example query for the Cobb County building and fire code RAG assistant" data-pswp-width="1197" data-pswp-height="1278">
+                        <img src="databricks_cobb_rag_streamlit_app_example_query.png"
+                        alt="Databricks Streamlit app example query for the Cobb County building and fire code RAG assistant" />
+                    </a>
                 </div>
             </section>
 
