@@ -48,6 +48,8 @@ AWS, Google Cloud, Databricks, Snowflake, MLflow, Docker, dbt, Streamlit, Huggin
 **Geospatial Analysis**  
 ArcGIS, QGIS, GeoPandas, Google Earth Engine  
 
+---
+
 ## 🏅 Certifications
 
 - Google Cloud Professional Machine Learning Engineer (2026)
