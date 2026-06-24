@@ -85,8 +85,10 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <span class="project-pill">FastAPI</span>
                     <span class="project-pill">Next.js</span>
                     <span class="project-pill">Scopus API</span>
+                    <span class="project-pill">OpenAlex / PyAlex</span>
+                    <span class="project-pill">Semantic Scholar</span>
                     <span class="project-pill">Zotero API</span>
-                    <span class="project-pill">DOI Verification</span>
+                    <span class="project-pill">LLM Relevance Critic</span>
                     <span class="project-pill">Document Export</span>
                 </div>
 
@@ -100,7 +102,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                         <dd>Scientific literature review automation for hydrology, climate, infrastructure, and environmental research</dd>
 
                         <dt>Tech Stack</dt>
-                        <dd>Python, FastAPI, Next.js, React, Tailwind CSS, Scopus API, Zotero API, Claude Code CLI, OpenRouter, python-docx, WeasyPrint</dd>
+                        <dd>Python, FastAPI, Next.js, React, Tailwind CSS, Scopus API, OpenAlex/PyAlex, Semantic Scholar, Crossref, SerpAPI, Zotero API, Claude Code CLI, OpenRouter, python-docx, ReportLab</dd>
 
                         <dt>Objective</dt>
                         <dd>Reduce manual literature-review overhead while preserving citation provenance, DOI traceability, and reusable research outputs</dd>
@@ -114,13 +116,15 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <p>
                         This project is a <strong>local research automation application</strong> that turns a scientific
                         topic into a citation-grounded literature review workflow. The app combines LLM synthesis with
-                        structured scholarly search, DOI verification, Zotero citation management, and document export
+                        multi-source scholarly and official-document retrieval, LLM relevance classification, DOI/URL
+                        verification, Zotero citation management, and document export
                         so generated reviews remain inspectable and tied back to real source metadata.
                     </p>
                     <p>
                         The system productizes an earlier multi-agent literature-review prototype into a practical
-                        FastAPI and Next.js application. Users can choose an LLM backend, set search depth, provide a
-                        Zotero collection, watch live progress, and download the final review as Markdown, Word, or PDF.
+                        FastAPI and Next.js application. Users can choose an LLM backend, select source categories, set
+                        search depth, provide a Zotero collection, watch live progress, and download the final review as
+                        Markdown, Word, or PDF.
                     </p>
                 </div>
             </section>
@@ -154,8 +158,9 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
 
                 <div class="project-section-text">
                     <p>
-                        The Next.js interface lets the user enter a research topic, select an LLM backend, choose search
-                        depth and output format, and optionally provide a Zotero collection name. The frontend consumes
+                        The Next.js interface lets the user enter a research topic, select an LLM backend, choose source
+                        categories, set search depth and output format, and optionally provide a Zotero collection name.
+                        The frontend consumes
                         server-sent events from the FastAPI backend so the user can follow each step of the workflow
                         while the review is being generated.
                     </p>
@@ -165,7 +170,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <a href="auto-lit-review-gui-example.png" class="portfolio-lightbox"
                         data-gallery="multi-agent-genai-literature-review"
                         data-title="Review setup interface for automated scientific literature review"
-                        data-pswp-width="1140" data-pswp-height="1071">
+                        data-pswp-width="1124" data-pswp-height="1193">
                         <img src="auto-lit-review-gui-example.png"
                             alt="Review setup interface for automated scientific literature review" />
                     </a>
@@ -175,7 +180,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <a href="auto-lit-review-running-workflow-progress.png" class="portfolio-lightbox"
                         data-gallery="multi-agent-genai-literature-review"
                         data-title="Live workflow progress while generating an automated literature review"
-                        data-pswp-width="1022" data-pswp-height="1207">
+                        data-pswp-width="1022" data-pswp-height="735">
                         <img src="auto-lit-review-running-workflow-progress.png"
                             alt="Live workflow progress while generating an automated literature review" />
                     </a>
@@ -188,18 +193,44 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
 
                 <div class="project-section-text">
                     <p>
-                        The backend orchestrates a multi-step workflow that decomposes the user topic, searches Scopus,
-                        synthesizes a review, verifies cited DOIs, saves verified papers to Zotero, and exports the
-                        final bibliography in American Geophysical Union style.
+                        The backend orchestrates a multi-step workflow that creates an evidence-aware query plan,
+                        searches multiple scholarly and official sources, asks an LLM relevance critic to classify
+                        candidate sources, synthesizes a bounded high-priority evidence set, verifies cited DOIs and
+                        trusted URLs, saves verified sources to Zotero, and exports the final bibliography in American
+                        Geophysical Union style.
                     </p>
 
                     <ul class="project-bullets">
-                        <li><strong>Topic decomposition:</strong> an LLM converts the user request into concise Scopus subtopics and a Zotero-ready collection title.</li>
-                        <li><strong>Scholarly search:</strong> Scopus metadata is retrieved and deduplicated by DOI before synthesis.</li>
+                        <li><strong>Evidence-aware planning:</strong> an LLM converts the user request into direct, adjacent, official-document, and seed-title query families.</li>
+                        <li><strong>Multi-source retrieval:</strong> the app searches Scopus, OpenAlex semantic search via PyAlex, Semantic Scholar, Crossref, SerpAPI trusted domains, Data.gov, and OSTI where selected.</li>
+                        <li><strong>Evidence governance:</strong> an LLM relevance critic labels each deduplicated source as direct, adjacent, or transfer-only relative to the actual topic.</li>
+                        <li><strong>Bounded synthesis:</strong> the synthesis prompt receives a capped high-priority working set that favors direct evidence and avoids oversized timeout-prone prompts.</li>
                         <li><strong>Grounded synthesis:</strong> the review prompt requires a final <code>CITED_DOIS</code> marker so the backend can inspect which papers the LLM actually used.</li>
-                        <li><strong>DOI verification:</strong> cited DOI existence is checked against Scopus before papers are saved or included in the bibliography flow.</li>
-                        <li><strong>Citation management:</strong> verified papers are saved into a selected or auto-created Zotero collection, skipping duplicate DOIs already present.</li>
+                        <li><strong>DOI and URL verification:</strong> cited DOIs are checked against Scopus with Crossref fallback, while trusted official no-DOI sources are accepted by URL/source tier.</li>
+                        <li><strong>Citation management:</strong> verified papers, reports, and official documents are saved into a selected or auto-created Zotero collection, skipping duplicates already present.</li>
                         <li><strong>Document export:</strong> the app saves a canonical Markdown review and can generate Word and PDF downloads.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Evidence Governance ===== -->
+            <section id="evidence-governance" class="section">
+                <h2 class="section-title">Evidence Governance &amp; Retrieval Quality</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        A later iteration of the app addressed a key failure mode in automated literature review:
+                        retrieval can return plausible but indirect method-transfer papers when the most relevant
+                        evidence sits outside a single scholarly index. The revised workflow separates discovery from
+                        evidence governance, so the app can distinguish direct evidence from adjacent background and
+                        transfer-only analogies.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Source tiers:</strong> sources are tagged as peer-reviewed literature, government or regulator reports, utility/technical documents, professional-society sources, or trusted context-only web material.</li>
+                        <li><strong>LLM relevance critic:</strong> after deduplication, a classification pass labels sources relative to the exact user topic rather than relying on brittle keyword gates.</li>
+                        <li><strong>Direct-evidence threshold:</strong> the final review must disclose when direct evidence is limited instead of padding findings with loosely transferable examples.</li>
+                        <li><strong>Inspectable rationale:</strong> classification reasons are carried into the synthesis context so users can see why a source was treated as direct, adjacent, or excluded.</li>
                     </ul>
                 </div>
             </section>
@@ -270,9 +301,10 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                 <div class="project-section-text">
                     <p>
                         The final report includes run metadata, executive summary, background and scope, thematic
-                        synthesis, key papers, research gaps, open questions, and an AGU-style bibliography. Metadata
-                        records the topic, selected backend, reviewed papers, verified citations, Zotero collection, and
-                        assigned OpenRouter model when applicable.
+                        synthesis, evidence-governance counts, key sources, research gaps, open questions, and an
+                        AGU-style bibliography. Metadata records the topic, selected backend, reviewed sources, direct
+                        evidence counts, verified citations, Zotero collection, and assigned OpenRouter model when
+                        applicable.
                     </p>
                 </div>
 
@@ -280,7 +312,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <a href="auto-lit-review-result-01.png" class="portfolio-lightbox"
                         data-gallery="multi-agent-genai-literature-review"
                         data-title="Generated literature review metadata and executive summary"
-                        data-pswp-width="1237" data-pswp-height="1233">
+                        data-pswp-width="1344" data-pswp-height="1243">
                         <img src="auto-lit-review-result-01.png"
                             alt="Generated literature review metadata and executive summary" />
                     </a>
@@ -290,7 +322,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <a href="auto-lit-review-result-02.png" class="portfolio-lightbox"
                         data-gallery="multi-agent-genai-literature-review"
                         data-title="Generated research gaps, open questions, and AGU-style bibliography"
-                        data-pswp-width="1329" data-pswp-height="1233">
+                        data-pswp-width="1037" data-pswp-height="1047">
                         <img src="auto-lit-review-result-02.png"
                             alt="Generated research gaps, open questions, and AGU-style bibliography" />
                     </a>
@@ -304,15 +336,16 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                 <div class="project-section-text">
                     <p>
                         Citation grounding is a core design goal. The backend parses cited DOIs from the LLM output,
-                        verifies them through Scopus, saves verified papers to Zotero, and uses the Zotero collection as
-                        the source for bibliography export. This gives the user both a generated review and a reusable
-                        citation-management asset.
+                        verifies them through Scopus and Crossref, saves verified papers and selected official
+                        documents to Zotero, and uses the Zotero collection as the source for bibliography export. This
+                        gives the user both a generated review and a reusable citation-management asset.
                     </p>
 
                     <ul class="project-bullets">
                         <li><strong>Collection handling:</strong> create a new Zotero collection or resume an existing collection by name.</li>
                         <li><strong>Duplicate protection:</strong> skip DOIs already present in the target collection.</li>
                         <li><strong>Bibliography export:</strong> produce references in American Geophysical Union style.</li>
+                        <li><strong>No-DOI support:</strong> preserve URL-backed government, utility, and professional documents when they are appropriate evidence for applied topics.</li>
                         <li><strong>Run provenance:</strong> record verified citation counts, collection keys, LLM backend, and assigned OpenRouter model where relevant.</li>
                     </ul>
                 </div>
@@ -321,7 +354,7 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <a href="auto-lit-review-result-zotero.png" class="portfolio-lightbox"
                         data-gallery="multi-agent-genai-literature-review"
                         data-title="Verified papers saved in Zotero collection"
-                        data-pswp-width="1457" data-pswp-height="720">
+                        data-pswp-width="2044" data-pswp-height="942">
                         <img src="auto-lit-review-result-zotero.png"
                             alt="Verified papers saved in Zotero collection" />
                     </a>
@@ -336,13 +369,14 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
                     <p>
                         This project demonstrates practical GenAI product engineering for a workflow where traceability
                         matters. Instead of treating LLM output as the final authority, the app wraps generation with
-                        API-backed search, DOI checks, citation manager integration, structured exports, and visible run
-                        metadata.
+                        API-backed search, LLM relevance screening, DOI/URL checks, citation manager integration,
+                        structured exports, and visible run metadata.
                     </p>
 
                     <ul class="project-bullets">
                         <li><strong>Research automation:</strong> converts a high-level topic into a structured, cited review artifact.</li>
-                        <li><strong>Grounded generation:</strong> separates prose synthesis from DOI verification and bibliography export.</li>
+                        <li><strong>Grounded generation:</strong> separates retrieval, relevance classification, prose synthesis, DOI/URL verification, and bibliography export.</li>
+                        <li><strong>Evidence quality control:</strong> uses source tiers and an LLM relevance critic to reduce drift toward loosely related transfer-only literature.</li>
                         <li><strong>Model routing:</strong> supports multiple LLM backends with provenance tracking for selected and assigned models.</li>
                         <li><strong>Full-stack implementation:</strong> combines a Next.js frontend, FastAPI backend, async workflow orchestration, document conversion, and external APIs.</li>
                         <li><strong>Operational UX:</strong> includes live progress updates, clearer API errors, output filenames with topic/date/backend codes, and local development tooling.</li>
@@ -368,8 +402,9 @@ title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husa
 
                     <p class="project-github-note">
                         The repository includes the FastAPI app, Next.js frontend, selectable LLM backend workflow,
-                        Scopus and Zotero integrations, document conversion utilities, MCP server code, runtime prompts,
-                        development scripts, and documentation for running the app locally.
+                        Scopus, OpenAlex, Semantic Scholar, Crossref, SerpAPI, Data.gov, OSTI, and Zotero integrations,
+                        document conversion utilities, MCP server code, runtime prompts, development scripts, and
+                        documentation for running the app locally.
                     </p>
 
                     <p class="project-github-note">
