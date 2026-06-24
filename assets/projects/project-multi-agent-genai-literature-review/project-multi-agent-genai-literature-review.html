@@ -1,0 +1,415 @@
+---
+title: "Multi-Agent LLM System for Automated Scientific Literature Review | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Multi-Agent LLM System for Automated Scientific Literature Review | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Multi-Agent LLM System for Automated Scientific Literature Review
+                </h2>
+
+                <div class="project-hero-image">
+                    <a href="auto-lit-review-summary-workflow.png" class="portfolio-lightbox"
+                        data-gallery="multi-agent-genai-literature-review"
+                        data-title="Automated scientific literature review workflow summary"
+                        data-pswp-width="2048" data-pswp-height="2048">
+                        <img src="auto-lit-review-summary-workflow.png"
+                            alt="Automated scientific literature review workflow summary" />
+                    </a>
+                </div>
+
+                <div class="project-meta-pills">
+                    <span class="project-pill">Multi-Agent LLMs</span>
+                    <span class="project-pill">FastAPI</span>
+                    <span class="project-pill">Next.js</span>
+                    <span class="project-pill">Scopus API</span>
+                    <span class="project-pill">Zotero API</span>
+                    <span class="project-pill">DOI Verification</span>
+                    <span class="project-pill">Document Export</span>
+                </div>
+
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>System Architect / Full-Stack GenAI Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Scientific literature review automation for hydrology, climate, infrastructure, and environmental research</dd>
+
+                        <dt>Tech Stack</dt>
+                        <dd>Python, FastAPI, Next.js, React, Tailwind CSS, Scopus API, Zotero API, Claude Code CLI, OpenRouter, python-docx, WeasyPrint</dd>
+
+                        <dt>Objective</dt>
+                        <dd>Reduce manual literature-review overhead while preserving citation provenance, DOI traceability, and reusable research outputs</dd>
+
+                        <dt>Outputs</dt>
+                        <dd>Markdown, Word, and PDF literature-review documents with AGU-style bibliography export</dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project is a <strong>local research automation application</strong> that turns a scientific
+                        topic into a citation-grounded literature review workflow. The app combines LLM synthesis with
+                        structured scholarly search, DOI verification, Zotero citation management, and document export
+                        so generated reviews remain inspectable and tied back to real source metadata.
+                    </p>
+                    <p>
+                        The system productizes an earlier multi-agent literature-review prototype into a practical
+                        FastAPI and Next.js application. Users can choose an LLM backend, set search depth, provide a
+                        Zotero collection, watch live progress, and download the final review as Markdown, Word, or PDF.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Scientific literature reviews are slow because they require several kinds of careful work:
+                        finding relevant papers, screening abstracts and metadata, synthesizing themes across studies,
+                        keeping citations grounded, formatting references, and saving papers for follow-up review.
+                    </p>
+                    <p>
+                        Generic LLM chat workflows can draft prose quickly, but they often lose citation provenance,
+                        invent references, or disconnect claims from verifiable scholarly metadata.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong>
+                        Can a local GenAI research assistant combine LLM synthesis with scholarly APIs and citation
+                        management tooling to make literature review generation more repeatable, traceable, and useful
+                        for scientific workflows?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Application Interface ===== -->
+            <section id="app-ui" class="section">
+                <h2 class="section-title">Review Setup Interface</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The Next.js interface lets the user enter a research topic, select an LLM backend, choose search
+                        depth and output format, and optionally provide a Zotero collection name. The frontend consumes
+                        server-sent events from the FastAPI backend so the user can follow each step of the workflow
+                        while the review is being generated.
+                    </p>
+                </div>
+
+                <div class="project-figure">
+                    <a href="auto-lit-review-gui-example.png" class="portfolio-lightbox"
+                        data-gallery="multi-agent-genai-literature-review"
+                        data-title="Review setup interface for automated scientific literature review"
+                        data-pswp-width="1140" data-pswp-height="1071">
+                        <img src="auto-lit-review-gui-example.png"
+                            alt="Review setup interface for automated scientific literature review" />
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== Workflow ===== -->
+            <section id="workflow" class="section">
+                <h2 class="section-title">System Workflow</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The backend orchestrates a multi-step workflow that decomposes the user topic, searches Scopus,
+                        synthesizes a review, verifies cited DOIs, saves verified papers to Zotero, and exports the
+                        final bibliography in American Geophysical Union style.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Topic decomposition:</strong> an LLM converts the user request into concise Scopus subtopics and a Zotero-ready collection title.</li>
+                        <li><strong>Scholarly search:</strong> Scopus metadata is retrieved and deduplicated by DOI before synthesis.</li>
+                        <li><strong>Grounded synthesis:</strong> the review prompt requires a final <code>CITED_DOIS</code> marker so the backend can inspect which papers the LLM actually used.</li>
+                        <li><strong>DOI verification:</strong> cited DOI existence is checked against Scopus before papers are saved or included in the bibliography flow.</li>
+                        <li><strong>Citation management:</strong> verified papers are saved into a selected or auto-created Zotero collection, skipping duplicate DOIs already present.</li>
+                        <li><strong>Document export:</strong> the app saves a canonical Markdown review and can generate Word and PDF downloads.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== LLM Backends ===== -->
+            <section id="modeling" class="section">
+                <h2 class="section-title">Selectable LLM Backends</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The application is designed for model flexibility. A user can run the same research workflow
+                        with Claude Code locally or with OpenRouter-hosted models, including free-router and named
+                        backend options. When the OpenRouter free router is selected, the app records both the selected
+                        router and the model OpenRouter assigns to the synthesis call.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Supported Model Options</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>UI Label</th>
+                                <th>Backend ID</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Claude Code</td>
+                                <td><code>claude</code></td>
+                                <td>Uses the local Claude Code CLI for prompt execution</td>
+                            </tr>
+                            <tr>
+                                <td>OpenRouter Free Router</td>
+                                <td><code>openrouter_free</code></td>
+                                <td>Requests a free long-context model suitable for literature synthesis</td>
+                            </tr>
+                            <tr>
+                                <td>Gemini 2.5 Flash</td>
+                                <td><code>gemini_flash</code></td>
+                                <td>Routes through OpenRouter to <code>google/gemini-2.5-flash</code></td>
+                            </tr>
+                            <tr>
+                                <td>Qwen3 Coder 480B A35B</td>
+                                <td><code>qwen3_coder_free</code></td>
+                                <td>Uses the free Qwen3 Coder OpenRouter model option</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA Nemotron 3 Ultra</td>
+                                <td><code>nemotron_ultra_free</code></td>
+                                <td>Uses NVIDIA Nemotron Ultra through OpenRouter when available</td>
+                            </tr>
+                            <tr>
+                                <td>NVIDIA Nemotron 3 Super</td>
+                                <td><code>nemotron_super_free</code></td>
+                                <td>Uses NVIDIA Nemotron Super through OpenRouter when available</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Outputs ===== -->
+            <section id="outputs" class="section">
+                <h2 class="section-title">Generated Review Outputs</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The final report includes run metadata, executive summary, background and scope, thematic
+                        synthesis, key papers, research gaps, open questions, and an AGU-style bibliography. Metadata
+                        records the topic, selected backend, reviewed papers, verified citations, Zotero collection, and
+                        assigned OpenRouter model when applicable.
+                    </p>
+                </div>
+
+                <div class="project-figure">
+                    <a href="auto-lit-review-result-01.png" class="portfolio-lightbox"
+                        data-gallery="multi-agent-genai-literature-review"
+                        data-title="Generated literature review metadata and executive summary"
+                        data-pswp-width="1237" data-pswp-height="1233">
+                        <img src="auto-lit-review-result-01.png"
+                            alt="Generated literature review metadata and executive summary" />
+                    </a>
+                </div>
+
+                <div class="project-figure">
+                    <a href="auto-lit-review-result-02.png" class="portfolio-lightbox"
+                        data-gallery="multi-agent-genai-literature-review"
+                        data-title="Generated research gaps, open questions, and AGU-style bibliography"
+                        data-pswp-width="1329" data-pswp-height="1233">
+                        <img src="auto-lit-review-result-02.png"
+                            alt="Generated research gaps, open questions, and AGU-style bibliography" />
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== Zotero ===== -->
+            <section id="deployment" class="section">
+                <h2 class="section-title">Zotero Integration &amp; Citation Provenance</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Citation grounding is a core design goal. The backend parses cited DOIs from the LLM output,
+                        verifies them through Scopus, saves verified papers to Zotero, and uses the Zotero collection as
+                        the source for bibliography export. This gives the user both a generated review and a reusable
+                        citation-management asset.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Collection handling:</strong> create a new Zotero collection or resume an existing collection by name.</li>
+                        <li><strong>Duplicate protection:</strong> skip DOIs already present in the target collection.</li>
+                        <li><strong>Bibliography export:</strong> produce references in American Geophysical Union style.</li>
+                        <li><strong>Run provenance:</strong> record verified citation counts, collection keys, LLM backend, and assigned OpenRouter model where relevant.</li>
+                    </ul>
+                </div>
+
+                <div class="project-figure">
+                    <a href="auto-lit-review-result-zotero.png" class="portfolio-lightbox"
+                        data-gallery="multi-agent-genai-literature-review"
+                        data-title="Verified papers saved in Zotero collection"
+                        data-pswp-width="1457" data-pswp-height="720">
+                        <img src="auto-lit-review-result-zotero.png"
+                            alt="Verified papers saved in Zotero collection" />
+                    </a>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Applied GenAI Engineering Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project demonstrates practical GenAI product engineering for a workflow where traceability
+                        matters. Instead of treating LLM output as the final authority, the app wraps generation with
+                        API-backed search, DOI checks, citation manager integration, structured exports, and visible run
+                        metadata.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Research automation:</strong> converts a high-level topic into a structured, cited review artifact.</li>
+                        <li><strong>Grounded generation:</strong> separates prose synthesis from DOI verification and bibliography export.</li>
+                        <li><strong>Model routing:</strong> supports multiple LLM backends with provenance tracking for selected and assigned models.</li>
+                        <li><strong>Full-stack implementation:</strong> combines a Next.js frontend, FastAPI backend, async workflow orchestration, document conversion, and external APIs.</li>
+                        <li><strong>Operational UX:</strong> includes live progress updates, clearer API errors, output filenames with topic/date/backend codes, and local development tooling.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The implementation is available in the GitHub repository below.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/multi-agent-LLM-literature-review" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The repository includes the FastAPI app, Next.js frontend, selectable LLM backend workflow,
+                        Scopus and Zotero integrations, document conversion utilities, MCP server code, runtime prompts,
+                        development scripts, and documentation for running the app locally.
+                    </p>
+
+                    <p class="project-github-note">
+                        Disclaimer: this project is for research and portfolio demonstration. Generated reviews should
+                        be manually checked before use in academic, regulatory, engineering, or policy decisions.
+                    </p>
+                </div>
+            </section>
+
+            <nav class="project-slide-ctas" data-project-slide-ctas data-scroll-threshold="0.85" aria-label="Previous and next portfolio projects"></nav>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+    <script src="/assets/js/project-slide-ctas.js"></script>
+
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
+</body>
+
+</html>
