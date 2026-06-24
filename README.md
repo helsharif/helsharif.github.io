@@ -48,6 +48,11 @@ AWS, Google Cloud, Databricks, Snowflake, MLflow, Docker, dbt, Streamlit, Huggin
 **Geospatial Analysis**  
 ArcGIS, QGIS, GeoPandas, Google Earth Engine  
 
+## 🏅 Certifications
+
+- Google Cloud Professional Machine Learning Engineer (2026)
+- Databricks Certified Generative AI Engineer Associate (2026)
+
 
 ---
 
@@ -83,6 +88,16 @@ Explore all projects on the live portfolio:
 ---
 
 ## 💼 Professional Experience
+
+### **Senior Data Scientist (Part-Time)**
+**Demand Delta**
+**Sep 2025 – Present · Marietta, GA**
+
+- Developed a real-time property lead scoring pipeline using weather, permits, valuation, and geospatial data; benchmarked ML against a heuristic baseline, with logistic regression/XGBoost driving **+12% revenue (+$450K per 600 leads)** and a **3.3x PR-AUC lift**. Implemented Platt scaling and SHAP for calibrated probabilities and explainable per-lead insights.
+- Built an explainable RAG platform to match project requirements with qualified engineering firms, indexing **7K+ public profiles** into approximately **70K retrieval documents** using PostgreSQL/pgvector, embeddings, hybrid search, RRF, and cross-encoder reranking.
+- Built an AI-powered lead enrichment pipeline using Python, Google Gemini, and the Google Places API to surface high-value industrial prospects for an engineering consultancy, replacing manual prospecting with a scored outreach list and accelerating lead qualification.
+
+---
 
 ### **Data Scientist (Research Engineer)**  
 **Georgia Institute of Technology, School of Civil & Environmental Engineering**  
