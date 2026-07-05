@@ -71,9 +71,9 @@ LSTM and climate-model integrations to forecast basin-scale agricultural demand.
 
 Automated bias-adjustment pipeline + interactive web dashboard for multi-model climate projections.
 
-### 🔁 **Customer Churn Modeling with SparkML, MLflow, and Neural Networks**
+### 🔁 **Telco Customer Churn Prediction & Retention Targeting System**
 
-Scalable churn models with experiment tracking and end-to-end ML workflow.
+Production-oriented churn prediction workflow with XGBoost, FastAPI, Streamlit, MLflow, and retention-value targeting.
 
 ### 🕵️ **AI-Automated Lead Generation Pipeline (RAG + Web Data)**
 

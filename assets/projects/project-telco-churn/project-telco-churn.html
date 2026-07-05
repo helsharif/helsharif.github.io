@@ -1,0 +1,527 @@
+---
+title: "Telco Customer Churn Prediction & Retention Targeting System | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Telco Customer Churn Prediction &amp; Retention Targeting System | Husayn El Sharif</title>
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+
+    <!-- PNG Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+
+    <!-- Manifest -->
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Icons (for sidebar + contact) -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- PhotoSwipe CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+
+        <!-- ========== LEFT SIDEBAR (same as homepage) ========== -->
+        {% include sidebar.html %}
+
+        <!-- ========== MAIN CONTENT ========== -->
+        <main class="main">
+
+            <!-- Top nav specific to project page -->
+            {% include project-topnav.html %}
+
+            <!-- ===== Project Overview ===== -->
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Telco Customer Churn Prediction &amp; Retention Targeting System
+                </h2>
+
+                <!-- Large hero graphic -->
+                <div class="project-hero-image">
+                    <a href="project_telco_churn_thumb.png" class="portfolio-lightbox"
+                        data-gallery="telco-churn"
+                        data-title="Telco customer churn prediction and retention targeting workflow overview"
+                        data-pswp-width="1000" data-pswp-height="750">
+                        <img src="project_telco_churn_thumb.png"
+                            alt="Telco customer churn prediction and retention targeting workflow overview" />
+                    </a>
+                </div>
+
+                <!-- Tech / domain pills -->
+                <div class="project-meta-pills">
+                    <span class="project-pill">Customer Churn Prediction</span>
+                    <span class="project-pill">Retention Targeting</span>
+                    <span class="project-pill">XGBoost</span>
+                    <span class="project-pill">Logistic Regression</span>
+                    <span class="project-pill">TabFM Benchmark</span>
+                    <span class="project-pill">Optuna</span>
+                    <span class="project-pill">MLflow</span>
+                    <span class="project-pill">FastAPI</span>
+                    <span class="project-pill">Streamlit</span>
+                    <span class="project-pill">Great Expectations</span>
+                    <span class="project-pill">Docker</span>
+                    <span class="project-pill">Hugging Face Spaces</span>
+                </div>
+
+                <!-- Quick facts card -->
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Data Scientist / Machine Learning Engineer</dd>
+
+                        <dt>Domain</dt>
+                        <dd>Telecommunications, subscription analytics, customer retention strategy</dd>
+
+                        <dt>Objective</dt>
+                        <dd>Predict churn risk and rank customers by expected retention-campaign value</dd>
+
+                        <dt>Dataset</dt>
+                        <dd>IBM Telco Customer Churn dataset with 7,043 records and 33 customer, service, billing, and
+                            churn-related fields</dd>
+
+                        <dt>Recommended Model</dt>
+                        <dd>Optuna-tuned XGBoost selected for the practical retention-targeting workflow</dd>
+
+                        <dt>Repository</dt>
+                        <dd><a href="https://github.com/helsharif/Customer-Churn-End-to-End-ML" target="_blank"
+                                rel="noopener noreferrer">github.com/helsharif/Customer-Churn-End-to-End-ML</a></dd>
+
+                        <dt>Live Demo</dt>
+                        <dd><a href="https://huggingface.co/spaces/helsharif/telco-churn-prediction" target="_blank"
+                                rel="noopener noreferrer">huggingface.co/spaces/helsharif/telco-churn-prediction</a>
+                        </dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        This project builds a production-oriented machine learning workflow for predicting customer
+                        churn in a fictional telecommunications business. The system moves beyond a notebook-only
+                        classifier by connecting leakage-safe feature engineering, model selection, experiment tracking,
+                        API serving, a Streamlit user interface, local monitoring, Docker packaging, and a Hugging Face
+                        Spaces deployment.
+                    </p>
+                    <p>
+                        The business goal is not simply to maximize accuracy. The final workflow ranks customers by
+                        expected campaign value, combining churn probability with retained lifetime value and
+                        intervention cost assumptions so that retention teams can prioritize outreach where it is most
+                        likely to pay off.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Background & Problem ===== -->
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Customer churn reduces recurring revenue and increases customer-acquisition pressure. In a
+                        subscription telecom setting, churn risk is shaped by contract terms, tenure, service bundles,
+                        billing behavior, support options, and price sensitivity. A useful model needs to identify
+                        customers likely to leave early enough for the business to intervene.
+                    </p>
+                    <p>
+                        <strong>Problem Statement:</strong> Given customer demographics, subscribed services, account
+                        tenure, contract details, and billing history, can a reproducible ML system predict quarterly
+                        churn and translate those probabilities into a ranked retention-campaign list?
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== Data & Leakage Controls ===== -->
+            <section id="data" class="section">
+                <h2 class="section-title">Dataset &amp; Leakage Controls</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The raw source is the IBM Telco Customer Churn dataset, which contains 7,043 customer records
+                        and 33 variables covering demographics, geography, service subscriptions, contract and billing
+                        information, tenure, churn outcome, and churn explanation fields.
+                    </p>
+                    <p>
+                        The preferred modeling target is <strong>Churn Value</strong>, where 1 indicates churn and 0
+                        indicates retention. The pipeline excludes direct identifiers, direct target equivalents, raw
+                        coordinates, and post-outcome churn explanation fields from model features.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Leakage exclusions:</strong> CustomerID, Count, Lat Long, Latitude, Longitude,
+                            Churn Label, Churn Value, Churn Score, Churn Reason, Churn Category, and similar
+                            churn-derived fields.</li>
+                        <li><strong>Feature handling:</strong> yes/no fields are encoded as 0/1, compact categorical
+                            variables are one-hot encoded, and blank Total Charges values are handled safely.</li>
+                        <li><strong>Model-ready outputs:</strong> the workflow creates separate datasets for logistic
+                            regression and XGBoost/TabFM comparison so each model family can use an appropriate feature
+                            set.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Exploratory Analysis ===== -->
+            <section id="eda" class="section">
+                <h2 class="section-title">Exploratory Analysis &amp; Feature Review</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Exploratory analysis focused on understanding which encoded predictors were associated with
+                        churn and which predictors carried redundant signal. These checks informed the interpretable
+                        baseline while preserving a richer feature set for the nonlinear XGBoost workflow.
+                    </p>
+
+                    <div class="project-figure">
+                        <a href="predictor-correlation-with-churn.png" class="portfolio-lightbox"
+                            data-gallery="telco-churn"
+                            data-title="Predictor correlations with churn in the encoded telco modeling dataset"
+                            data-pswp-width="1158" data-pswp-height="936">
+                            <img src="predictor-correlation-with-churn.png"
+                                alt="Predictor correlations with churn in the encoded telco modeling dataset" />
+                        </a>
+                    </div>
+
+                    <p>
+                        Positive correlations indicate predictors associated with higher churn risk, while negative
+                        correlations indicate predictors associated with retention. The multicollinearity review helped
+                        prune redundant inputs for the logistic-regression baseline; XGBoost retained a broader encoded
+                        feature set because tree-based models are less sensitive to linear multicollinearity.
+                    </p>
+
+                    <div class="project-figure">
+                        <a href="predictor-multi-collinearity.png" class="portfolio-lightbox"
+                            data-gallery="telco-churn"
+                            data-title="Multicollinearity review for churn predictors using VIF"
+                            data-pswp-width="1158" data-pswp-height="650">
+                            <img src="predictor-multi-collinearity.png"
+                                alt="Multicollinearity review for churn predictors using VIF" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Modeling ===== -->
+            <section id="modeling" class="section">
+                <h2 class="section-title">Modeling Approach</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The research notebooks compare logistic regression, Optuna-tuned XGBoost, and a PyTorch/CUDA
+                        TabFM benchmark using consistent stratified holdout logic. The packaged production-style
+                        workflow focuses on the two practical model families: logistic regression and XGBoost.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Logistic Regression:</strong> a transparent baseline with directly inspectable
+                            coefficients and very fast training.</li>
+                        <li><strong>XGBoost:</strong> a tuned gradient-boosted tree model that captures nonlinear
+                            interactions and supports SHAP-style interpretation.</li>
+                        <li><strong>TabFM benchmark:</strong> a transformer-based tabular foundation-model experiment
+                            retained as historical reference, but not included in the serving and monitoring workflow.
+                        </li>
+                        <li><strong>Thresholding:</strong> candidate notebooks default to the training-set churn rate,
+                            with validation-based threshold tuning in the reusable package pipeline.</li>
+                        <li><strong>Experiment evidence:</strong> MLflow logs lightweight parameters, metrics,
+                            comparison tables, prediction outputs, and retention-targeting summaries.</li>
+                    </ul>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Model Trade-Offs</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Role</th>
+                                <th>Strength</th>
+                                <th>Best Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Logistic Regression</strong></td>
+                                <td>Transparent baseline</td>
+                                <td>Fast, auditable, coefficient-based interpretation</td>
+                                <td>Fallback when governance or simplicity matters most</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XGBoost</strong></td>
+                                <td>Recommended practical model</td>
+                                <td>Strong nonlinear ranking and best top-100 campaign value</td>
+                                <td>Production-style retention targeting workflow</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TabFM</strong></td>
+                                <td>Foundation-model benchmark</td>
+                                <td>Strong conventional metrics in historical testing</td>
+                                <td>Experimental comparison, not the deployed workflow</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- ===== Results ===== -->
+            <section id="results" class="section">
+                <h2 class="section-title">Model Selection &amp; Retention Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Historical model-selection experiments used five-fold stratified cross-validation on the
+                        training split, then evaluated candidates once on the untouched holdout set. TabFM achieved the
+                        strongest conventional predictive metrics in that saved run, but XGBoost was selected as the
+                        practical recommendation because it delivered the highest expected net value for the top-100
+                        retention campaign list.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Saved Model-Selection Evidence</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Holdout PR AUC</th>
+                                <th>Holdout ROC AUC</th>
+                                <th>Top-100 Expected Net Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Logistic Regression</strong></td>
+                                <td>0.6393</td>
+                                <td>Baseline reference</td>
+                                <td>$23,555.11</td>
+                            </tr>
+                            <tr>
+                                <td><strong>XGBoost</strong></td>
+                                <td>0.6725</td>
+                                <td>0.8559</td>
+                                <td>$24,647.51</td>
+                            </tr>
+                            <tr>
+                                <td><strong>TabFM</strong></td>
+                                <td>0.6781</td>
+                                <td>0.8599</td>
+                                <td>$16,017.86</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="project-section-text">
+                    <p>
+                        This result illustrates the difference between general ranking quality and campaign value.
+                        Retention targeting combines churn probability, retained-LTV assumptions, offer acceptance,
+                        retention uplift, outreach cost, and offer cost. XGBoost was nearly tied with TabFM on PR AUC,
+                        ran much faster, and produced the stronger value-ranked outreach list under the saved business
+                        assumptions.
+                    </p>
+                </div>
+            </section>
+
+            <!-- ===== MLOps Workflow ===== -->
+            <section id="mlops" class="section">
+                <h2 class="section-title">Production-Oriented MLOps Workflow</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project packages the reusable logic under <strong>src/churn_ml/</strong> so training,
+                        preprocessing, prediction, serving, monitoring, and UI interaction are not trapped inside
+                        notebooks. The production-style pipeline compares logistic regression and XGBoost, selects by
+                        validation PR AUC, tunes the threshold, evaluates once on the test split, and persists a local
+                        production model bundle.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Validation and preprocessing:</strong> raw schema checks, leakage-safe feature
+                            generation, and documented processed outputs.</li>
+                        <li><strong>Training pipeline:</strong> reproducible model comparison, MLflow tracking when
+                            available, saved metrics, and persisted model artifacts.</li>
+                        <li><strong>API serving:</strong> FastAPI endpoints for health checks, model information, and
+                            churn predictions.</li>
+                        <li><strong>Monitoring foundation:</strong> anonymized JSONL inference logs and local drift
+                            checks against a saved training baseline.</li>
+                        <li><strong>CI/CD readiness:</strong> pytest, Ruff linting, import validation, and Docker image
+                            build checks through GitHub Actions.</li>
+                    </ul>
+
+                    <div class="project-figure">
+                        <a href="project_telco_churn_overview.png" class="portfolio-lightbox"
+                            data-gallery="telco-churn"
+                            data-title="End-to-end telco churn ML workflow from raw data through deployment and monitoring"
+                            data-pswp-width="2752" data-pswp-height="1536">
+                            <img src="project_telco_churn_overview.png"
+                                alt="End-to-end telco churn ML workflow from raw data through deployment and monitoring" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Streamlit Demo ===== -->
+            <section id="demo" class="section">
+                <h2 class="section-title">Streamlit Prediction App</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The live application uses a Streamlit front end against a FastAPI prediction endpoint. In the
+                        Hugging Face Spaces deployment, the Docker image trains or loads the production model artifact,
+                        runs FastAPI internally, and exposes the Streamlit UI on the public Space port.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Interactive inputs:</strong> customer profile, service, contract, billing, and
+                            tenure fields are converted into model-ready features.</li>
+                        <li><strong>Prediction output:</strong> the app returns churn probability, classification, and
+                            retention-targeting context for the submitted profile.</li>
+                        <li><strong>Deployment architecture:</strong> Docker keeps the hosted demo aligned with the
+                            local FastAPI plus Streamlit workflow.</li>
+                    </ul>
+
+                    <div class="project-figure">
+                        <a href="telco-churn-streamlit-app-ui.png" class="portfolio-lightbox"
+                            data-gallery="telco-churn"
+                            data-title="Streamlit interface for the telco churn prediction and retention targeting app"
+                            data-pswp-width="752" data-pswp-height="1198">
+                            <img src="telco-churn-streamlit-app-ui.png"
+                                alt="Streamlit interface for the telco churn prediction and retention targeting app" />
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ===== Impact ===== -->
+            <section id="impact" class="section">
+                <h2 class="section-title">Business &amp; Portfolio Value</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The project demonstrates how to connect model quality to a business-facing retention decision.
+                        Rather than stopping at classification metrics, it turns churn predictions into a campaign list
+                        that can be evaluated against cost, uplift, and customer-value assumptions.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>Actionable targeting:</strong> prioritizes customers by expected campaign value,
+                            not just raw churn risk.</li>
+                        <li><strong>Governance awareness:</strong> excludes leakage fields and keeps interpretable
+                            logistic-regression evidence available alongside the stronger XGBoost candidate.</li>
+                        <li><strong>Deployment realism:</strong> includes API serving, UI interaction, Docker packaging,
+                            monitoring foundations, and CI checks.</li>
+                        <li><strong>Clear trade-off analysis:</strong> explains why the production-style workflow uses
+                            XGBoost even though TabFM was a useful benchmark.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- ===== Github Repository ===== -->
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository &amp; Live Demo</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The full implementation is available on GitHub, and the public Hugging Face Space hosts the
+                        Streamlit churn prediction interface backed by the production-style FastAPI workflow.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/Customer-Churn-End-to-End-ML" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://huggingface.co/spaces/helsharif/telco-churn-prediction" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            Open Live Demo on Hugging Face Spaces
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The implementation includes leakage-safe preprocessing, logistic-regression and XGBoost model
+                        comparison, MLflow experiment evidence, FastAPI serving, Streamlit UI interaction, Docker
+                        deployment support, drift-check scaffolding, and CI/CD-ready project structure.
+                    </p>
+                </div>
+            </section>
+
+            <nav class="project-slide-ctas" data-project-slide-ctas data-scroll-threshold="0.85" aria-label="Previous and next portfolio projects"></nav>
+
+            <!-- ========== BOTTOM NAV (duplicate of top nav) ========== -->
+            {% include project-bottomnav.html %}
+
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll for in-page anchors
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((l) => l.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+    <script src="/assets/js/project-slide-ctas.js"></script>
+
+    <!-- PhotoSwipe JS -->
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
+
+</body>
+
+</html>
