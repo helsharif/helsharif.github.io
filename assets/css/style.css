@@ -494,6 +494,12 @@ img {
     color: #d6d6d6;
 }
 
+/* Metric tables use the site's standard typeface in every column. */
+.project-table--metrics td:last-child {
+    font-family: inherit;
+    font-size: inherit;
+}
+
 /* Hover effect (optional but nice) */
 .project-table tbody tr:hover {
     background-color: #1f242b;
