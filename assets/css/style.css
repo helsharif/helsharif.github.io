@@ -1108,6 +1108,12 @@ img {
   font-style: italic;
 }
 
+.project-figure--chatbot {
+  max-width: 669px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-figure img {
   width: 100%;
   display: block;
