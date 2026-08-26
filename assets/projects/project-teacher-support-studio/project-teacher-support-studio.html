@@ -1,0 +1,385 @@
+---
+title: "Teacher Support Studio: Student Proficiency Prediction & AI Teacher Assistant | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Teacher Support Studio: Student Proficiency Prediction &amp; AI Teacher Assistant | Husayn El Sharif</title>
+    <meta name="description"
+        content="An end-to-end educational machine learning system that predicts next-practice success and delivers explainable, grounded guidance through a teacher-facing AI assistant." />
+
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+        {% include sidebar.html %}
+
+        <main class="main">
+            {% include project-topnav.html %}
+
+            <section id="overview" class="section">
+                <h2 class="section-title">
+                    Teacher Support Studio: Student Proficiency Prediction &amp; AI Teacher Assistant
+                </h2>
+
+                <div class="project-hero-image">
+                    <a href="teacher_support_studio_overview.png" class="portfolio-lightbox"
+                        data-gallery="teacher-support-studio"
+                        data-title="Teacher Support Studio end-to-end educational machine learning workflow"
+                        data-pswp-width="1298" data-pswp-height="1257">
+                        <img src="teacher_support_studio_overview.png"
+                            alt="Teacher Support Studio workflow from ASSISTments learning data to readiness predictions and grounded teacher guidance" />
+                    </a>
+                </div>
+
+                <div class="project-meta-pills">
+                    <span class="project-pill">Educational Data Science</span>
+                    <span class="project-pill">Longitudinal ML</span>
+                    <span class="project-pill">XGBoost</span>
+                    <span class="project-pill">Logistic Regression</span>
+                    <span class="project-pill">SHAP</span>
+                    <span class="project-pill">FastAPI</span>
+                    <span class="project-pill">LangGraph</span>
+                    <span class="project-pill">OpenAI</span>
+                    <span class="project-pill">Responsible AI</span>
+                </div>
+
+                <aside class="project-quick-facts">
+                    <h3>Quick Facts</h3>
+                    <dl>
+                        <dt>Role</dt>
+                        <dd>Data Scientist / Machine Learning Engineer / Full-Stack AI Developer</dd>
+
+                        <dt>Dataset</dt>
+                        <dd>ASSISTments 2009–2010 Skill Builder: 259,386 filtered interactions from 4,163 students</dd>
+
+                        <dt>Objective</dt>
+                        <dd>Estimate the probability of first-attempt success on a student's next skill-practice interaction</dd>
+
+                        <dt>Best Model</dt>
+                        <dd>Tuned XGBoost with 0.7000 test ROC-AUC and 0.8454 average precision</dd>
+
+                        <dt>Application</dt>
+                        <dd>FastAPI readiness dashboard with SHAP explanations and a LangGraph-powered teacher assistant</dd>
+                    </dl>
+                </aside>
+
+                <div class="project-section-text">
+                    <p>
+                        Teacher Support Studio is an end-to-end educational machine learning project that predicts a
+                        student's probability of first-attempt success on upcoming skill practice and turns those
+                        estimates into teacher-facing, evidence-grounded guidance.
+                    </p>
+                    <p>
+                        The project combines leakage-safe longitudinal feature engineering, interpretable and nonlinear
+                        classification models, model-native SHAP contributions, and a deployable FastAPI application.
+                        Its outputs are designed as low-stakes planning signals—not mastery labels or automated
+                        instructional decisions.
+                    </p>
+                </div>
+            </section>
+
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Student practice histories contain useful signals about recent performance, prior learning
+                        opportunities, help seeking, and skill-specific progress. Used carefully, those signals can help
+                        an educator decide where a brief check-in or additional practice may be useful.
+                    </p>
+                    <p>
+                        <strong>Machine Learning Question:</strong> What is the probability that a student answers the
+                        next skill-practice interaction correctly on the first attempt?
+                    </p>
+                    <p>
+                        <strong>Application Question:</strong> How can that probability be presented with its supporting
+                        evidence and limitations so teachers retain contextual interpretation and final decision-making?
+                    </p>
+                </div>
+            </section>
+
+            <section id="data" class="section">
+                <h2 class="section-title">Dataset &amp; Leakage-Safe Feature Engineering</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The modeling workflow uses the ASSISTments 2009–2010 Skill Builder dataset. After filtering to
+                        original problems with valid skill identifiers, the working data contains 259,386 interactions
+                        from 4,163 students and an overall first-attempt correctness rate of 65.8%.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li><strong>170 documented predictors:</strong> student, skill, practice, recency, streak, opportunity, and help-seeking signals.</li>
+                        <li><strong>Past-only information:</strong> longitudinal features are shifted so each row uses only evidence available before the predicted interaction.</li>
+                        <li><strong>Chronological evaluation:</strong> unique interaction order values are split into the earliest 70% for training, the next 15% for validation, and the latest 15% for testing.</li>
+                        <li><strong>Fair comparison:</strong> logistic regression and XGBoost use the same predictor set and held-out evaluation protocol.</li>
+                        <li><strong>Protected test window:</strong> operating thresholds are selected on validation data rather than tuned against final test outcomes.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="modeling" class="section">
+                <h2 class="section-title">Modeling Workflow &amp; Evaluation</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        An L2-regularized logistic regression provides an interpretable baseline, while tuned XGBoost
+                        captures nonlinear relationships and interactions in students' learning histories. Both models
+                        are evaluated on discrimination, ranking quality, probability error, and threshold-based balance.
+                    </p>
+                </div>
+
+                <div class="project-table-wrapper">
+                    <h3 class="project-subtitle">Held-Out Test Performance</h3>
+                    <table class="project-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>ROC-AUC</th>
+                                <th>Average Precision</th>
+                                <th>Log Loss</th>
+                                <th>Brier Score</th>
+                                <th>Balanced Accuracy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Logistic regression</td>
+                                <td>0.6746</td>
+                                <td>0.8251</td>
+                                <td>0.5565</td>
+                                <td>0.1864</td>
+                                <td>0.6121 at 0.590</td>
+                            </tr>
+                            <tr>
+                                <td>XGBoost</td>
+                                <td>0.7000</td>
+                                <td>0.8454</td>
+                                <td>0.5443</td>
+                                <td>0.1823</td>
+                                <td>0.6317 at 0.635</td>
+                            </tr>
+                            <tr>
+                                <td>Prevalence baseline</td>
+                                <td>0.5000</td>
+                                <td>0.7169</td>
+                                <td>0.6068</td>
+                                <td>0.2078</td>
+                                <td>0.5000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="project-section-text">
+                    <ul class="project-bullets">
+                        <li><strong>Consistent improvement:</strong> XGBoost outperforms logistic regression across discrimination and probability-error metrics.</li>
+                        <li><strong>Strongest signal:</strong> recent student-skill performance—especially mean skill accuracy across the five latest relevant interactions—drives the nonlinear model.</li>
+                        <li><strong>Interpretability:</strong> global feature importance and local SHAP contributions connect predictions to the learner evidence behind them.</li>
+                        <li><strong>Important limitation:</strong> the final test window contains 38,909 interactions but only 87 students, so performance is not evidence of broad unseen-student generalization.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="application" class="section">
+                <h2 class="section-title">Teacher Support Studio Application</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The application lets a teacher select a synthetic class and student, review estimated readiness
+                        across named skills, inspect how each summary was created, and ask questions grounded in the
+                        evidence currently displayed.
+                    </p>
+                </div>
+
+                <div class="project-figure">
+                    <a href="teacher-support-studio-dashboard.png" class="portfolio-lightbox"
+                        data-gallery="teacher-support-studio"
+                        data-title="Teacher Support Studio readiness dashboard with synthetic student names and deidentified data"
+                        data-pswp-width="1265" data-pswp-height="1590">
+                        <img src="teacher-support-studio-dashboard.png"
+                            alt="Teacher Support Studio dashboard showing highest and lowest estimated readiness by skill" />
+                    </a>
+                </div>
+            </section>
+
+            <section id="workflow" class="section">
+                <h2 class="section-title">Readiness Scoring Workflow</h2>
+
+                <div class="project-section-text">
+                    <ol class="project-bullets">
+                        <li>The teacher selects a synthetic class and student mapped to authentic deidentified identifiers.</li>
+                        <li>The application retrieves the student's complete recorded interaction history.</li>
+                        <li>It constructs up to ten historically observed next-practice contexts for each named skill.</li>
+                        <li>The persisted XGBoost model scores the scenarios, and their median probability becomes the skill's estimated readiness.</li>
+                        <li>Skills with fewer than five prior learner interactions are excluded before the five highest and five lowest estimates are selected.</li>
+                        <li>A LangGraph workflow gives OpenAI only the selected metrics and evidence for a structured response; deterministic local guidance remains available if OpenAI is unavailable.</li>
+                    </ol>
+                </div>
+            </section>
+
+            <section id="assistant" class="section">
+                <h2 class="section-title">Grounded AI Teacher Assistant</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        The assistant answers preloaded or free-form questions in three predictable sections: what the
+                        model suggests, a low-stakes action the teacher might try, and limitations to keep in mind. The
+                        prompt receives only the selected student's displayed metrics and supporting evidence, keeping
+                        the response tied to the current view.
+                    </p>
+                </div>
+
+                <div class="project-figure">
+                    <a href="teacher-support-studio-llm-priority-response.png" class="portfolio-lightbox"
+                        data-gallery="teacher-support-studio"
+                        data-title="Grounded assistant response identifying a priority skill and suggesting a low-stakes check-in"
+                        data-pswp-width="1265" data-pswp-height="1590">
+                        <img src="teacher-support-studio-llm-priority-response.png"
+                            alt="Teacher Support Studio grounded assistant response about which skill to check first" />
+                    </a>
+                </div>
+
+                <div class="project-figure">
+                    <a href="teacher-support-studio-llm-evidence-response.png" class="portfolio-lightbox"
+                        data-gallery="teacher-support-studio"
+                        data-title="Grounded assistant explanation of the five-interaction evidence threshold"
+                        data-pswp-width="1265" data-pswp-height="1590">
+                        <img src="teacher-support-studio-llm-evidence-response.png"
+                            alt="Teacher Support Studio assistant explaining why some practiced skills were excluded" />
+                    </a>
+                </div>
+            </section>
+
+            <section id="architecture" class="section">
+                <h2 class="section-title">Application Architecture &amp; Reproducibility</h2>
+
+                <div class="project-section-text">
+                    <ul class="project-bullets">
+                        <li><strong>Data and modeling:</strong> Python, pandas, NumPy, SciPy, scikit-learn, and XGBoost.</li>
+                        <li><strong>Interpretability:</strong> XGBoost model-native SHAP contributions, Plotly, and Kaleido.</li>
+                        <li><strong>Application layer:</strong> FastAPI, Uvicorn, Pydantic, JavaScript, HTML, and CSS.</li>
+                        <li><strong>Generative AI:</strong> LangGraph, LangChain, and OpenAI with a deterministic fallback path.</li>
+                        <li><strong>Quality and reproducibility:</strong> uv, JupyterLab, pytest, Ruff, persisted model artifacts, and ordered notebooks.</li>
+                        <li><strong>Deployment:</strong> a self-contained Render bundle packages the application, model, mappings, and selected demo data.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="responsible-use" class="section">
+                <h2 class="section-title">Responsible Use &amp; Limitations</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        This project is a portfolio demonstration of teacher-facing decision support. Predictions are
+                        planning signals for plausible next practice—not measures of intelligence, general ability,
+                        motivation, disability, or psychological mastery.
+                    </p>
+
+                    <ul class="project-bullets">
+                        <li>Do not use estimates to automatically determine grading, placement, access, or interventions.</li>
+                        <li>Treat the five-interaction minimum as a demo evidence rule rather than a validated educational standard.</li>
+                        <li>Interpret results in light of temporal and population shift in the held-out data.</li>
+                        <li>Validate calibration, subgroup behavior, unseen-student generalization, and instructional impact before real educational use.</li>
+                        <li>Keep educators responsible for contextual interpretation and final decisions.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository &amp; Live Demo</h2>
+
+                <div class="project-section-text">
+                    <p>
+                        Explore the complete analysis, application source, reproducible environment, tests, deployment
+                        bundle, and interactive teacher-facing demo.
+                    </p>
+
+                    <p>
+                        <a href="https://github.com/helsharif/teacher-support-studio" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🔗 View Project Repository on GitHub
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="https://teacher-support-studio.onrender.com/" target="_blank"
+                            rel="noopener noreferrer" class="project-github-link">
+                            🚀 Open Live Demo
+                        </a>
+                    </p>
+
+                    <p class="project-github-note">
+                        The live Render service may need a short warm-up after a period of inactivity.
+                    </p>
+                </div>
+            </section>
+
+            <nav class="project-slide-ctas" data-project-slide-ctas data-scroll-threshold="0.85"
+                aria-label="Previous and next portfolio projects"></nav>
+
+            {% include project-bottomnav.html %}
+        </main>
+    </div>
+
+    <script>
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((link) => link.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+    <script src="/assets/js/project-slide-ctas.js"></script>
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
+</body>
+
+</html>
