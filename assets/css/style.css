@@ -326,7 +326,7 @@ img {
 
 /* Paragraph formatting */
 .about-content .intro-text {
-  text-align: justify;           /* justify the text */
+  text-align: left;
   line-height: 1.7;              /* cleaner, more readable spacing */
   margin-bottom: 1.2rem;         /* space between paragraphs */
 }
