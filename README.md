@@ -2,51 +2,53 @@
 
 ### Senior Data Scientist • Machine Learning Engineer • Georgia Tech Ph.D.
 
-Hi, I’m **Husayn**. I’m a **Senior Data Scientist** and **Georgia Tech Ph.D.** with over ten years of experience working with machine learning, geospatial analytics, and complex real world data. I enjoy taking messy information and turning it into insights that **help people make better decisions**.
+Hi, I’m Husayn. I’m a Senior Data Scientist and Georgia Tech Ph.D. with more than ten years of experience turning messy data into actionable systems through predictive modeling, generative AI, and geospatial analytics.
 
-My work spans remote sensing, environmental analytics, and applied AI, backed by **models, pipelines, and dashboards** I’ve built for researchers, engineers, and operational teams. I also mentor students and early career professionals who are developing their skills in data science and programming.
+I’ve built models, data pipelines, AI applications, and analytical tools that serve fields including environmental science, education, public health, engineering, and business operations. My projects range from satellite-based water-quality monitoring and climate analytics to computer vision and agentic RAG systems.
 
-Grounded in civil engineering and hydrology, I bring a practical way of understanding complex systems, and that foundation still shapes how I approach data and problem solving. I now apply these skills across a wider range of fields where careful analysis can support meaningful, evidence based improvements in **science, technology, and public health**.
+My foundation in civil engineering and hydrology taught me to look beyond isolated datasets and approach problems as interconnected systems. I bring this holistic perspective to building intelligent tools that can positively impact people, communities, the environment, and the way important decisions are made.
 
-🔗 **Portfolio:** https://helsharif.github.io/  
-🔗 **LinkedIn:** https://www.linkedin.com/in/husayn-el-sharif  
+If you’re working on a problem where machine learning, AI, or geospatial analytics can make a meaningful difference, I’d be glad to connect.
+
+🔗 **Portfolio:** [hesportfolio.com](https://hesportfolio.com/)  
+🔗 **LinkedIn:** [linkedin.com/in/husayn-el-sharif](https://www.linkedin.com/in/husayn-el-sharif)  
 📍 Marietta, Georgia, USA
 
 ---
 
 ## 🚀 What I Do
 
-- Build ML and deep learning models for structured, unstructured, geospatial, and image data  
-- Design AI/LLM-powered systems (RAG, prompt engineering, multi-agent workflows)  
-- Develop scientific and production-grade pipelines with Python, SQL, Spark, and cloud services  
-- Create visual analytics dashboards to support decision-making for technical and non-technical users  
-- Deploy solutions using AWS, GCP, Docker, Streamlit, and other MLOps tools  
-- Mentor students and junior engineers in data science, modeling, and analytics workflows  
+- Build predictive models for environmental, educational, public health, business, and energy applications.
+- Develop generative AI applications and agentic RAG systems with grounded retrieval and evaluation.
+- Create reproducible data pipelines and ML workflows with Python, SQL, Docker, and cloud platforms.
+- Apply remote sensing and geospatial analytics to water quality, climate, and agricultural planning.
+- Build analytical tools and dashboards that support practical, evidence-based decisions.
+- Mentor graduate researchers in data science and machine learning.
 
 ---
 
 ## 🧠 Technical Skills
 
 **Programming & Analytics**  
-Python, SQL, R, MATLAB, Git, JupyterLab  
+Python, SQL, R, MATLAB
 
-**Machine Learning & Data**  
-NumPy, Pandas, Scikit-Learn, TensorFlow, PyTorch, PySpark  
+**Machine Learning**  
+Scikit-Learn, TensorFlow, PyTorch, XGBoost, Deep Learning, Transfer Learning, Computer Vision
 
-**AI Techniques**  
-Machine Learning, Deep Learning, Computer Vision, Transfer Learning  
+**Data & MLOps**  
+Numpy, Pandas, PySpark, MLflow, Docker, Airflow, dbt, Streamlit, Git
 
-**GenAI & LLM**  
-NLP, Prompt Engineering & Fine-Tuning, RAG, Vector Embeddings, LangChain, CrewAI  
+**AI Engineering**  
+Prompt Engineering, Fine-Tuning, Agentic RAG, Claude Code, Codex
 
 **Data Visualization**  
-Matplotlib, Seaborn, Plotly, Tableau  
+Matplotlib, Seaborn, Plotly, Tableau, Power BI
 
-**Cloud Platforms & MLOps**  
-AWS, Google Cloud, Databricks, Snowflake, MLflow, Docker, dbt, Streamlit, Hugging Face  
+**Cloud Platforms**  
+AWS, Google Cloud, Databricks, Snowflake, Hugging Face
 
 **Geospatial Analysis**  
-ArcGIS, QGIS, GeoPandas, Google Earth Engine  
+ArcGIS, QGIS, GeoPandas, Google Earth Engine
 
 ---
 
@@ -59,40 +61,63 @@ ArcGIS, QGIS, GeoPandas, Google Earth Engine
 
 ## 📂 Featured Projects
 
-### 🌊 **Remote Sensing & ML for Water Quality at Lake Lanier**
+### [Remote Sensing & ML for Water Quality Assessment at Lake Lanier](https://hesportfolio.com/assets/projects/project-lake-lanier/project-lake-lanier.html#top-nav)
 
-Satellite-based ML workflow to estimate chlorophyll-a, enabling compliance monitoring and decision support.
+Satellite-based ML workflow to monitor chlorophyll-a and assess water quality compliance for Lake Lanier.
 
-### 🌾 **Climate-Informed Crop Yield & Irrigation Forecasting (ACF Basin)**
+### [Teacher Support Studio: Student Proficiency Prediction & AI Teacher Assistant](https://hesportfolio.com/assets/projects/project-teacher-support-studio/project-teacher-support-studio.html#top-nav)
 
-LSTM and climate-model integrations to forecast basin-scale agricultural demand.
+Predicts next-practice success from longitudinal learning data and turns explainable estimates into grounded, teacher-facing guidance.
 
-### ☁️ **Continental-Scale Climate Bias Correction & Dashboard**
+### [Autodesk Agentic RAG Chatbot](https://hesportfolio.com/assets/projects/project-autodesk-rag-app/project-autodesk-rag-app.html#top-nav)
 
-Automated bias-adjustment pipeline + interactive web dashboard for multi-model climate projections.
+Evidence-grounded assistant for Autodesk product and workflow questions using hybrid retrieval, web verification, reranking, and evaluation.
 
-### 🔁 **Telco Customer Churn Prediction & Retention Targeting System**
+### [Cobb County Building & Fire Code Agentic RAG Assistant](https://hesportfolio.com/assets/projects/project-cobb-county-code-rag-assistant/project-cobb-county-code-rag-assistant.html#top-nav)
+
+RAG-powered assistant for querying and retrieving information from Cobb County building and fire codes.
+
+### [Telco Customer Churn Prediction & Retention Targeting System](https://hesportfolio.com/assets/projects/project-telco-churn/project-telco-churn.html#top-nav)
 
 Production-oriented churn prediction workflow with XGBoost, FastAPI, Streamlit, MLflow, and retention-value targeting.
 
-### 🕵️ **AI-Automated Lead Generation Pipeline (RAG + Web Data)**
+### [AI-Automated Lead Generation Pipeline for Engineering Consultancy (RAG + Web Data)](https://hesportfolio.com/assets/projects/project-ai-lead-generation/project-ai-lead-generation.html#top-nav)
 
-Retrieves regulatory records and ranks engineering prospects using LLMs and vector search.
+RAG-powered pipeline to mine regulatory and web data, rank prospects, and surface qualified engineering leads.
 
-### 👁️ **Retinal Disease Detection with Deep Learning & TensorFlow**
+### [AI-Powered Retinal Disease Detection with Deep Learning & Computer Vision Pipeline](https://hesportfolio.com/assets/projects/project-retinal-disease-detection/project-retinal-disease-detection.html#top-nav)
 
-EfficientNet-based multi-class classification pipeline for cataract, DR, glaucoma, and normal images.
+TensorFlow-based CNN that classifies retinal images into disease categories to support early detection.
 
-### 🤖 **Multi-Agent GenAI System for Hydrology Literature Review**
+### [Multi-Agent LLM System for Automated Scientific Literature Review](https://hesportfolio.com/assets/projects/project-multi-agent-genai-literature-review/project-multi-agent-genai-literature-review.html#top-nav)
 
-CrewAI-based system that synthesizes scientific papers, cutting a 7-day manual review down to ~1 day.
+Full-stack research automation app that searches Scopus, verifies DOIs, saves papers to Zotero, and exports cited review documents.
 
-### ☎️ **Voice-AI Customer Service Agent for Medical Lab Appointments**
+### [Voice-AI Customer Service Agent for Medical Lab Appointments](https://hesportfolio.com/assets/projects/project-voice-ai-medical-lab/project-voice-ai-medical-lab.html#top-nav)
 
-LLM-powered voice workflow automating scheduling, rescheduling, and information retrieval.
+Voice AI system to automate medical lab appointment scheduling, rescheduling, and support calls.
 
-Explore all projects on the live portfolio:  
-**https://helsharif.github.io/#portfolio**
+### [Unsupervised Risk Modeling with K-Means on AMI Smart Meter Data](https://hesportfolio.com/assets/projects/project-smart-meter-kmeans/project-smart-meter-kmeans.html#top-nav)
+
+Segmented smart meters using k-means clustering on high-frequency AMI power-quality data to identify behavioral patterns linked to grid reliability and outage risk.
+
+### [Public Health A/B Testing & Predictive Analytics (XGBoost)](https://hesportfolio.com/assets/projects/project-public-health-ab-testing-xgboost/project-public-health-ab-testing-xgboost.html#top-nav)
+
+Application of A/B testing and machine learning (XGBoost) to measure message impact and target individuals most likely to schedule appointments, with SHAP-based explainability.
+
+### [Climate-Informed Crop Yield & Irrigation Projections for the ACF River Basin](https://hesportfolio.com/assets/projects/project-acf-crop-yield/project-acf-crop-yield.html#top-nav)
+
+Modeled climate-adjusted crop yields and irrigation demand to support long-term agricultural and water planning.
+
+### [Continental-Scale Climate Bias-Correction, Projection, & Interactive Dashboard](https://hesportfolio.com/assets/projects/project-climate-bias-correction/project-climate-bias-correction.html#top-nav)
+
+Built bias-corrected climate projections and an interactive dashboard to explore multi-model climate futures.
+
+### [SOCO 48-Hour Energy Demand Forecasting](https://hesportfolio.com/assets/projects/project-soco-energy-demand/project-soco-energy-demand.html#top-nav)
+
+End-to-end ML pipeline for forecasting hourly electricity demand using 10+ years of grid and weather data, achieving high-accuracy 48-hour load predictions.
+
+Explore all projects on the [live portfolio](https://hesportfolio.com/#portfolio).
 
 ---
 
@@ -100,25 +125,25 @@ Explore all projects on the live portfolio:
 
 ### **Senior Data Scientist (Part-Time)**
 
-**Demand Delta**
+**Demand Delta**  
 **Sep 2025 – Present · Marietta, GA**
 
-- Developed a property lead-scoring pipeline using weather, permit, valuation, and geospatial data; outperformed a heuristic baseline with logistic regression/XGBoost, identifying a projected **12% revenue lift (+$450K per 600 leads)** and a **3.3x higher PR-AUC lift**. Implemented Platt scaling and SHAP for for explainable, per-lead insights.
-- Built an explainable RAG platform to match project requirements with qualified engineering firms, indexing **7K+ public profiles** into approximately **70K retrieval documents** using PostgreSQL/pgvector, embeddings, hybrid search, RRF, and cross-encoder reranking.
-- Built an AI-powered lead enrichment pipeline using Python, Google Gemini, and the Google Places API to surface high-value industrial prospects for an engineering consultancy, replacing manual prospecting with a scored outreach list and accelerating lead qualification.
+- Developed an XGBoost lead-scoring system using weather, permit, valuation, and geospatial data, projecting a 12% revenue lift (~$450K per 600 leads) and improving precision-recall performance by 3.3x over a heuristic baseline. Added Platt calibration and SHAP for explainable per-lead insights.
+- Built an explainable RAG platform to match project requirements with qualified engineering firms, indexing 7K+ public profiles into ~70K retrieval documents using PostgreSQL/pgvector, embeddings, hybrid search, RRF, and cross-encoder reranking.
+- Built an AI-powered lead enrichment pipeline (Python, Google Gemini, Google Places API) to surface high-value industrial prospects for an engineering consultancy, replacing manual prospecting with a scored outreach list and accelerating lead qualification.
 
 ---
 
-### **Data Scientist (Research Engineer)**
+### **Senior Data Scientist (Research Engineer)**
 
 **Georgia Institute of Technology, School of Civil & Environmental Engineering**  
-**Mar 2021 – Present · Atlanta, GA**
+**Aug 2012 – Present · Atlanta, GA**
 
-- Developed end-to-end ML applications and dashboards for near-real-time water quality monitoring in Georgia’s Lake Lanier, enabling proactive, data-driven decisions for the Gwinnett County Dept. of Water Resources.  
-- Applied deep learning models (RNN/LSTM) to forecast crop yield and irrigation demand, enhancing watershed-scale agricultural decision support.  
-- Built a multi-agent GenAI system (**CrewAI + LangChain + GPT + Gemini LLMs**) to automate hydrology literature review workflows, reducing a 7-day manual research process to 1 day and accelerating scientific reporting productivity by ~85%.  
-- Oversaw **$400K+** in annual federal and state research projects as Assistant Director, Georgia Water Resources Institute.  
-- Mentored and supervised student researchers in data science methods, guiding successful publications, conference presentations, and career advancement.  
+- Built a satellite-based ML pipeline using Sentinel-2 and Google Earth Engine to estimate chlorophyll-a concentrations and detect harmful algal blooms, enabling near-real-time water-quality monitoring and operational decision support for Gwinnett County Department of Water Resources.
+- Developed bias-correction and spatiotemporal downscaling algorithms for 16 climate models across two emissions scenarios, producing 4-km daily climate projections while preserving temperature-precipitation correlations. Integrated climate, soil, and crop data into ML models to predict crop yield and irrigation demand and quantify long-range agricultural risks across the ACF River Basin.
+- Built Dockerized geospatial ML workflows, supporting reproducible deployment of environmental monitoring and predictive modeling pipelines.
+- Oversaw $400K+ in annual federal and state research funding as Assistant Director of the Georgia Water Resources Institute.
+- Mentored graduate researchers in data science and ML methods, supporting publications and conference presentations.
 
 ---
 
@@ -127,26 +152,7 @@ Explore all projects on the live portfolio:
 **4Earth, Inc.**  
 **Aug 2022 – Aug 2025 · Kennesaw, GA**
 
-- Developed physics and data-driven system models and AI-Ops pipelines for real-time AWS IoT sensor analytics, improving engineering efficiency and reducing time-to-market by **20%**.
-
----
-
-### **Data Scientist (Postdoctoral Fellow)**
-
-**Georgia Institute of Technology, School of Civil & Environmental Engineering**  
-**May 2019 – Mar 2021 · Atlanta, GA**
-
-- Applied ML and geospatial analytics to improve predictive flood-risk models, delivering actionable intelligence for government and community resilience planning across East Africa.  
-- Developed ML techniques that improved climate forecast **accuracy and spatial coherence by over 50%**, strengthening data-driven insights for long-term water resources planning and policy.
-
----
-
-### **Machine Learning Researcher (Ph.D. Research)**
-
-**Georgia Institute of Technology, School of Civil & Environmental Engineering**  
-**Sep 2012 – May 2019 · Atlanta, GA**
-
-- Applied ML to fuse multi-sensor NASA satellite imagery and climate time-series data, boosting accuracy of crop-yield, drought, irrigation, and streamflow forecasts and enabling basin-scale, data-driven water-management decisions across multi-decadal climate scenarios.
+- Developed physics and data-driven system models and AI-Ops pipelines for real-time AWS IoT sensor analytics, improving engineering efficiency and reducing time-to-market by 20%.
 
 ---
 
@@ -192,9 +198,11 @@ Explore all projects on the live portfolio:
 
 ## 📫 Contact
 
-**Email:** https://helsharif.github.io/#contact  
-**GitHub:** https://github.com/helsharif  
-**Portfolio:** https://helsharif.github.io/
+Interested in connecting or discussing an opportunity? [Send me a message](https://hesportfolio.com/#contact).
+
+**Contact form:** [hesportfolio.com/#contact](https://hesportfolio.com/#contact)  
+**GitHub:** [github.com/helsharif](https://github.com/helsharif)  
+**Portfolio:** [hesportfolio.com](https://hesportfolio.com/)
 
 ---
 
