@@ -1,0 +1,243 @@
+---
+title: "Trial Conversion Prediction & MLOps | Husayn El Sharif"
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8FNBM2Q4RK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-8FNBM2Q4RK');
+    </script>
+
+    <meta charset="UTF-8" />
+    <title>Trial Conversion Prediction &amp; MLOps | Husayn El Sharif</title>
+    <meta name="description"
+        content="Predicting trial-to-paid conversion from day-3 activity with XGBoost, MLflow, FastAPI, AWS deployment, and automated drift monitoring." />
+
+    <link rel="icon" type="image/x-icon" href="../../favicons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../../favicons/android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" href="../../favicons/apple-touch-icon.png" />
+    <link rel="manifest" href="../../favicons/site.webmanifest" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@5/dist/photoswipe.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
+</head>
+
+<body>
+    <div class="page">
+        {% include sidebar.html %}
+
+        <main class="main">
+            {% include project-topnav.html %}
+
+            <section id="overview" class="section">
+                <h2 class="section-title">Trial Conversion Prediction &amp; MLOps</h2>
+<figure class="project-hero-image">
+<a href="trial-conversion-overview.png" class="portfolio-lightbox" data-gallery="trial-conversion-mlops" data-title="From three days of trial engagement to conversion predictions, outreach priorities, and drift monitoring" data-pswp-width="1000" data-pswp-height="878">
+<img src="trial-conversion-overview.png" alt="From three days of trial engagement to conversion predictions, outreach priorities, and drift monitoring" width="1000" height="878"  style="height: auto;" />
+</a>
+</figure><div class="project-meta-pills"><span class="project-pill">Predictive Analytics</span><span class="project-pill">XGBoost</span><span class="project-pill">MLflow</span><span class="project-pill">FastAPI</span><span class="project-pill">Docker</span><span class="project-pill">GitHub Actions</span><span class="project-pill">AWS EC2 &amp; S3</span><span class="project-pill">Evidently</span><span class="project-pill">Streamlit</span></div>
+<aside class="project-quick-facts"><h3>Quick Facts</h3><dl>
+<dt>Role</dt><dd>Data Scientist / Machine Learning Engineer</dd>
+<dt>Context</dt><dd>Subscription trial conversion</dd>
+<dt>Goal</dt><dd>Prioritize outreach using the first 3 days of a 14-day trial</dd>
+<dt>Recorded Result</dt><dd>0.88 held-out test ROC-AUC · 1,137 training / 379 test examples</dd>
+<dt>Delivery</dt><dd>FastAPI predictions, daily ranked CSVs, and a Streamlit dashboard</dd>
+<dt>Operations</dt><dd>Container deployment to AWS EC2, MLflow model promotion, and daily drift checks</dd>
+</dl></aside>                <div class="project-section-text">
+<p>This project models a <strong>subscription-based digital content platform using synthetic user engagement and trial-conversion data</strong>. It demonstrates an end-to-end machine learning system for predicting paid conversions, scoring new trial users, and monitoring data drift, with lessons applicable to similar subscription services.</p>
+<p>Users receive a <strong>14-day trial</strong> to explore the service. At the end of that period, they can convert to a paid subscription to continue accessing the content or abandon the service. The model scores users after their first three days of activity, leaving approximately <strong>11 days to act before the trial expires</strong>. A daily ranked list helps the growth team prioritize onboarding support during that remaining window.</p>
+                </div>
+            </section>
+
+            <section id="background" class="section">
+                <h2 class="section-title">Background &amp; Problem Statement</h2>
+                <div class="project-section-text">
+<p>In this subscription service scenario, trial users explore digital content through sessions, including listening sessions. Some return regularly and spend more time engaging with content; others use the service briefly or stop returning. These early patterns provide signals about whether a user will choose a paid subscription when the 14-day trial ends.</p>
+<p>The model receives each user's session counts for days 1, 2, and 3, the number of listening sessions and total engagement minutes across those days, plus country and device type. It transforms these inputs into features describing activity volume, consistency, and depth. The synthetic data includes the eventual conversion outcome for training; that outcome is what the model predicts for new trial users.</p>
+<p>Growth teams have limited time to contact trial users. Scoring at the end of day 3 lets them review weak engagement while days 4 through 14 are still available for onboarding support or engagement prompts. The operational question is: <strong>which active trials should the team review first?</strong></p>
+<p>The system ranks users from lowest to highest predicted conversion probability. This supports prioritization, but conversion likelihood alone does not establish who will benefit from outreach. Measuring incremental conversions requires a controlled experiment.</p>
+                </div>
+            </section>
+
+            <section id="data" class="section">
+                <h2 class="section-title">Data &amp; Feature Engineering</h2>
+                <div class="project-section-text">
+<p>The project uses <strong>synthetic engagement and trial-conversion data</strong> to represent a subscription-based digital content service. Training uses a fixed CSV extract of a PostgreSQL trial snapshot, and daily scoring reads dated day-3 cohorts from S3. The target is <code>converted</code>: 1 for a trial that became a paid subscription and 0 for one that ended without conversion.</p>
+<figure class="project-figure">
+    <a href="trial-conversion-training-data-first-last-15.png" class="portfolio-lightbox" data-gallery="trial-conversion-mlops"
+        data-title="Training dataframe: first 15 and last 15 rows, all 12 columns"
+        data-pswp-width="1881" data-pswp-height="1985">
+        <img src="trial-conversion-training-data-first-last-15.png" alt="Raw training dataframe showing all 12 columns for the first 15 and last 15 rows, with original row indices"
+            width="1881" height="1985" loading="lazy" style="height: auto;" />
+    </a>
+    <figcaption>Raw training snapshot: 1,516 rows and 12 columns before feature engineering. The first 15 and last 15 rows retain their original order and zero-based indices; 1,486 middle rows are omitted. IDs, dates, and the conversion label are shown for context and are not all model inputs. Click to enlarge.</figcaption>
+</figure>
+<p><strong>Raw prediction inputs:</strong> <code>sessions_day1</code>, <code>sessions_day2</code>, <code>sessions_day3</code>, <code>listen_sessions_3d</code>, <code>total_minutes_3d</code>, <code>country</code>, and <code>device_type</code>. Only information available in the first three days is used to construct the following model features:</p><ul class="project-bullets">
+<li><strong>Activity volume:</strong> total sessions across days 1–3 (<code>sessions_3d</code>) and total engagement minutes (<code>total_minutes_3d</code>).</li>
+<li><strong>Consistency:</strong> number of days with at least one session (<code>active_days_3d</code>) and the fraction of all sessions occurring on day 1 (<code>day1_share</code>).</li>
+<li><strong>Engagement depth:</strong> listening sessions divided by total sessions (<code>listen_share</code>) and total minutes divided by total sessions (<code>avg_session_minutes</code>).</li>
+<li><strong>Context:</strong> country and device type, one-hot encoded for modeling.</li>
+<li><strong>Consistent transformations:</strong> training, inference, and drift monitoring reuse the same feature function; zero-session trials retain zero-valued shares and duration.</li>
+</ul>
+                </div>
+            </section>
+
+            <section id="modeling" class="section">
+                <h2 class="section-title">Modeling &amp; Recorded Results</h2>
+                <div class="project-section-text">
+<p>XGBoost uses 500 trees, a maximum depth of 3, and a learning rate of 0.01. Evaluation uses a stratified 75% / 25% train-test split with a fixed random seed.</p>
+                </div>
+<div class="project-table-wrapper"><h3 class="project-subtitle">Saved Model Evaluation</h3>
+<table class="project-table project-table--metrics"><thead><tr><th scope="col">Measure</th><th scope="col">Recorded Value</th></tr></thead><tbody>
+<tr><td>Training / held-out test examples</td><td>1,137 / 379</td></tr>
+<tr><td>Candidate test ROC-AUC</td><td><strong>0.8831</strong></td></tr>
+<tr><td>Previous recorded ROC-AUC</td><td>0.8750</td></tr>
+<tr><td>Absolute AUC improvement</td><td>0.0081</td></tr>
+<tr><td>Required improvement for promotion</td><td>0.0050</td></tr>
+<tr><td>Promotion decision</td><td>Promoted · registered model version 2</td></tr>
+</tbody></table></div>                <div class="project-section-text">
+<p>These values come from the saved evaluation artifact, not a live production measurement. ROC-AUC describes ranking performance across thresholds; it is not an accuracy percentage. Validation on later cohorts and probability calibration remain next steps.</p>
+                </div>
+            </section>
+
+            <section id="promotion" class="section">
+                <h2 class="section-title">Experiment Tracking &amp; Model Promotion</h2>
+                <div class="project-section-text">
+<p>MLflow records parameters, dataset metadata, evaluation results, and promotion decisions. The conditional training workflow compares the candidate with the higher available incumbent AUC from local artifacts and the model registry.</p><ul class="project-bullets">
+<li><strong>Promote:</strong> require an absolute AUC improvement of at least 0.005, publish artifacts to S3, register the model, and assign the champion alias.</li>
+<li><strong>Retain:</strong> preserve the incumbent artifacts and alias when the candidate fails the improvement rule.</li>
+<li><strong>Separate delivery:</strong> model promotion publishes artifacts; the container deployment pipeline distributes the model to serving and batch jobs.</li>
+</ul><p>The original training command also remains available and publishes unconditionally. The promotion comparison uses saved incumbent scores, so enforcing a common evaluation set is an identified improvement.</p>
+                </div>
+            </section>
+
+            <section id="deployment" class="section">
+                <h2 class="section-title">Deployment &amp; Daily Automation</h2>
+                <div class="project-section-text">
+<p>Separate Docker images package the API and scheduled jobs. GitHub Actions runs Ruff and pytest, builds both images, and publishes them to GitHub Container Registry on the main branch before deploying to AWS EC2.</p><ul class="project-bullets">
+<li><strong>On-demand predictions:</strong> FastAPI validates inputs and returns a conversion probability and low, medium, or high band.</li>
+<li><strong>Daily scoring:</strong> a 06:30 cron job uploads a CSV to S3, sorted by ascending conversion probability.</li>
+<li><strong>Daily monitoring:</strong> an independent 06:45 cron job writes Evidently HTML reports and JSON drift verdicts to S3, with a Slack webhook alert when the newest cohort drifts.</li>
+<li><strong>Quality checks:</strong> repository tests cover API validation, prediction structure, zero-session features, and model promotion decisions and failures.</li>
+</ul><p>Schedules follow the EC2 host timezone. Serving and scoring load the model packaged into their images; drift checks compare incoming features against the training reference.</p>
+                </div>
+            </section>
+
+            <section id="scored-output" class="section">
+                <h2 class="section-title">Daily Scored Output</h2>
+                <div class="project-section-text">
+                    <p>The batch scoring job turns a new cohort into an outreach list ranked from lowest to highest predicted conversion probability. The output retains the cohort inputs and adds a conversion probability and band for each trial.</p>
+                </div>
+                <figure class="project-figure">
+                    <a href="trial-conversion-scored-output-first-middle-last-10.png" class="portfolio-lightbox" data-gallery="trial-conversion-mlops"
+                        data-title="Sorted scoring output: first, middle, and last 10 rows"
+                        data-pswp-width="1902" data-pswp-height="2853">
+                        <img src="trial-conversion-scored-output-first-middle-last-10.png" alt="Sorted trial scores showing ranks 1–10, 56–65, and 111–120, with conversion probabilities and bands"
+                            width="1902" height="2853" loading="lazy" style="height: auto;" />
+                    </a>
+                    <figcaption>Scored output for October 17, 2026: 120 trials sorted by ascending conversion probability. The preview shows ranks 1–10, 56–65, and 111–120. All 12 CSV fields are retained, with probability and band placed first for readability; rank is added for orientation. Probabilities use the original 0–1 scale. Lower scores receive higher outreach priority; these are predictions, not observed conversion outcomes. Click to enlarge.</figcaption>
+                </figure>
+            </section>
+
+            <section id="application" class="section">
+                <h2 class="section-title">Outreach Dashboard</h2>
+                <div class="project-section-text">
+<p>The Streamlit dashboard reads saved predictions and monitoring artifacts from S3. Users can filter by country and device, adjust an outreach cutoff, and download a ranked CSV. A history view supports a rolling 31-day window or a calendar month.</p>
+<p>Freshness warnings and drift verdicts help users interpret the list before acting. Synthetic backfilled monitoring history is labeled separately from measured reports.</p>
+                </div><figure class="project-figure">
+<a href="trial-conversion-app-ui.png" class="portfolio-lightbox" data-gallery="trial-conversion-mlops" data-title="Trial conversion dashboard with outreach cutoff, freshness warning, drift status, filters, and ranked trial users" data-pswp-width="1349" data-pswp-height="1202">
+<img src="trial-conversion-app-ui.png" alt="Trial conversion dashboard with outreach cutoff, freshness warning, drift status, filters, and ranked trial users" width="1349" height="1202" loading="lazy" style="height: auto;" />
+</a><figcaption>Dashboard snapshot: the lowest conversion probabilities appear first. Values and warnings reflect the captured cohort.</figcaption>
+</figure>
+            </section>
+
+            <section id="monitoring" class="section">
+                <h2 class="section-title">Drift Monitoring with Evidently</h2>
+                <div class="project-section-text">
+<p>Evidently compares eight feature distributions with the training reference. Dataset drift is flagged when at least <strong>50% of features</strong> drift, equivalent to four of the eight monitored inputs.</p>
+<p>The report below shows three drifted features out of eight (37.5%), below the dataset-level threshold. It is a separate report snapshot from the dashboard above. Drift is a signal to investigate; confirming a decline in predictive performance requires conversion labels.</p>
+                </div><figure class="project-figure">
+<a href="trial-conversion-drift-detection-report-evidently.png" class="portfolio-lightbox" data-gallery="trial-conversion-mlops" data-title="Evidently report showing three of eight drifted features and no dataset-level drift" data-pswp-width="1243" data-pswp-height="1178">
+<img src="trial-conversion-drift-detection-report-evidently.png" alt="Evidently report showing three of eight drifted features and no dataset-level drift" width="1243" height="1178" loading="lazy" style="height: auto;" />
+</a><figcaption>Example report: individual feature drift can occur without crossing the dataset-level alert threshold.</figcaption>
+</figure>
+            </section>
+
+            <section id="impact" class="section">
+                <h2 class="section-title">Outcomes &amp; Next Steps</h2>
+                <div class="project-section-text">
+<p>The result is an implemented ML workflow connecting early engagement signals to daily ranked outputs, an API, automated container delivery, and feature drift monitoring. It demonstrates the engineering needed to keep predictions accessible and inspectable beyond a notebook.</p><ul class="project-bullets">
+<li><strong>Validate over time:</strong> evaluate later cohorts and calibrate conversion probabilities.</li>
+<li><strong>Measure outreach impact:</strong> run a controlled experiment to assess incremental conversions and intervention costs.</li>
+<li><strong>Strengthen release reliability:</strong> add artifact consistency checks, rollback, and post-deployment health verification.</li>
+<li><strong>Extend operational coverage:</strong> add job failure alerts and overlap prevention; drift checks do not automatically retrain the model.</li>
+</ul><p>The transferable lessons are to score early enough for teams to act, reuse feature definitions across training and serving, separate model promotion from deployment, and surface data freshness and drift alongside predictions. Similar digital content, SaaS, and membership services can adapt this workflow to their own trial lengths, engagement signals, and outreach capacity. Each application would need evaluation on its own data and an experiment to establish conversion impact.</p>
+<p>No measured increase in paid conversions is claimed for this project.</p>
+                </div>
+            </section>
+
+            <section id="github-repo" class="section">
+                <h2 class="section-title">GitHub Repository &amp; Documentation</h2>
+                <div class="project-section-text">
+<p>Explore the feature engineering, training workflows, API, dashboard, tests, and deployment configuration, along with setup instructions and the operations runbook.</p>
+<p><a href="https://github.com/helsharif/trial-conversion-model" target="_blank" rel="noopener noreferrer" class="project-github-link">View Project Repository on GitHub</a></p>
+<p><a href="https://github.com/helsharif/trial-conversion-model/blob/main/docs/operations.md" target="_blank" rel="noopener noreferrer" class="project-github-link">Read the Training &amp; Operations Guide</a></p>
+<p class="project-github-note">The screenshots show the application and monitoring outputs. Running the dashboard locally requires authorized access to its S3 artifacts; setup instructions are in the repository.</p>
+                </div>
+            </section>
+
+            <nav class="project-slide-ctas" data-project-slide-ctas data-scroll-threshold="0.85"
+                aria-label="Previous and next portfolio projects"></nav>
+
+            {% include project-bottomnav.html %}
+        </main>
+    </div>
+
+    <script>
+        const inPageAnchors = document.querySelectorAll('a[href^="#"]');
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        inPageAnchors.forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                const targetId = this.getAttribute("href");
+                if (!targetId || targetId === "#") return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+                if (this.classList.contains("nav-link")) {
+                    navLinks.forEach((link) => link.classList.remove("active"));
+                    this.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+    <script src="/assets/js/contact-obfuscation.js"></script>
+    <script src="/assets/js/project-slide-ctas.js"></script>
+    <script type="module" src="/assets/js/photoswipe-lightbox.js"></script>
+</body>
+
+</html>
