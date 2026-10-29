@@ -59,15 +59,63 @@ ArcGIS, QGIS, GeoPandas, Google Earth Engine
 
 ---
 
+## 💼 Professional Experience
+
+### **Senior Data Scientist (Research Engineer)**
+
+**Georgia Institute of Technology, School of Civil & Environmental Engineering**  
+**Aug 2012 – Present · Atlanta, GA**
+
+- Developed and deployed an end-to-end ML pipeline using Sentinel-2 satellite imagery and Google Earth Engine to generate weekly chlorophyll-a maps across 150 km² of Lake Lanier at 30 m resolution for the Gwinnett County Department of Water Resources; trained county technicians to use the system for near-real-time water quality monitoring and early warning of harmful algal blooms, reducing reliance on costly field sampling.
+- Developed bias-correction and spatiotemporal downscaling algorithms for 16 climate models across two emissions scenarios, producing 4-km daily climate projections while preserving temperature-precipitation correlations. Integrated climate, soil, and crop data into ML models to predict crop yield and irrigation demand and quantify long-range agricultural risks across the ACF River Basin.
+- Ported and modernized the SAC-SMA hydrologic model from R to Python using OpenAI Codex, adding flexible time steps, units, and calibration objectives. Achieved 100% model fidelity through rigorous testing, enabling high-performance computational workflows to assess projected changes in Georgia's water availability through the year 2100.
+- Developed and evaluated an artificial neural network (ANN) to predict daily solar radiation from meteorological data, reducing RMSE by up to 9.7% versus a calibrated empirical model and supporting long-term agricultural forecasting.
+- Oversaw $400K+ in annual federal and state research funding as Assistant Director of the Georgia Water Resources Institute, evaluating grant proposals for technical merit and practical impact, coordinating research awards, and ensuring timely technical and financial reporting to federal agencies.
+- Mentored graduate researchers in data science, programming, and ML methods, supporting publications and conference presentations.
+
+---
+
+### **Senior Data Scientist (Part-Time)**
+
+**Demand Delta**  
+**Sep 2025 – Present · Marietta, GA**
+
+- Developed an XGBoost lead-scoring system using weather, permit, valuation, and geospatial data, projecting a 12% revenue lift (~$450K per 600 leads) and improving precision-recall performance by 3.3x over a heuristic baseline. Added Platt calibration and SHAP for explainable per-lead insights.
+- Built an explainable RAG platform to match project requirements with qualified engineering firms, indexing 7K+ public profiles into ~70K retrieval documents using PostgreSQL/pgvector, embeddings, hybrid search, reciprocal rank fusion, and cross-encoder reranking.
+- Built an AI-powered lead-enrichment pipeline with Python, Google Gemini, and the Google Places API to surface high-value industrial prospects for an engineering consultancy, replacing manual prospecting with a scored outreach list and accelerating lead qualification.
+
+---
+
+### **Engineering Consultant (Part-Time)**
+
+**4Earth, Inc.**  
+**Aug 2022 – Aug 2025 · Kennesaw, GA**
+
+- Built a TensorFlow-based decision algorithm combining neural networks and dynamic programming to select optimal membrane cleaning actions at 10-minute intervals, evaluating 74K+ system states to balance operational costs, equipment wear, and membrane performance.
+- Developed and calibrated a data-driven decision support system for wastewater treatment operations, applying sensor time-series analysis and rule-based algorithms to automate membrane cleaning, detect anomalies, and handle edge cases across 32 operating scenarios.
+- Supported AWS IoT integration for near-real-time monitoring of 24 operational KPIs at 60-second intervals, enabling data-driven insights into wastewater treatment performance and supporting the development of AI-powered operational systems.
+- Developed physics-based and 3D modeling workflows and trained engineers in their adoption, improving design collaboration, reducing physical prototyping iterations, and shortening project delivery time by 20%.
+
+---
+
+### **Data Scientist (Graduate Research Assistant)**
+
+**Florida Atlantic University, Dept. of Civil, Environmental, & Geomatics Engineering**  
+**May 2010 – Aug 2012 · Boca Raton, FL**
+
+- Built and validated ML models to reconstruct missing environmental data, benchmarking 71 methods across 33 years of daily observations from 15 weather stations to improve data accuracy and statistical consistency for hydrologic and climate analyses.
+
+---
+
 ## 📂 Featured Projects
 
 ### [Remote Sensing & ML for Water Quality Assessment at Lake Lanier](https://hesportfolio.com/assets/projects/project-lake-lanier/project-lake-lanier.html#top-nav)
 
 Satellite-based ML workflow to monitor chlorophyll-a and assess water quality compliance for Lake Lanier.
 
-### [Teacher Support Studio: Student Proficiency Prediction & AI Teacher Assistant](https://hesportfolio.com/assets/projects/project-teacher-support-studio/project-teacher-support-studio.html#top-nav)
+### [Trial Conversion Prediction & MLOps](https://hesportfolio.com/assets/projects/project-trial-conversion-mlops/project-trial-conversion-mlops.html#top-nav)
 
-Predicts next-practice success from longitudinal learning data and turns explainable estimates into grounded, teacher-facing guidance.
+Turns early trial engagement into outreach priorities with XGBoost, automated AWS deployment, and data drift monitoring.
 
 ### [Autodesk Agentic RAG Chatbot](https://hesportfolio.com/assets/projects/project-autodesk-rag-app/project-autodesk-rag-app.html#top-nav)
 
@@ -84,6 +132,10 @@ Production-oriented churn prediction workflow with XGBoost, FastAPI, Streamlit, 
 ### [AI-Automated Lead Generation Pipeline for Engineering Consultancy (RAG + Web Data)](https://hesportfolio.com/assets/projects/project-ai-lead-generation/project-ai-lead-generation.html#top-nav)
 
 RAG-powered pipeline to mine regulatory and web data, rank prospects, and surface qualified engineering leads.
+
+### [Teacher Support Studio: Student Proficiency Prediction & AI Teacher Assistant](https://hesportfolio.com/assets/projects/project-teacher-support-studio/project-teacher-support-studio.html#top-nav)
+
+Predicts next-practice success from longitudinal learning data and turns explainable estimates into grounded, teacher-facing guidance.
 
 ### [AI-Powered Retinal Disease Detection with Deep Learning & Computer Vision Pipeline](https://hesportfolio.com/assets/projects/project-retinal-disease-detection/project-retinal-disease-detection.html#top-nav)
 
@@ -118,50 +170,6 @@ Built bias-corrected climate projections and an interactive dashboard to explore
 End-to-end ML pipeline for forecasting hourly electricity demand using 10+ years of grid and weather data, achieving high-accuracy 48-hour load predictions.
 
 Explore all projects on the [live portfolio](https://hesportfolio.com/#portfolio).
-
----
-
-## 💼 Professional Experience
-
-### **Senior Data Scientist (Part-Time)**
-
-**Demand Delta**  
-**Sep 2025 – Present · Marietta, GA**
-
-- Developed an XGBoost lead-scoring system using weather, permit, valuation, and geospatial data, projecting a 12% revenue lift (~$450K per 600 leads) and improving precision-recall performance by 3.3x over a heuristic baseline. Added Platt calibration and SHAP for explainable per-lead insights.
-- Built an explainable RAG platform to match project requirements with qualified engineering firms, indexing 7K+ public profiles into ~70K retrieval documents using PostgreSQL/pgvector, embeddings, hybrid search, RRF, and cross-encoder reranking.
-- Built an AI-powered lead enrichment pipeline (Python, Google Gemini, Google Places API) to surface high-value industrial prospects for an engineering consultancy, replacing manual prospecting with a scored outreach list and accelerating lead qualification.
-
----
-
-### **Senior Data Scientist (Research Engineer)**
-
-**Georgia Institute of Technology, School of Civil & Environmental Engineering**  
-**Aug 2012 – Present · Atlanta, GA**
-
-- Built a satellite-based ML pipeline using Sentinel-2 and Google Earth Engine to estimate chlorophyll-a concentrations and detect harmful algal blooms, enabling near-real-time water-quality monitoring and operational decision support for Gwinnett County Department of Water Resources.
-- Developed bias-correction and spatiotemporal downscaling algorithms for 16 climate models across two emissions scenarios, producing 4-km daily climate projections while preserving temperature-precipitation correlations. Integrated climate, soil, and crop data into ML models to predict crop yield and irrigation demand and quantify long-range agricultural risks across the ACF River Basin.
-- Built Dockerized geospatial ML workflows, supporting reproducible deployment of environmental monitoring and predictive modeling pipelines.
-- Oversaw $400K+ in annual federal and state research funding as Assistant Director of the Georgia Water Resources Institute.
-- Mentored graduate researchers in data science and ML methods, supporting publications and conference presentations.
-
----
-
-### **Engineering Consultant (Part-Time)**
-
-**4Earth, Inc.**  
-**Aug 2022 – Aug 2025 · Kennesaw, GA**
-
-- Developed physics and data-driven system models and AI-Ops pipelines for real-time AWS IoT sensor analytics, improving engineering efficiency and reducing time-to-market by 20%.
-
----
-
-### **Data Scientist (Graduate Research Assistant)**
-
-**Florida Atlantic University, Dept. of Civil, Environmental, & Geomatics Engineering**  
-**May 2010 – Aug 2012 · Boca Raton, FL**
-
-- Built and validated ML models to reconstruct missing environmental data, improving accuracy and spatial consistency for hydrologic and climate analyses.
 
 ---
 
