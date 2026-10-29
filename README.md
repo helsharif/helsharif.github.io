@@ -16,17 +16,6 @@ If you’re working on a problem where machine learning, AI, or geospatial analy
 
 ---
 
-## 🚀 What I Do
-
-- Build predictive models for environmental, educational, public health, business, and energy applications.
-- Develop generative AI applications and agentic RAG systems with grounded retrieval and evaluation.
-- Create reproducible data pipelines and ML workflows with Python, SQL, Docker, and cloud platforms.
-- Apply remote sensing and geospatial analytics to water quality, climate, and agricultural planning.
-- Build analytical tools and dashboards that support practical, evidence-based decisions.
-- Mentor graduate researchers in data science and machine learning.
-
----
-
 ## 🧠 Technical Skills
 
 **Programming & Analytics**  
